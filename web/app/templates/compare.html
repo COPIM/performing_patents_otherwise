@@ -8,7 +8,7 @@
 
     Application ID:
 
-    <a href="/search/id?id={{ result['id'] }}&core=all">
+    <a href="{{ url_for('search.id_search', id=result['id'], core='all') }}">
       {{ result['application_id'] }}
     </a>
 
@@ -63,7 +63,7 @@
     {% if result['image'] is defined %}
       <img class="img-fluid" src="data:image/jpg;base64,{{ result['image'] }}" alt="Drawing of patent" />'
     {% endif %}
-    
+
     </div>
   {% endfor %}
   </div>

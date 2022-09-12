@@ -8,7 +8,7 @@
   {% for title in titles %}
 
     <span class="title">
-      <a href="/search/id?id={{ title['id'] }}&core=all">
+      <a href="{{ url_for('search.id_search', id=title['id'], core='all') }}">
         {{ title['title'] }}
       </a>
     </span>

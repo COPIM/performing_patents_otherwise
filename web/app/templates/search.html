@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="row p-3">
-  <form action="/search" method="POST">
+  <form action="{{ url_for('search.basic_search') }}" method="POST">
     <input type="hidden" name="search" value="{{ search }}">
     <input type="hidden" name="searchopt" value="{{ core }}">
     sort by:
@@ -28,7 +28,7 @@
 
     Application ID:
 
-    <a href="/search/id?id={{ result['id'] }}&core=all">
+    <a href="{{ url_for('search.id_search', id=result['id'], core='all') }}">
       <span class="result-entry">
         {{ result['application_id'] }}
       </span>

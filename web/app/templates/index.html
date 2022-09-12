@@ -11,7 +11,7 @@
 
 <div class="row justify-content-center p-3">
   <div class="col-sm-6 text-center">
-    <form action="/search" method="POST">
+    <form action="{{ url_for('search.basic_search') }}" method="POST">
       <input type="text" name="search" placeholder="search for a patent record">
       <input type="submit" id="submit" value="search">
     </form>
@@ -21,25 +21,25 @@
 
 <div class="row p-3">
   <div class="col text-center">
-    <a href="/random">show a random record</a>
+    <a href="{{ url_for('random.random_record') }}">show a random record</a>
   </div>
 
   <div class="col text-center">
-    <a href="/random/two">compare two random records</a>
+    <a href="{{ url_for('random.two_random_records') }}">compare two random records</a>
   </div>
 </div>
 
 <div class="row p-3">
   <div class="col text-center">
-    <a href="/random/titles">ten random titles</a>
+    <a href="{{ url_for('random.ten_random_titles') }}">ten random titles</a>
   </div>
 
   <div class="col text-center">
-    <a href="/random/abstracts">ten random abstracts</a>
+    <a href="{{ url_for('random.ten_random_abstracts') }}">ten random abstracts</a>
   </div>
 
   <div class="col text-center">
-    <a href="/random/images">ten random images (takes a long time to load)</a>
+    <a href="{{ url_for('random.ten_random_images') }}">ten random images (takes a long time to load)</a>
   </div>
 </div>
 

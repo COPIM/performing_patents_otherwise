@@ -7,7 +7,7 @@
 
     Application ID:
 
-    <a href="/search/id?id={{ result['id'] }}&core=all">
+    <a href="{{ url_for('search.id_search', id=result['id'], core='all') }}">
       {{ result['application_id'] }}
     </a>
 
