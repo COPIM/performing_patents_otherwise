@@ -119,7 +119,7 @@ def get_images(doc_ref):
             json['ops:world-patent-data']['ops:document-inquiry']['ops:inquiry-result']['ops:document-instance']
             document_instances = json['ops:world-patent-data']['ops:document-inquiry']['ops:inquiry-result']['ops:document-instance']
             try:
-                document_instances[1]
+                document_instances[0]
                 for document_instance in document_instances:
                     if document_instance['@desc'] == 'Drawing':
                         drawings_url = ops_url_images + '3.2/rest-services/' +  document_instance['@link'] + '?Range=1'
@@ -130,7 +130,8 @@ def get_images(doc_ref):
             except KeyError:
                 pass
 
-            if drawings_url is not None:
+            try:
+                drawings_url[0]
 
                 # set up API call
                 headers = {"Authorization": "Bearer " + access_token, "Accept": "application/tiff"}
@@ -143,6 +144,9 @@ def get_images(doc_ref):
                         png_blob = image.make_blob('png')
                         base64_bytes = base64.b64encode(png_blob)
                         output['image'] = base64_bytes.decode("ascii")
+
+            except KeyError:
+                pass
 
         except KeyError:
             pass
