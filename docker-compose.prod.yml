@@ -1,0 +1,37 @@
+version: '3.9'
+
+services:
+
+  python:
+    build: ./web
+    container_name: python
+    expose:
+      - 5000
+    env_file:
+      - ./config.env.prod
+    volumes:
+      - ./web:/code
+    command: gunicorn --bind 0.0.0.0:5000 "app:create_app()"
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - "1337:80"
+    volumes:
+      - ./nginx-conf:/etc/nginx/conf.d
+    depends_on:
+      - python
+
+  solr:
+    container_name: solr
+    image: solr:latest
+    ports:
+      - '8983:8983'
+    volumes:
+      - solrdata:/var/solr
+      - ./solr_config:/opt/solr/server/solr/configsets/custom
+
+volumes:
+  solrdata:

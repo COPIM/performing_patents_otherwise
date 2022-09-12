@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row p-3">
+  <form action="/search" method="POST">
+    <input type="hidden" name="search" value="{{ search }}">
+    <input type="hidden" name="searchopt" value="{{ core }}">
+    sort by:
+    <select name="sort" id="sort" onchange="this.form.submit()">
+      <option value="relevance" {% if sort == 'relevance' %} selected {% endif %}>relevance</option>
+      <option value="year desc" {% if sort == 'year desc' %} selected {% endif %}>year descending</option>
+      <option value="year asc" {% if sort == 'year asc' %} selected {% endif %}>year ascending</option>
+    </select>
+    <noscript>
+      <input type="submit" class="btn btn-default" value="Set" />
+    </noscript>
+  </form>
+</div>
+
+{% if results == 'no results found' %}
+
+  {{ results }}
+
+{% else %}
+
+  {% for result in results %}
+
+    Application ID:
+
+    <a href="/search/id?id={{ result['id'] }}&core=all">
+      <span class="result-entry">
+        {{ result['application_id'] }}
+      </span>
+    </a>
+
+    <br><br>
+
+    Year:
+
+    {{ result['year'] }}
+
+    <br><br>
+
+    EPO publication:
+
+    <a href="{{ result['epo_publication_url'] }}">
+        {{ result['epo_publication_url'] }}
+    </a>
+
+    <br><br>
+
+    IPC publication:
+
+    <a href="{{ result['ipc_publication_url'] }}">
+        {{ result['ipc_publication_url'] }}
+    </a>
+
+    <br><br>
+
+    {% if result['title'] is defined %}
+      Title:
+      <span class="result-entry">
+        {{ result['title'] }}
+      </span>
+      <br><br>
+    {% endif %}
+
+    {% if result['abstract'] is defined %}
+      Abstract:
+      <span class="result-entry">
+        {{ result['abstract'] }}
+      </span>
+      <br><br>
+    {% endif %}
+
+      <hr>
+
+  {% endfor %}
+
+{% endif %}
+
+<script>
+  let search_string = "{{ search }}";
+  const search_array = search_string.split(" ");
+  for (const term of search_array){
+    $("span[class=result-entry]:contains('" + term + "')").html(function(_, html) {
+      var replace = "(" + term + ")";
+      var re = new RegExp(replace, "g");
+      return html.replace(re, '<span style="color:orange">$1</span>');
+    });
+  }
+</script>
+
+{% endblock %}

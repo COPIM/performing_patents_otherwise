@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  {% for result in results %}
+  <div id="result">
+
+    Application ID:
+
+    <a href="/search/id?id={{ result['id'] }}&core=all">
+      {{ result['application_id'] }}
+    </a>
+
+    <br><br>
+
+    Year:
+
+    {{ result['year'] }}
+
+    <br><br>
+
+    EPO publication:
+
+    <a href="{{ result['epo_publication_url'] }}">
+      {{ result['epo_publication_url'] }}
+    </a>
+
+    <br><br>
+
+    IPC publication:
+
+    <a href="{{ result['ipc_publication_url'] }}">
+      {{ result['ipc_publication_url'] }}
+    </a>
+
+    <br><br>
+
+    {% if result['title'] is defined %}
+      Title:
+      {{ result['title'] }}
+      <br><br>
+    {% endif %}
+
+    {% if result['original_title'] is defined %}
+      Original language title:
+      {{ result['original_title'] }}
+      <br><br>
+    {% endif %}
+
+    {% if result['abstract'] is defined %}
+      Abstract:
+      {{ result['abstract'] }}
+      <br><br>
+    {% endif %}
+
+    {% if result['original_abstract'] is defined %}
+      Original language abstract:
+      {{ result['original_abstract'] }}
+      <br><br>
+    {% endif %}
+
+    {% if result['image'] is defined %}
+      <img class="img-fluid" src="data:image/jpg;base64,{{ result['image'] }}" alt="Drawing of patent" />'
+    {% endif %}
+
+  </div>
+  {% endfor %}
+
+{% endblock %}

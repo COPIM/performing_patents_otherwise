@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  {% for result in results %}
+
+    <img class="img-fluid" src="data:image/jpg;base64,{{ result['image'] }}" alt="Drawing accompanying patent for{{ result['title'] }}" />'
+
+  {% endfor %}
+
+{% endblock %}

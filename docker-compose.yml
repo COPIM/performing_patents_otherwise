@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+
+  python:
+    build: ./web
+    container_name: python
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./web:/code
+    env_file:
+      - ./config.env
+
+  solr:
+    container_name: solr
+    image: solr:latest
+    ports:
+      - '8983:8983'
+    volumes:
+      - solrdata:/var/solr
+      - ./solr_config:/opt/solr/server/solr/configsets/custom
+
+volumes:
+  solrdata:

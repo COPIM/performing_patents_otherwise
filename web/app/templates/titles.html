@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <button class="float-end btn btn-danger" onclick="removeRandomTitle()">-</button>
+  <button class="float-end btn btn-danger" onclick="addRandomTitle()">+</button>
+
+  {% for title in titles %}
+
+    <span class="title">
+      <a href="/search/id?id={{ title['id'] }}&core=all">
+        {{ title['title'] }}
+      </a>
+    </span>
+
+    <br><br>
+
+    <hr>
+
+  {% endfor %}
+
+<script>
+  var titles = {{ additional_titles|tojson }};
+
+  x = 0;
+
+  function addRandomTitle(){
+    var record_array = titles[x];
+    document.querySelector('.container-fluid').innerHTML += "<a href='/search/id?id=" + record_array['id'] + "&core=all'><span class='title'>" + record_array['title'] + "</span></a><br><br><hr>";
+    x++;
+  }
+
+  function removeRandomTitle() {
+    var elts = document.getElementsByClassName("title");
+    var RandomSpan = elts[Math.floor(Math.random() * elts.length)];
+    var TextReplacement = RandomSpan.textContent.replace(/\w/g,"-");
+    RandomSpan.removeAttribute("href");
+    RandomSpan.innerHTML = TextReplacement;
+  }
+</script>
+
+{% endblock %}

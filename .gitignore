@@ -1,0 +1,5 @@
+.DS_Store
+config.env
+config.env.prod
+data
+web/app/__pycache__/

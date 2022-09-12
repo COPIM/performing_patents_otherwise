@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  {% for abstract in abstracts %}
+
+    {{ abstract['abstract'] }}
+
+    <br><br>
+
+    <hr>
+
+  {% endfor %}
+
+{% endblock %}
