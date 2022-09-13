@@ -2,9 +2,20 @@
 
 {% block content %}
 
-  <button class="float-end btn btn-danger" onclick="removeRandomTitle()">-</button>
-  <button class="float-end btn btn-danger" onclick="addRandomTitle()">+</button>
+<div class="action">
+  <button onClick="refresh(this)" type="button" value="Refresh" title="new iteration">↻</button>
+  <button  onclick="addRandomTitle()" title="add one">+</button>
+  <button  onclick="removeRandomTitle()"  title="remove one">-</button>
+</div>
 
+<div class="row">
+  <div class="col m-5">
+    <a href="{{ url_for('main.index') }}" class="h1 text-left"> ⇽ </a>
+    <p class="h1 text-center">Poetics of Titles</p>
+  </div>
+</div>
+
+<div id="page-titles">
   {% for title in titles %}
 
     <span class="title">
@@ -13,29 +24,21 @@
       </a>
     </span>
 
-    <br><br>
-
-    <hr>
+    <span class="joint">&</span>
 
   {% endfor %}
+</div>
 
-<script>
+<script type="text/javascript">
   var titles = {{ additional_titles|tojson }};
 
   x = 0;
 
   function addRandomTitle(){
     var record_array = titles[x];
-    document.querySelector('.container-fluid').innerHTML += "<a href='/search/id?id=" + record_array['id'] + "&core=all'><span class='title'>" + record_array['title'] + "</span></a><br><br><hr>";
+    document.querySelector('#page-titles').innerHTML += "<a href='/search/id?id=" + record_array['id'] + "&core=all'><span class='title'>" + record_array['title'] + "</span></a><span class='joint'>&</span>";
     x++;
-  }
-
-  function removeRandomTitle() {
-    var elts = document.getElementsByClassName("title");
-    var RandomSpan = elts[Math.floor(Math.random() * elts.length)];
-    var TextReplacement = RandomSpan.textContent.replace(/\w/g,"-");
-    RandomSpan.removeAttribute("href");
-    RandomSpan.innerHTML = TextReplacement;
+    window.scrollTo(0, document.body.scrollHeight);
   }
 </script>
 

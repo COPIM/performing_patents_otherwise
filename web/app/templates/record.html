@@ -2,65 +2,61 @@
 
 {% block content %}
 
+<div class="action">
+  <button onClick="refresh(this)" type="button" value="Refresh" title="new iteration">↻</button>
+</div>
+
+<a href="{{ url_for('main.index') }}" class="h1 text-left"> ⇽ </a>
+
   {% for result in results %}
-  <div id="result">
-
-    Application ID:
-
-    <a href="{{ url_for('search.id_search', id=result['id'], core='all') }}">
-      {{ result['application_id'] }}
-    </a>
-
-    <br><br>
-
-    Year:
-
-    {{ result['year'] }}
-
-    <br><br>
-
-    EPO publication:
-
-    <a href="{{ result['epo_publication_url'] }}">
-      {{ result['epo_publication_url'] }}
-    </a>
-
-    <br><br>
-
-    IPC publication:
-
-    <a href="{{ result['ipc_publication_url'] }}">
-      {{ result['ipc_publication_url'] }}
-    </a>
-
-    <br><br>
+  <div class="col text-center mt-2" id="result">
 
     {% if result['title'] is defined %}
+    <p class="h1 mb-2">
       Title:
       {{ result['title'] }}
-      <br><br>
+    </p>
+    {% endif %}
+
+    {% if result['year'] is defined %}
+    <p class="mb-2">
+      Year:
+      {{ result['year'] }}
+    </p>
     {% endif %}
 
     {% if result['original_title'] is defined %}
       Original language title:
       {{ result['original_title'] }}
-      <br><br>
+    <br><br>
     {% endif %}
 
     {% if result['abstract'] is defined %}
+    <p>
       Abstract:
       {{ result['abstract'] }}
-      <br><br>
+    </p>
     {% endif %}
 
     {% if result['original_abstract'] is defined %}
+    <p>
       Original language abstract:
       {{ result['original_abstract'] }}
-      <br><br>
+    </p>
+    <br><br>
     {% endif %}
 
+    European Patent Office PDF:
+    <a href="{{ url_for('search.id_search', id=result['id'], core='all') }}">
+      <span class="result-entry">
+        {{ result['application_id'] }}
+      </span>
+    </a>
+
     {% if result['image'] is defined %}
-      <img class="img-fluid" src="data:image/jpg;base64,{{ result['image'] }}" alt="Drawing of patent" />'
+    <div class="col text-center">
+      <img class="img-fluid" src="data:image/jpg;base64,{{ result['image'] }}" alt="Drawing accompanying patent for{{ result['title'] }}" />
+    </div>
     {% endif %}
 
   </div>

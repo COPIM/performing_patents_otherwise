@@ -263,7 +263,6 @@ p.about-text {
     border-bottom: 0.10rem var(--color-lightyellow) solid;
 }
 
-
 .search_term {
     background: var(--color-lightyellow);
 }
@@ -296,7 +295,7 @@ body#random-img-page{
 
 /* PAGE —> RANDOM TITLES */
 
-body#page-titles  a, body#page-titles  span {
+#page-titles  a, #page-titles  span {
     font-size: 3.5vw; /* should be converted to calc */
 }
 
@@ -323,12 +322,11 @@ body#page-titles  a, body#page-titles  span {
 
 /* COMPARE —> 10 ABSTRACTS */
 
-
-.rdn-abstracts .container-fluid p::first-letter {
+#rdn-abstracts #alltext p::first-letter {
   font-size: 5rem;
 }
 
-.rdn-abstracts .container-fluid p {
+#rdn-abstracts #alltext p {
     margin: 0% 20%;
     line-height: 1.8rem;
     font-size: var(--body-fontsize);

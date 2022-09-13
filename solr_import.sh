@@ -1,6 +1,5 @@
 #!/bin/bash
 # @name: solr_import.sh
-# @version: 0.1
 # @creation_date: 2022-03-11
 # @license: The MIT License <https://opensource.org/licenses/MIT>
 # @author: Simon Bowie <ad7588@coventry.ac.uk>

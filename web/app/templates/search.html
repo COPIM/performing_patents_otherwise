@@ -2,6 +2,13 @@
 
 {% block content %}
 
+<div class="row">
+  <div class="col m-5">
+    <a href="{{ url_for('main.index') }}" class="h1 text-left"> ⇽ </a>
+    <p class="h1 text-center">a timeline of inventions</p>
+  </div>
+</div>
+
 <div class="row p-3">
   <form action="{{ url_for('search.basic_search') }}" method="POST">
     <input type="hidden" name="search" value="{{ search }}">
@@ -67,16 +74,8 @@
 
 {% endif %}
 
-<script>
-  let search_string = "{{ search }}";
-  const search_array = search_string.split(" ");
-  for (const term of search_array){
-    $("span[class=result-entry]:contains('" + term + "')").html(function(_, html) {
-      var replace = "(" + term + ")";
-      var re = new RegExp(replace, "g");
-      return html.replace(re, '<span style="color:orange">$1</span>');
-    });
-  }
+<script type="text/javascript">
+  highlightSearchTerms({{ search|tojson}})
 </script>
 
 {% endblock %}
