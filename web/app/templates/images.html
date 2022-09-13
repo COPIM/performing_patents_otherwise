@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block body %}
+  <body id="random-img-page">
+{% endblock %}
 
-<div id="random-img-page">
+{% block content %}
 
   <div class="action">
     <button onClick="refresh(this)" type="button" value="Refresh" title="new iteration">↻</button>
@@ -22,12 +24,10 @@
 
   {% for result in results %}
 
-    <img class="img-fluid" src="data:image/jpg;base64,{{ result['image'] }}" alt="Drawing accompanying patent for{{ result['title'] }}" />
+    <img class="img-fluid" src="data:image/jpg;base64,{{ result['image'] }}" alt="Drawing accompanying patent for {{ result['title'] }}" />
 
   {% endfor %}
 
   </div>
-
-</div>
 
 {% endblock %}

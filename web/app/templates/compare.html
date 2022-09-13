@@ -18,7 +18,6 @@
       Title:
       {{ result['title'] }}
     </p>
-    <br>
     {% endif %}
 
     {% if result['year'] is defined %}
@@ -28,44 +27,37 @@
     </p>
     {% endif %}
 
-    {% if result['title'] is defined %}
-      Title:
-      {{ result['title'] }}
-      <br><br>
-    {% endif %}
-
     {% if result['original_title'] is defined %}
+    <p class="mb-2">
       Original language title:
       {{ result['original_title'] }}
-      <br><br>
+    </p>
     {% endif %}
 
     {% if result['abstract'] is defined %}
-    <p>
+    <p class="mb-2">
       Abstract:
       {{ result['abstract'] }}
-      <br><br>
     </p>
     {% endif %}
 
     {% if result['original_abstract'] is defined %}
-    <p>
+    <p class="mb-2">
       Original language abstract:
       {{ result['original_abstract'] }}
-      <br><br>
     </p>
     {% endif %}
 
-    European Patent Office PDF:
-    <a href="{{ url_for('search.id_search', id=result['id'], core='all') }}">
-      <span class="result-entry">
+    <p class="mb-2">
+      European Patent Office PDF:
+      <a href="{{ url_for('search.id_search', id=result['id'], core='all') }}">
         {{ result['application_id'] }}
-      </span>
-    </a>
+      </a>
+    </p>
 
     {% if result['image'] is defined %}
     <div class="col text-center">
-      <img class="img-fluid" src="data:image/jpg;base64,{{ result['image'] }}" alt="Drawing accompanying patent for{{ result['title'] }}" />
+      <img class="img-fluid" src="data:image/jpg;base64,{{ result['image'] }}" alt="Drawing accompanying patent for {{ result['title'] }}" />
     </div>
     {% endif %}
 
