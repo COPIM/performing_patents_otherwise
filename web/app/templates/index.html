@@ -30,6 +30,11 @@
 <div class="index-row">
   <div class="col text-center m-5">
     <p class="h1">Performing Patents Otherwise</p>
+    <div class="info" style="display: none;">
+      <p class="code">
+        Archival conversations with 320,000 clothing inventions
+      </p>
+    </div>
   </div>
 </div>
 
@@ -45,7 +50,7 @@
 <div class="info" style="display: none;">
   <p class="code">
     // Main search engine sorting code:
-    $search_results = solr_search($_POST["search"], $_POST["searchopt"], $_POST["sort"]); if(is_array($search_results)): foreach($search_results as $result): ?>
+    solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=content%3A' + urllib.parse.quote_plus(search) + '&wt=json&sort=' + sort; request = requests.get(solrurl); json = request.json()
   </p>
 </div>
 

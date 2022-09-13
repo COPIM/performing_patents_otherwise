@@ -273,7 +273,7 @@ p.about-text {
 
 /* PAGE —> RANDOM IMAGES */
 
-body#random-img-page{
+#random-img-page{
     background-color: var(--color-dark) !important;
 }
 

@@ -28,7 +28,7 @@ function highlightSearchTerms(search){
     $("span[class=result-entry]:contains('" + term + "')").html(function(_, html) {
       var replace = "(" + term + ")";
       var re = new RegExp(replace, "g");
-      return html.replace(re, '<span style="color:orange">$1</span>');
+      return html.replace(re, '<span class="search_term">$1</span>');
     });
   }
 }
@@ -41,6 +41,7 @@ function removeRandomTitle() {
   RandomSpan.style.display = "inline-block";
 }
 
+// code adapted from w3collective
 function readingTime(text) {
   const wpm = 200;
   const words = text.trim().split(/\s+/).length;

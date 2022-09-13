@@ -2,10 +2,32 @@
 
 {% block content %}
 
+<div id="random-img-page">
+
+  <div class="action">
+    <button onClick="refresh(this)" type="button" value="Refresh" title="new iteration">↻</button>
+    <button onclick="" title="add one">+</button>
+    <button onclick="" title="remove">-</button>
+  </div>
+
+  <a href="{{ url_for('main.index') }}" class="h1 text-left contrast" style="color: var(--color-lightyellow) !important;"> ⇽ </a>
+
+  <div class="row">
+    <div class="col m-5">
+      <p class="h1 text-center contrast">Layering of Images</p>
+    </div>
+  </div>
+
+  <div class="container-fluid compare">
+
   {% for result in results %}
 
-    <img class="img-fluid" src="data:image/jpg;base64,{{ result['image'] }}" alt="Drawing accompanying patent for{{ result['title'] }}" />'
+    <img class="img-fluid" src="data:image/jpg;base64,{{ result['image'] }}" alt="Drawing accompanying patent for{{ result['title'] }}" />
 
   {% endfor %}
+
+  </div>
+
+</div>
 
 {% endblock %}
