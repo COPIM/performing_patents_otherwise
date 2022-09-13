@@ -1,10 +1,365 @@
 /*
 # @name: custom.css
-# @version: 0.1
 # @creation_date: 2022-09-07
 # @license: The MIT License <https://opensource.org/licenses/MIT>
 # @author: Simon Bowie <ad7588@coventry.ac.uk>
+# @author: Joana Chicau
 # @purpose: Custom CSS to override Bootstrap 5 defaults
 # @acknowledgements:
 # Bootstrap 5.1.3: https://getbootstrap.com/
 */
+
+/* NEW STYLE by Joana Chicau */
+
+/* FONTS*/
+
+@font-face {
+     font-family: "Astloch-B";
+     src: url(fonts/Astloch-Bold.ttf) format('truetype');
+     font-weight: bold;
+}
+
+@font-face {
+     font-family: "Astloch";
+     src: url(fonts/Astloch-Regular.ttf) format('truetype');
+     font-weight: normal;
+}
+
+@font-face {
+     font-family: "Abordage";
+     src: url(fonts/Abordage-Regular.otf) format('opentype');
+     font-weight: normal;
+}
+
+@font-face {
+     font-family: "Cmunobi";
+     src: url(fonts/cmunobi.ttf) format('opentype');
+     font-weight: normal;
+}
+
+@font-face {
+     font-family: "Compagnon";
+     src: url(fonts/Compagnon-Roman.otf) format('opentype');
+     font-weight: bold;
+}
+
+@font-face {
+     font-family: "Compagnon-M";
+     src: url(fonts/Compagnon-Medium.otf) format('opentype');
+     font-weight: bold;
+}
+
+
+@font-face {
+     font-family: "Compagnon-L";
+     src: url(fonts/Compagnon-Light.otf) format('opentype');
+     font-weight: lighter;
+}
+
+@font-face {
+     font-family: "Compagnon-T";
+     src: url(fonts/Compagnon-LightItalic.otf) format('opentype');
+     font-weight: bold;
+}
+
+:root {
+    --color-dark: #0c2039;
+    --color-whitish: #fbf9ff;
+    --color-lightyellow: #ffff99;
+    --color-gray: #edecec;
+    --color-blue: #4f1dff;
+    --color-pink: #cc285f;
+    --title-font: "Cmunobi";
+    --body-font: "Compagnon";
+
+    /*@media screen and (min-width: 320px)*/
+    --title-fontsize: calc(2rem + 1.5vw) !important;
+    --body-fontsize: calc(14px + 6 * (100vw - 320px) / 1600) !important;
+    --button-fontsize: calc(16px + 6 * (100vw - 320px) / 1600) !important;
+    --body-fontsize-s: calc(11px + 6 * (100vw - 320px) / 1600) !important;
+}
+
+::selection {
+    background-color: var(--color-lightyellow);
+}
+
+body {
+    color: var(--color-dark);
+    font-family: var(--body-font) !important;
+    font-size: var(--body-fontsize) !important;
+    cursor: crosshair;
+    background-color:  var(--color-whitish) !important;
+}
+
+.background-random{
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1, .h1 {
+    font-family: var(--title-font) !important;
+    font-size: var(--title-fontsize) !important;
+    -webkit-text-stroke-width: 0.01rem;
+    -webkit-text-stroke-color: black;
+    font-style: italic;
+}
+
+a.h1 {
+    text-decoration: none;
+}
+
+a, a:visited {
+    cursor: cell;
+    color: var(--color-dark) !important;
+}
+
+a:hover {
+    text-shadow: 1px 1px 10px var(--color-lightyellow);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0rem !important;
+}
+
+.contrast {
+    color: var(--color-lightyellow) !important;
+}
+
+/* INDEX */
+
+.border, .border-dark {
+  border-color: var(--color-dark) !important;
+  border-radius: 0.25rem;
+}
+
+.border-glow, hr {
+  box-shadow: 1px 1px 4px var(--color-lightyellow);
+}
+
+input#inputsearch, select#searchopt, select#sort, input#submit {
+    background: var(--color-dark) !important;
+    color: var(--color-lightyellow) !important;
+    border: none !important;
+    border-radius: 0.25rem !important;
+    margin: 0.25rem;
+}
+
+select#searchopt{
+    padding: 0.25rem 0.5rem;
+}
+
+input#inputsearch {
+ width: 350px;
+}
+
+input#submit:hover {
+   box-shadow: 0.25rem 0.25rem 0.5rem var(--color-lightyellow)  !important;
+}
+
+.button-search  a, .button-search input, .button-search  select {
+  font-size:  var(--button-fontsize) !important;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.random-interferences a {
+  color: var(--color-dark)  !important;
+  background:  var(--color-lightyellow);
+}
+
+.random-interferences  a:hover {
+  box-shadow: 0.25rem 0.25rem 0.5rem var(--color-dark)  !important;
+}
+
+.button-hidden-off a {
+  color: var(--color-dark)  !important;
+  background:  var(--color-gray);
+  text-decoration: none;
+}
+
+.button-hidden-off a:hover {
+  box-shadow: 0.25rem 0.25rem 0.5rem var(--color-dark)  !important;
+}
+
+button#notes, .action {
+    margin: 1rem 2rem;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.action button {
+    color: var(--color-pink)  !important;
+    font-size: 2rem;
+    background-color: transparent;
+    border: none;
+ }
+
+button#notes:hover {
+    color: var(--color-dark)  !important;
+}
+
+.info {
+    font-family: var(--body-font) !important;
+    color: var(--color-pink)  !important;
+}
+
+.code {
+    line-height: 1.2rem;
+    font-size: var(--body-fontsize-s);
+    margin: 0.5rem 1rem;
+}
+
+.w-6 {
+    max-width: 75%;
+}
+
+.mb-10{
+    margin-bottom: 10rem;
+}
+
+.note-veritcal {
+    font-size: var(--body-fontsize-s);
+    position: absolute;
+    right: 0;
+    z-index: 200;
+    margin: 0.5rem;
+    border-radius: 0.25rem;
+    padding: 0.15rem 0.25rem;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+.note-interference span {
+    display: inline-flex;
+    background-color: var(--color-lightyellow);
+    width: 2rem;
+    height: 1rem;
+}
+
+p.about-text {
+    margin: 10% ;
+}
+
+.index-row {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+/* SEARCH */
+
+.search-links {
+    font-size: var(--body-fontsize-s);
+}
+
+.emphasis {
+    border-bottom: 0.10rem var(--color-lightyellow) solid;
+}
+
+
+.search_term {
+    background: var(--color-lightyellow);
+}
+
+.ID-link-search {
+    background: var(--color-lightyellow);
+}
+
+/* PAGE —> RANDOM IMAGES */
+
+body#random-img-page{
+    background-color: var(--color-dark) !important;
+}
+
+#random-img-page .img-fluid {
+  flex-shrink: 1;
+  flex-basis: 10px;
+  height: 50vh;
+  box-shadow: 1px 1px 10px #fff6af;
+  border-radius: 100%;
+  transition: all 1s ease-in-out;
+}
+
+#random-img-page .img-fluid:hover {
+  transform: scale(2.0);
+  border-radius: 0.15rem;
+  transform-origin: top left;
+  opacity: 0.85;
+}
+
+/* PAGE —> RANDOM TITLES */
+
+body#page-titles  a, body#page-titles  span {
+    font-size: 3.5vw; /* should be converted to calc */
+}
+
+.joint {
+    padding:0rem 2.5rem ;
+}
+
+/* COMPARE —> 2 RANDOM PATENTS  */
+
+.skewY {
+    transform: skewY(-20deg);
+}
+
+.compare {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.compare > div {
+    width: 48%;
+}
+
+/* COMPARE —> 10 ABSTRACTS */
+
+
+.rdn-abstracts .container-fluid p::first-letter {
+  font-size: 5rem;
+}
+
+.rdn-abstracts .container-fluid p {
+    margin: 0% 20%;
+    line-height: 1.8rem;
+    font-size: var(--body-fontsize);
+
+}
+
+/***************** MOBILE ****************/
+
+@media screen and (min-width:0px) and (max-width: 768px) {
+
+/* INDEX SEARCH */
+
+input#inputsearch {
+ width: 250px;;
+}
+
+/* RANDOM IMAGES */
+#random-img-page .img-fluid:hover {
+  transform: none;
+  border-radius: 0.15rem;
+  opacity: 1;
+}
+
+/* COMPARE —> 2 RANDOM PATENTS  */
+
+.compare > div {
+    width: 100%;
+}
+
+.col {
+  flex: auto !important;
+}
+
+}

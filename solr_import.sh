@@ -70,7 +70,7 @@ Import_recursive()
 ############################################################
 
 # Set variables
-directory="/Users/ad7588/projects/patent_site"
+directory="/Users/ad7588/projects/patent_site_python"
 
 # Get the options
 while getopts ":hlimzaespxdw" option; do

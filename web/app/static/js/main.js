@@ -7,3 +7,12 @@
 # @purpose: JavaScript functions for various functions
 # @acknowledgements:
 */
+
+function hideShowInfo () {
+      var iDiv = document.querySelectorAll('.info'), i;
+  for (i = 0; i < iDiv.length; ++i) {
+     if ( iDiv[i].style.display == 'none') {
+        iDiv[i].style.display = 'initial'; }
+     else { iDiv[i].style.display = 'none'; }
+  }
+}

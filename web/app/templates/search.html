@@ -26,55 +26,42 @@
 
   {% for result in results %}
 
-    Application ID:
-
-    <a href="{{ url_for('search.id_search', id=result['id'], core='all') }}">
-      <span class="result-entry">
-        {{ result['application_id'] }}
-      </span>
-    </a>
-
-    <br><br>
+    <p class="h1">
 
     Year:
 
     {{ result['year'] }}
 
-    <br><br>
-
-    EPO publication:
-
-    <a href="{{ result['epo_publication_url'] }}">
-        {{ result['epo_publication_url'] }}
-    </a>
-
-    <br><br>
-
-    IPC publication:
-
-    <a href="{{ result['ipc_publication_url'] }}">
-        {{ result['ipc_publication_url'] }}
-    </a>
-
-    <br><br>
+    </p>
 
     {% if result['title'] is defined %}
-      Title:
+    <p class="mb-2 mt-5">
+      <span class="emphasis">Title:</span>
       <span class="result-entry">
         {{ result['title'] }}
       </span>
-      <br><br>
+    </p>
     {% endif %}
 
     {% if result['abstract'] is defined %}
-      Abstract:
+    <p class="mb-2">
+      <span class="emphasis">Abstract:</span>
       <span class="result-entry">
         {{ result['abstract'] }}
       </span>
-      <br><br>
+    </p>
     {% endif %}
 
-      <hr>
+    <div class="mt-2 mb-5 search-links">
+      <p>
+        <span class="emphasis">European Patent Office PDF:</span>
+        <a href="{{ url_for('search.id_search', id=result['id'], core='all') }}">
+          <span class="result-entry">
+            {{ result['application_id'] }}
+          </span>
+        </a>
+      </p>
+    </div>
 
   {% endfor %}
 

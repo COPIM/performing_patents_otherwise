@@ -2,45 +2,97 @@
 
 {% block content %}
 
-<div class="row">
-  <div class="col text-center">
-    <p class="h1">Performing Patents Otherwise</p>
-    <p class="h2">Archival conversations with 320,000 clothing inventions</p>
+<div class="index-row button-search random-interferences">
+  <div class="col text-center p-2">
+    <!-- random titles -->
+    <a href="{{ url_for('random.ten_random_titles') }}">a poetics of titles</a>
+  </div>
+
+  <div class="col text-center p-2">
+    <!-- random abstracts -->
+    <a href="{{ url_for('random.ten_random_abstracts') }}">a handful of fragments</a>
+  </div>
+
+  <div class="col text-center p-2">
+    <!-- random images -->
+    <a href="{{ url_for('random.ten_random_images') }}">a scattering of images</a>
   </div>
 </div>
 
-<div class="row justify-content-center p-3">
-  <div class="col-sm-6 text-center">
+<div class="info note-interference" style="display: none;">
+  <p class="code"> // Interferences: Search interferences perform data otherwise. They disrupt ordering and invite unexpected readings.</p>
+</div>
+
+<div class="index-row">
+  <div class="col text-center m-5">
+    <p class="h1">Performing Patents Otherwise</p>
+  </div>
+</div>
+
+<div class="row justify-content-center mt-3">
+  <div class="col-sm-10 text-center button-search">
     <form action="{{ url_for('search.basic_search') }}" method="POST">
-      <input type="text" name="search" placeholder="search for a patent record">
+      <input type="text" name="search" id="inputsearch" placeholder="search for a patent record...">
       <input type="submit" id="submit" value="search">
     </form>
   </div>
 </div>
 
+<div class="info" style="display: none;">
+  <p class="code">
+    // Main search engine sorting code:
+    $search_results = solr_search($_POST["search"], $_POST["searchopt"], $_POST["sort"]); if(is_array($search_results)): foreach($search_results as $result): ?>
+  </p>
+</div>
 
-<div class="row p-3">
-  <div class="col text-center">
-    <a href="{{ url_for('random.random_record') }}">show a random record</a>
+<div class="index-row button-search random-interferences mt-5">
+  <div class="col text-center p-2">
+    <!-- random record -->
+    <a href="{{ url_for('random.random_record') }}">a random entry</a>
   </div>
 
-  <div class="col text-center">
-    <a href="{{ url_for('random.two_random_records') }}">compare two random records</a>
+  <div class="col text-center p-2">
+    <!-- compare two random records -->
+    <a href="{{ url_for('random.two_random_records') }}">a juxtaposition of two</a>
+  </div>
+
+  <div class="col text-center p-2">
+    <!-- timeline of search term -->
+    <a href="{{ url_for('random.two_random_records') }}">a timeline of inventions</a>
   </div>
 </div>
 
-<div class="row p-3">
-  <div class="col text-center">
-    <a href="{{ url_for('random.ten_random_titles') }}">ten random titles</a>
+<div class="index-row justify-content-center mt-5">
+  <div class="col text-center button-search button-hidden-off p-2">
+    <a href="">Hidden in plain sight</a>
+
+      <div class="info" style="display: none;">
+        <p class="code">// Searching for a history of women’s clothing inventors, that is in the archive, but hidden in plain sight.... </p>
+      </div>
   </div>
 
-  <div class="col text-center">
-    <a href="{{ url_for('random.ten_random_abstracts') }}">ten random abstracts</a>
+   <div class="col text-center button-search button-hidden-off p-2">
+    <a href="">Search as a book</a>
+
+      <div class="info" style="display: none;">
+        <p class="code">// Find here a table of contents for this digital archive... </p>
+      </div>
   </div>
 
-  <div class="col text-center">
-    <a href="{{ url_for('random.ten_random_images') }}">ten random images (takes a long time to load)</a>
+
+  <div class="col text-center button-search button-hidden-off p-2">
+    <a href="">Off the record</a>
+
+      <div class="info" style="display: none;">
+        <p class="code">// Some things are all over the patent archive but never made explicit. Off the record presents three artistic works that render these absent-present realities visible... </p>
+      </div>
   </div>
+</div>
+
+<div>
+  <p class="about-text">Performing Patents Otherwise is a search engine, a dataset and a series of interferences in searching 320.000 clothing patents. Searching is a creative act. Search engines expose some parts of the archive, obscure others, and can even render visible what’s not in the archive. Performing Patents Otherwise queries patent data, and the search categories and techniques that make this data sort-, relate- and knowable.
+  <a href="about">Continue reading...</a>
+  </p>
 </div>
 
 {% endblock %}
