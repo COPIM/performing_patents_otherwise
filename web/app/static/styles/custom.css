@@ -330,34 +330,33 @@ body#random-img-page{
     margin: 0% 20%;
     line-height: 1.8rem;
     font-size: var(--body-fontsize);
-
 }
 
 /***************** MOBILE ****************/
 
 @media screen and (min-width:0px) and (max-width: 768px) {
 
-/* INDEX SEARCH */
+  /* INDEX SEARCH */
 
-input#inputsearch {
- width: 250px;;
-}
+  input#inputsearch {
+    width: 250px;;
+  }
 
-/* RANDOM IMAGES */
-#random-img-page .img-fluid:hover {
-  transform: none;
-  border-radius: 0.15rem;
-  opacity: 1;
-}
+  /* RANDOM IMAGES */
+  #random-img-page .img-fluid:hover {
+    transform: none;
+    border-radius: 0.15rem;
+    opacity: 1;
+  }
 
-/* COMPARE —> 2 RANDOM PATENTS  */
+  /* COMPARE —> 2 RANDOM PATENTS  */
 
-.compare > div {
+  .compare > div {
     width: 100%;
-}
+  }
 
-.col {
-  flex: auto !important;
-}
+  .col {
+    flex: auto !important;
+  }
 
 }
