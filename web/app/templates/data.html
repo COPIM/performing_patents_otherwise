@@ -15,8 +15,8 @@ There are a total of {{ total_number }} patents.
         {{ year_data[i] }}<br>
       {% else %}
         <a href="{{ url_for('search.year_search', year=year_data[i]) }}">
-          {{ year_data[i] }}:
-        </a>
+          {{ year_data[i] }}
+        </a>:
       {% endif %}
     {% endfor %}
   </div>
@@ -32,8 +32,8 @@ There are a total of {{ total_number }} patents.
           {{ country_data[i].flag }}:
         {% else %}
           <a href="{{ url_for('search.country_search', country_code=country_data[i]) }}">
-            {{ country_data[i] }}:
-          </a>
+            {{ country_data[i] }}
+          </a>:
         {% endif %}
       {% endif %}
     {% endfor %}
