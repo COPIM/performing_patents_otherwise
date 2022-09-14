@@ -28,7 +28,8 @@ def basic_search():
         search_results = solr.solr_search(core, sort, search)
         results = search_results[0]
         num_found = search_results[1]
-        return render_template('search.html', results=results, num_found=num_found, search=search, core=core, sort=sort)
+        total_number = solr.get_total_number(core)
+        return render_template('search.html', results=results, num_found=num_found, total_number=total_number, search=search, core=core, sort=sort)
     else:
         return redirect(url_for('main.index'))
 
