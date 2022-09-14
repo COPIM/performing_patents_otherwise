@@ -11,8 +11,13 @@
 </div>
 
 <div class="row p-3">
+  {% if search is defined %}
   <form action="{{ url_for('search.basic_search') }}" method="POST">
     <input type="hidden" name="search" value="{{ search }}">
+  {% elif country_code is defined %}
+  <form action="{{ url_for('search.country_search') }}" method="POST">
+    <input type="hidden" name="country_code" value="{{ country_code }}">
+  {% endif %}
     <input type="hidden" name="searchopt" value="{{ core }}">
     sort by:
     <select name="sort" id="sort" onchange="this.form.submit()">
@@ -86,8 +91,10 @@
 
 {% endif %}
 
+{% if search is defined %}
 <script type="text/javascript">
   highlightSearchTerms({{ search|tojson}})
 </script>
+{% endif %}
 
 {% endblock %}

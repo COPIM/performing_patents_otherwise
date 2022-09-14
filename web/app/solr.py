@@ -17,7 +17,7 @@ from . import ops
 solr_hostname = os.environ.get('SOLR_HOSTNAME')
 solr_port = os.environ.get('SOLR_PORT')
 
-def solr_search(core, sort, search=None, id=None):
+def content_search(core, sort, search=None, id=None):
 
     # Assemble a query string to send to Solr. This uses the Solr hostname from config.env. Solr's query syntax can be found at many sites including https://lucene.apache.org/solr/guide/6_6/the-standard-query-parser.html
     if id is not None:
@@ -47,6 +47,36 @@ def solr_search(core, sort, search=None, id=None):
             # parse result
             result_output = parse_result(id, content)
             output.append(result_output)
+    return output, num_found
+
+def country_search(core, sort, country_code):
+
+    # Assemble a query string to send to Solr. This uses the Solr hostname from config.env. Solr's query syntax can be found at many sites including https://lucene.apache.org/solr/guide/6_6/the-standard-query-parser.html
+    if (sort == 'relevance'):
+        solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=%7B!term%20f%3Dcountry%7D' + country_code + '&wt=json'
+    else:
+        solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=%7B!term%20f%3Dcountry%7D' + country_code + '&wt=json&sort=' + sort
+
+    # get result
+    request = requests.get(solrurl)
+    # turn the API response into useful Json
+    json = request.json()
+
+    num_found = json['response']['numFound']
+
+    if (num_found == 0):
+        output = 'no results found'
+    else:
+        output = []
+        for result in json['response']['docs']:
+            # set ID variable
+            id = result['id']
+            # set content variable
+            content = result['content']
+            # parse result
+            result_output = parse_result(id, content)
+            output.append(result_output)
+
     return output, num_found
 
 def parse_result(id, input):
@@ -179,7 +209,7 @@ def get_total_number(core):
 def get_term_data(field, core):
 
     # Assemble a query string to send to Solr. This uses the Solr hostname from config.env. Solr's query syntax can be found at many sites including https://lucene.apache.org/solr/guide/6_6/the-standard-query-parser.html
-    solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/terms?terms.fl=' + field + '&wt=json&terms.limit=1000'
+    solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/terms?terms.fl=' + field + '&wt=json&terms.limit=1000&terms.sort=index'
 
     # get result
     request = requests.get(solrurl)

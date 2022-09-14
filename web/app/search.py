@@ -25,7 +25,7 @@ def basic_search():
             sort = request.form.get('sort')
         else:
             sort = 'relevance'
-        search_results = solr.solr_search(core, sort, search)
+        search_results = solr.content_search(core, sort, search)
         results = search_results[0]
         num_found = search_results[1]
         total_number = solr.get_total_number(core)
@@ -38,6 +38,8 @@ def basic_search():
 def id_search():
     if request.args.get('id') is None:
         return redirect(url_for('main.index'))
+    else:
+        id = request.args.get('id')
     if request.args.get('core') is not None:
         core = request.args.get('core')
     else:
@@ -46,8 +48,7 @@ def id_search():
         sort = request.args.get('sort')
     else:
         sort = 'relevance'
-    id = request.args.get('id')
-    search_results = solr.solr_search(core, sort, search, id)
+    search_results = solr.content_search(core, sort, search, id)
     results = search_results[0]
 
     for result in results:
@@ -58,3 +59,27 @@ def id_search():
             result.update(image)
 
     return render_template('record.html', results=results)
+
+# route for country search page
+@search.route('/search/country/', methods=['GET', 'POST'])
+def country_search():
+    if request.method == 'POST':
+        country_code = request.form.get('country_code')
+        core = request.form.get('core')
+        sort = request.form.get('sort')
+    else:
+        country_code = request.args.get('country_code')
+        core = request.args.get('core')
+        sort = request.args.get('sort')
+    if country_code is None:
+        return redirect(url_for('main.index'))
+    if core is None:
+        core = 'all'
+    if sort is None:
+        sort = 'relevance'
+    search_results = solr.country_search(core, sort, country_code)
+    results = search_results[0]
+    num_found = search_results[1]
+    total_number = solr.get_total_number(core)
+
+    return render_template('search.html', results=results, num_found=num_found, total_number=total_number, country_code=country_code, core=core, sort=sort)
