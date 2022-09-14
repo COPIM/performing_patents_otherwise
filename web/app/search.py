@@ -24,8 +24,10 @@ def basic_search():
         sort = request.form.get('sort')
     else:
         sort = 'relevance'
-    results = solr.solr_search(core, sort, search)
-    return render_template('search.html', results=results, search=search, core=core, sort=sort)
+    search_results = solr.solr_search(core, sort, search)
+    results = search_results[0]
+    num_found = search_results[1]
+    return render_template('search.html', results=results, num_found=num_found, search=search, core=core, sort=sort)
 
 # route for id_search page
 @search.route('/search/id/')
@@ -39,7 +41,8 @@ def id_search():
     else:
         sort = 'relevance'
     id = request.args.get('id')
-    results = solr.solr_search(core, sort, search, id)
+    search_results = solr.solr_search(core, sort, search, id)
+    results = search_results[0]
 
     for result in results:
         publication_details = ops.get_publication_details(result['doc_ref'])

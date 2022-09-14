@@ -32,7 +32,9 @@ def solr_search(core, sort, search=None, id=None):
     # turn the API response into useful Json
     json = request.json()
 
-    if (json['response']['numFound'] == 0):
+    num_found = json['response']['numFound']
+
+    if (num_found == 0):
         output = 'no results found'
     else:
         output = []
@@ -44,7 +46,7 @@ def solr_search(core, sort, search=None, id=None):
             # parse result
             result_output = parse_result(id, content)
             output.append(result_output)
-    return output
+    return output, num_found
 
 def parse_result(id, input):
 
