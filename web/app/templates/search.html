@@ -51,6 +51,14 @@
     </p>
     {% endif %}
 
+    {% if result['country'] is defined %}
+    <p class="mb-2">
+      <span class="emphasis">Country:</span>
+      {{ result['country'].name }}
+      {{ result['country'].flag }}
+    </p>
+    {% endif %}
+
     {% if result['abstract'] is defined %}
     <p class="mb-2">
       <span class="emphasis">Abstract:</span>
