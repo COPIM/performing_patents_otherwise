@@ -77,9 +77,35 @@ def country_search():
         core = 'all'
     if sort is None:
         sort = 'relevance'
-    search_results = solr.country_search(core, sort, country_code)
+    field = 'country'
+    search_results = solr.term_search(core, sort, field, country_code)
     results = search_results[0]
     num_found = search_results[1]
     total_number = solr.get_total_number(core)
 
     return render_template('search.html', results=results, num_found=num_found, total_number=total_number, country_code=country_code, core=core, sort=sort)
+
+# route for year search page
+@search.route('/search/year/', methods=['GET', 'POST'])
+def year_search():
+    if request.method == 'POST':
+        year = request.form.get('year')
+        core = request.form.get('core')
+        sort = request.form.get('sort')
+    else:
+        year = request.args.get('year')
+        core = request.args.get('core')
+        sort = request.args.get('sort')
+    if year is None:
+        return redirect(url_for('main.index'))
+    if core is None:
+        core = 'all'
+    if sort is None:
+        sort = 'relevance'
+    field = 'year'
+    search_results = solr.term_search(core, sort, field, year)
+    results = search_results[0]
+    num_found = search_results[1]
+    total_number = solr.get_total_number(core)
+
+    return render_template('search.html', results=results, num_found=num_found, total_number=total_number, year=year, core=core, sort=sort)

@@ -49,13 +49,13 @@ def content_search(core, sort, search=None, id=None):
             output.append(result_output)
     return output, num_found
 
-def country_search(core, sort, country_code):
+def term_search(core, sort, field, input):
 
     # Assemble a query string to send to Solr. This uses the Solr hostname from config.env. Solr's query syntax can be found at many sites including https://lucene.apache.org/solr/guide/6_6/the-standard-query-parser.html
     if (sort == 'relevance'):
-        solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=%7B!term%20f%3Dcountry%7D' + country_code + '&wt=json'
+        solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=%7B!term%20f%3D' + field + '%7D' + input + '&wt=json'
     else:
-        solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=%7B!term%20f%3Dcountry%7D' + country_code + '&wt=json&sort=' + sort
+        solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=%7B!term%20f%3D' + field + '%7D' + input + '&wt=json&sort=' + sort
 
     # get result
     request = requests.get(solrurl)

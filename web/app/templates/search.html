@@ -17,6 +17,9 @@
   {% elif country_code is defined %}
   <form action="{{ url_for('search.country_search') }}" method="POST">
     <input type="hidden" name="country_code" value="{{ country_code }}">
+  {% elif year is defined %}
+  <form action="{{ url_for('search.year_search') }}" method="POST">
+    <input type="hidden" name="year" value="{{ year }}">
   {% endif %}
     <input type="hidden" name="searchopt" value="{{ core }}">
     sort by:

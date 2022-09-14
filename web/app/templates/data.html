@@ -14,7 +14,9 @@ There are a total of {{ total_number }} patents.
       {% if i % 2 %}
         {{ year_data[i] }}<br>
       {% else %}
-        {{ year_data[i] }}:
+        <a href="{{ url_for('search.year_search', year=year_data[i]) }}">
+          {{ year_data[i] }}:
+        </a>
       {% endif %}
     {% endfor %}
   </div>
