@@ -58,7 +58,10 @@ def parse_result(id, input):
     doc_ref = re.search('=D\s(([^\s]*)\s([^\s]*)\s([^\s]*))', input)
     if doc_ref is None:
         doc_ref = re.search('=D&locale=en_EP\s(([^\s]*)\s([^\s]*)\s([^\s]*))', input)
-        output['doc_ref'] = doc_ref.group(1).replace(" ","")
+        if doc_ref is None:
+            output['doc_ref'] = ""
+        else:
+            output['doc_ref'] = doc_ref.group(1).replace(" ","")
     else:
         output['doc_ref'] = doc_ref.group(1).replace(" ","")
 
@@ -143,4 +146,32 @@ def get_ten_random_images():
                 result.update(image)
                 output.append(result)
                 i += 1
+    return output
+
+def get_total_number(core):
+
+    # Assemble a query string to send to Solr. This uses the Solr hostname from config.env. Solr's query syntax can be found at many sites including https://lucene.apache.org/solr/guide/6_6/the-standard-query-parser.html
+    solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=*:*&wt=json'
+
+    # get result
+    request = requests.get(solrurl)
+    # turn the API response into useful Json
+    json = request.json()
+
+    num_found = json['response']['numFound']
+
+    return num_found
+
+def get_term_data(field, core):
+
+    # Assemble a query string to send to Solr. This uses the Solr hostname from config.env. Solr's query syntax can be found at many sites including https://lucene.apache.org/solr/guide/6_6/the-standard-query-parser.html
+    solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/terms?terms.fl=' + field + '&wt=json&terms.limit=1000'
+
+    # get result
+    request = requests.get(solrurl)
+    # turn the API response into useful Json
+    json = request.json()
+
+    output = json['terms'][field]
+
     return output

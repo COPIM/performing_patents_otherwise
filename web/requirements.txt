@@ -4,3 +4,4 @@ gunicorn
 markdown
 requests
 Wand
+pycountry

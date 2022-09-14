@@ -6,32 +6,37 @@
 # @acknowledgements:
 # https://www.digitalocean.com/community/tutorials/how-to-add-authentication-to-your-app-with-flask-login
 
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, redirect, url_for
 from . import solr
 from . import ops
 
 search = Blueprint('search', __name__)
 
 # route for search page
-@search.route('/search/', methods=['POST'])
+@search.route('/search/', methods=['GET', 'POST'])
 def basic_search():
-    search = request.form.get('search')
-    if request.form.get('core') is not None:
-        core = request.form.get('core')
+    if request.method == 'POST':
+        search = request.form.get('search')
+        if request.form.get('core') is not None:
+            core = request.form.get('core')
+        else:
+            core = 'all'
+        if request.form.get('sort') is not None:
+            sort = request.form.get('sort')
+        else:
+            sort = 'relevance'
+        search_results = solr.solr_search(core, sort, search)
+        results = search_results[0]
+        num_found = search_results[1]
+        return render_template('search.html', results=results, num_found=num_found, search=search, core=core, sort=sort)
     else:
-        core = 'all'
-    if request.form.get('sort') is not None:
-        sort = request.form.get('sort')
-    else:
-        sort = 'relevance'
-    search_results = solr.solr_search(core, sort, search)
-    results = search_results[0]
-    num_found = search_results[1]
-    return render_template('search.html', results=results, num_found=num_found, search=search, core=core, sort=sort)
+        return redirect(url_for('main.index'))
 
 # route for id_search page
-@search.route('/search/id/')
+@search.route('/search/id/', methods=['GET'])
 def id_search():
+    if request.args.get('id') is None:
+        return redirect(url_for('main.index'))
     if request.args.get('core') is not None:
         core = request.args.get('core')
     else:

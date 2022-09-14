@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<a href="{{ url_for('main.index') }}" class="h1 text-left"> ⇽ </a>
+
+There are a total of {{ total_number }} patents.
+
+<br><br>
+
+<canvas id="chartOfYearFrequency" width="600" height="300"></canvas>
+<canvas id="chartOfCountryFrequency" width="600" height="300"></canvas>
+
+<script type="text/javascript">
+  // retrieve variables passed from Python
+  var year_labels = {{ year_labels|safe }}
+  var year_dataset = {{ year_dataset|safe }}
+
+  // set up chart
+  var data = {
+    labels: year_labels,
+    datasets: year_dataset,
+  };
+
+  var config = {
+    type: 'bar',
+    data: data,
+    options: {
+      plugins: {
+        title: {
+          display: true,
+          text: 'number of patent records for each year'
+        },
+      },
+      responsive: true,
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: 'year'
+          },
+          stacked: true,
+        },
+        y: {
+          title: {
+            display: true,
+            text: 'number of records'
+          },
+          stacked: true
+        }
+      }
+    }
+  };
+
+  var yearGraph = new Chart(
+    document.getElementById('chartOfYearFrequency'),
+    config
+  );
+</script>
+
+<script type="text/javascript">
+  // retrieve variables passed from Python
+  var country_labels = {{ country_labels|safe }}
+  var country_dataset = {{ country_dataset|safe }}
+
+  // set up chart
+  var data = {
+    labels: country_labels,
+    datasets: country_dataset,
+  };
+
+  var config = {
+    type: 'bar',
+    data: data,
+    options: {
+      plugins: {
+        title: {
+          display: true,
+          text: 'number of patent records from each country'
+        },
+      },
+      responsive: true,
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: 'country'
+          },
+          stacked: true,
+        },
+        y: {
+          title: {
+            display: true,
+            text: 'number of records'
+          },
+          stacked: true
+        }
+      }
+    }
+  };
+
+  var yearGraph = new Chart(
+    document.getElementById('chartOfCountryFrequency'),
+    config
+  );
+</script>
+
+{% endblock %}

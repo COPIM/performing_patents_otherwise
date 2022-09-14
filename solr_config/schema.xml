@@ -527,4 +527,15 @@
   </fieldType>
   <!-- END -->
 
+  <!-- ADDED BY SIMON BOWIE 2022-08-14 -->
+  <copyField source="content" dest="country"/>
+  <field name="country" type="country" indexed="true" stored="true"/>
+
+  <fieldType name="country" class="solr.TextField" positionIncrementGap="100">
+    <analyzer>
+        <tokenizer class="solr.PatternTokenizerFactory" pattern="FT=D[^\s]*\s(\w{2})" group="1" />
+    </analyzer>
+  </fieldType>
+  <!-- END -->
+
 </schema>

@@ -31,4 +31,8 @@ def create_app():
     from .random import random as random_blueprint
     app.register_blueprint(random_blueprint)
 
+    # blueprint for data parts of app
+    from .data import data as data_blueprint
+    app.register_blueprint(data_blueprint)
+
     return app
