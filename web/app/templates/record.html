@@ -28,8 +28,11 @@
     {% if result['country'] is defined %}
     <p class="mb-2">
       Country:
-      {{ result['country'].name }}
-      {{ result['country'].flag }}
+      {% if result['country'].name is defined %}
+        {{ result['country'].name }} {{ result['country'].flag }}
+      {% else %}
+        {{ result['country'] }}
+      {% endif %}
     </p>
     {% endif %}
 

@@ -45,12 +45,16 @@ def main_data():
             country_dict = {"label": "number of records", "data": country_numbers, "backgroundColor": random_colour}
         else:
             country = pycountry.countries.get(alpha_2=country_data[i])
-            if country is None:
+            if country is not None:
+                country_labels.append(country.name)
+                country_data[i] = country
+            else:
                 country = pycountry.historic_countries.get(alpha_2=country_data[i])
-            country_labels.append(country.name)
-            country_data[i] = country
+                if country is not None:
+                    country_data[i] = country
+                    country_labels.append(country.name)
+                else:
+                    country_labels.append(country_data[i])
     country_dataset.append(country_dict)
 
-    germany = pycountry.countries.get(alpha_2='DE')
-
-    return render_template('data.html', total_number=total_number, year_data=year_data, year_labels=year_labels, year_dataset=year_dataset, country_data=country_data, country_labels=country_labels, country_dataset=country_dataset, germany=germany)
+    return render_template('data.html', total_number=total_number, year_data=year_data, year_labels=year_labels, year_dataset=year_dataset, country_data=country_data, country_labels=country_labels, country_dataset=country_dataset)

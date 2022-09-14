@@ -23,7 +23,11 @@ There are a total of {{ total_number }} patents.
       {% if i % 2 %}
         {{ country_data[i] }}<br>
       {% else %}
-        {{ country_data[i].name }} {{ country_data[i].flag }}:
+        {% if country_data[i].name is defined %}
+          {{ country_data[i].name }} {{ country_data[i].flag }}:
+        {% else %}
+          {{ country_data[i] }}:
+        {% endif %}
       {% endif %}
     {% endfor %}
   </div>

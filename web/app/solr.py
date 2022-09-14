@@ -98,10 +98,14 @@ def parse_result(id, input):
     # search for the country in the content element and display it
     country_code = re.search('FT=D[^\s]*\s(\w{2})', input)
     country = pycountry.countries.get(alpha_2=country_code.group(1))
-    if country is None:
-        country = pycountry.historic_countries.get(alpha_2=country_code.group(1))
     if country is not None:
         output['country'] = country
+    else:
+        country = pycountry.historic_countries.get(alpha_2=country_code.group(1))
+        if country is not None:
+            output['country'] = country
+        else:
+            output['country'] = country_code.group(1)
 
     return output
 
