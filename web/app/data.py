@@ -4,7 +4,7 @@
 # @author: Simon Bowie <ad7588@coventry.ac.uk>
 # @purpose: data route for data
 # @acknowledgements:
-#
+# pycountry module for country data
 
 from flask import Blueprint, render_template, request
 import random
@@ -48,6 +48,7 @@ def main_data():
             if country is None:
                 country = pycountry.historic_countries.get(alpha_2=country_data[i])
             country_labels.append(country.name)
+            country_data[i] = country
     country_dataset.append(country_dict)
 
     germany = pycountry.countries.get(alpha_2='DE')

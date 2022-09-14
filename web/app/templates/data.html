@@ -8,6 +8,27 @@ There are a total of {{ total_number }} patents.
 
 <br><br>
 
+<div class="row">
+  <div class="col-6 text-center">
+    {% for i in range(0, year_data|length) %}
+      {% if i % 2 %}
+        {{ year_data[i] }}<br>
+      {% else %}
+        {{ year_data[i] }}:
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="col-6 text-center">
+    {% for i in range(0, country_data|length) %}
+      {% if i % 2 %}
+        {{ country_data[i] }}<br>
+      {% else %}
+        {{ country_data[i].name }} {{ country_data[i].flag }}:
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
 <canvas id="chartOfYearFrequency" width="600" height="300"></canvas>
 <canvas id="chartOfCountryFrequency" width="600" height="300"></canvas>
 

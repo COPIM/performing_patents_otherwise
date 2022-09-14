@@ -27,6 +27,14 @@
     </p>
     {% endif %}
 
+    {% if result['country'] is defined %}
+    <p class="mb-2">
+      Country:
+      {{ result['country'].name }}
+      {{ result['country'].flag }}
+    </p>
+    {% endif %}
+
     {% if result['original_title'] is defined %}
     <p class="mb-2">
       Original language title:
