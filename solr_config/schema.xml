@@ -518,7 +518,7 @@
 
   <!-- ADDED BY SIMON BOWIE 2022-04-04 -->
   <copyField source="content" dest="year"/>
-  <field name="year" type="year" indexed="true" stored="true"/>
+  <field name="year" type="year" indexed="true"/>
 
   <fieldType name="year" class="solr.TextField" positionIncrementGap="100">
     <analyzer>
@@ -529,7 +529,7 @@
 
   <!-- ADDED BY SIMON BOWIE 2022-08-14 -->
   <copyField source="content" dest="country"/>
-  <field name="country" type="country" indexed="true" stored="true"/>
+  <field name="country" type="country" indexed="true"/>
 
   <fieldType name="country" class="solr.TextField" positionIncrementGap="100">
     <analyzer>
