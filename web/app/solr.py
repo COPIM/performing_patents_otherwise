@@ -24,9 +24,9 @@ def content_search(core, sort, search=None, id=None):
         solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=id%3A"' + id + '"&wt=json'
     else:
         if (sort == 'relevance'):
-            solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=content%3A' + urllib.parse.quote_plus(search) + '&wt=json'
+            solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=content%3A' + urllib.parse.quote_plus(search) + '&wt=json&facet.field=country&facet.field=year&facet.sort=count&facet=true'
         else:
-            solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=content%3A' + urllib.parse.quote_plus(search) + '&wt=json&sort=' + sort
+            solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=content%3A' + urllib.parse.quote_plus(search) + '&wt=json&sort=' + sort + '&facet.field=country&facet.field=year&facet.sort=count&facet=true'
 
     # get result
     request = requests.get(solrurl)
@@ -47,7 +47,9 @@ def content_search(core, sort, search=None, id=None):
             # parse result
             result_output = parse_result(id, content)
             output.append(result_output)
-    return output, num_found
+        country_facet = json['facet_counts']['facet_fields']['country']
+        year_facet = json['facet_counts']['facet_fields']['year']
+    return output, num_found, country_facet, year_facet
 
 def term_search(core, sort, field, input):
 
