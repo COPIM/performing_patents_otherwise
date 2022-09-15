@@ -38,11 +38,16 @@ def main_data():
     country_labels = []
     country_numbers = []
     country_dataset = []
+    background_colours = []
     for i in range(0, len(country_data)):
         if i % 2:
             country_numbers.append(country_data[i])
-            random_colour = "#" + "%06x" % random.randint(0, 0xFFFFFF)
-            country_dict = {"label": "number of records", "data": country_numbers, "backgroundColor": random_colour}
+            x = 0
+            while x <= len(country_data):
+                random_colour = "#" + "%06x" % random.randint(0, 0xFFFFFF)
+                background_colours.append(random_colour)
+                x += 1
+            country_dict = {"label": "number of records", "data": country_numbers, "backgroundColor": background_colours}
         else:
             country = pycountry.countries.get(alpha_2=country_data[i])
             if country is not None:

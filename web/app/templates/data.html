@@ -102,7 +102,7 @@ There are a total of {{ total_number }} patents.
   };
 
   var config = {
-    type: 'bar',
+    type: 'pie',
     data: data,
     options: {
       plugins: {
@@ -112,22 +112,6 @@ There are a total of {{ total_number }} patents.
         },
       },
       responsive: true,
-      scales: {
-        x: {
-          title: {
-            display: true,
-            text: 'country'
-          },
-          stacked: true,
-        },
-        y: {
-          title: {
-            display: true,
-            text: 'number of records'
-          },
-          stacked: true
-        }
-      }
     }
   };
 
