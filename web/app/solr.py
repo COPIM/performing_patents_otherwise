@@ -109,16 +109,23 @@ def parse_result(id, input):
     output['ipc_publication_url'] = ipc_publication.group(1)
 
     # search for the title in the content element and display it
-    title = re.search('Title.*\n(.*)\n', input)
+    title = re.search('Title.*?\\n(.*?)\\n|Tile.?\\n(.*?)\\n', input)
     if title is not None:
-        output['title'] = title.group(1)
+        if title.group(1) is not None:
+            output['title'] = title.group(1)
+        else:
+            output['title'] = title.group(2)
 
     # search for the abstract in the content element and display it
     abstract = re.search('Abstract.*\n(.*)\n', input)
-    if abstract is None:
-        abstract = re.search('\(.\) \\n\\n(.*)\\n', input)
     if abstract is not None:
-        output['abstract'] = abstract.group(1);
+        if abstract.group(1) is not None:
+            output['abstract'] = abstract.group(1)
+    else:
+        abstract = re.search('\(.*?\) (\\n\\n\\n\\n|\\n\\n\\n|\\n\\n)(.*)\\n', input)
+        if abstract is not None:
+            if abstract.group(2) is not None:
+                output['abstract'] = abstract.group(2)
 
     # search for the year in the content element and display it
     year = re.search('=D[^\s]*\s[^\s]*\s[^\s]*\s[^\s]*\s(\d{4})', input)
@@ -136,6 +143,8 @@ def parse_result(id, input):
             output['country'] = country
         else:
             output['country'] = country_code.group(1)
+
+    output['raw'] = input
 
     return output
 
