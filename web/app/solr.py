@@ -4,6 +4,7 @@
 # @author: Simon Bowie <simon.bowie.19@gmail.com>
 # @purpose: Performs Solr functions
 # @acknowledgements:
+# pycountry module for country data: https://pypi.org/project/pycountry/
 
 import os
 import requests
@@ -17,23 +18,14 @@ from . import ops
 solr_hostname = os.environ.get('SOLR_HOSTNAME')
 solr_port = os.environ.get('SOLR_PORT')
 
-def content_search(core, sort, search=None, id=None):
-
-    # Assemble a query string to send to Solr. This uses the Solr hostname from config.env. Solr's query syntax can be found at many sites including https://lucene.apache.org/solr/guide/6_6/the-standard-query-parser.html
-    if id is not None:
-        solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=id%3A"' + id + '"&wt=json'
-    else:
-        if (sort == 'relevance'):
-            solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=content%3A' + urllib.parse.quote_plus(search) + '&wt=json&facet.field=country&facet.field=year&facet.sort=count&facet=true'
-        else:
-            solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=content%3A' + urllib.parse.quote_plus(search) + '&wt=json&sort=' + sort + '&facet.field=country&facet.field=year&facet.sort=count&facet=true'
-
+def solr_search(solrurl):
     # get result
     request = requests.get(solrurl)
     # turn the API response into useful Json
     json = request.json()
 
     num_found = json['response']['numFound']
+    facets = []
 
     if (num_found == 0):
         output = 'no results found'
@@ -47,39 +39,65 @@ def content_search(core, sort, search=None, id=None):
             # parse result
             result_output = parse_result(id, content)
             output.append(result_output)
-        country_facet = json['facet_counts']['facet_fields']['country']
-        year_facet = json['facet_counts']['facet_fields']['year']
-    return output, num_found, country_facet, year_facet
+        try:
+            json['facet_counts']
+            facets = json['facet_counts']['facet_fields']
+        except KeyError:
+            pass
 
-def term_search(core, sort, field, input):
+    return output, num_found, facets
 
-    # Assemble a query string to send to Solr. This uses the Solr hostname from config.env. Solr's query syntax can be found at many sites including https://lucene.apache.org/solr/guide/6_6/the-standard-query-parser.html
+def query_search(core, sort, query, country, year):
+
+    # assemble parameters for the query string to Solr
     if (sort == 'relevance'):
-        solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=%7B!term%20f%3D' + field + '%7D' + input + '&wt=json'
+        sort_parameter = ''
     else:
-        solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=%7B!term%20f%3D' + field + '%7D' + input + '&wt=json&sort=' + sort
+        sort_parameter = '&sort=' + sort
 
-    # get result
-    request = requests.get(solrurl)
-    # turn the API response into useful Json
-    json = request.json()
-
-    num_found = json['response']['numFound']
-
-    if (num_found == 0):
-        output = 'no results found'
+    if (query is None or query == 'None'):
+        query_parameter = '&q=*%3A*'
     else:
-        output = []
-        for result in json['response']['docs']:
-            # set ID variable
-            id = result['id']
-            # set content variable
-            content = result['content']
-            # parse result
-            result_output = parse_result(id, content)
-            output.append(result_output)
+        query_parameter = '&q=content%3A' + urllib.parse.quote_plus(query)
 
-    return output, num_found
+    if (country is None or country == 'None'):
+        country_parameter = ''
+    else:
+        field = 'country'
+        country_parameter = '&fq=%7B!term%20f%3D' + field + '%7D' + country
+
+    if (year is None or year == 'None'):
+        year_parameter = ''
+    else:
+        field = 'year'
+        year_parameter = '&fq=%7B!term%20f%3D' + field + '%7D' + year
+
+    # assemble a query string to send to Solr. This uses the Solr hostname from config.env. Solr's query syntax can be found at many sites including https://lucene.apache.org/solr/guide/6_6/the-standard-query-parser.html
+    solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&indent=true' + query_parameter + '&wt=json' + sort_parameter + country_parameter + year_parameter + '&facet.field=country&facet.field=year&facet.sort=count&facet.mincount=1&facet=true'
+
+    output = solr_search(solrurl)
+
+    return output
+
+def id_search(core, id):
+
+    # assemble a query string to send to Solr. This uses the Solr hostname from config.env. Solr's query syntax can be found at many sites including https://lucene.apache.org/solr/guide/6_6/the-standard-query-parser.html
+    solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=id%3A"' + id + '"&wt=json'
+
+    output = solr_search(solrurl)
+
+    return output
+
+def random_search(core):
+
+    rand = str(random.randint(0, 9999999))
+
+    # assemble a query string to send to Solr. This uses the Solr hostname from config.env. Solr's query syntax can be found at many sites including https://lucene.apache.org/solr/guide/6_6/the-standard-query-parser.html
+    solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=*%3A*&wt=json&sort=random_' + rand + '%20asc&rows=1'
+
+    output = solr_search(solrurl)
+
+    return output
 
 def parse_result(id, input):
 
@@ -108,7 +126,9 @@ def parse_result(id, input):
 
     # search for the IPC publication URL in the content element and display it
     ipc_publication = re.search('IPC.*\n(.*)\n', input)
-    output['ipc_publication_url'] = ipc_publication.group(1)
+    if ipc_publication is not None:
+        if ipc_publication.group(1) is not None:
+            output['ipc_publication_url'] = ipc_publication.group(1)
 
     # search for the title in the content element and display it
     title = re.search('Title.*?\\n(.*?)\\n|Tile.?\\n(.*?)\\n', input)
@@ -150,38 +170,13 @@ def parse_result(id, input):
 
     return output
 
-def get_random_record(core):
-
-    rand = str(random.randint(0, 9999999))
-
-    # Assemble a query string to send to Solr. This uses the Solr hostname from config.env. Solr's query syntax can be found at many sites including https://lucene.apache.org/solr/guide/6_6/the-standard-query-parser.html
-    solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=*%3A*&wt=json&sort=random_' + rand + '%20asc&rows=1'
-
-    # get result
-    request = requests.get(solrurl)
-    # turn the API response into useful Json
-    json = request.json()
-
-    if (json['response']['numFound'] == 0):
-        output = 'no results found'
-    else:
-        output = []
-        for result in json['response']['docs']:
-            # set ID variables
-            id = result['id']
-            # set content variable
-            content = result['content']
-            # parse result
-            result_output = parse_result(id, content)
-            output.append(result_output)
-    return output
-
 def get_ten_random_elements(field):
     core = 'all'
     output = []
     i = 0
     while i <= 9:
-        results = get_random_record(core)
+        search_results = random_search(core)
+        results = search_results[0]
         for result in results:
             if field in result:
                 dict = {'id': result['id'], field: result[field]}
@@ -194,7 +189,8 @@ def get_ten_random_images():
     output = []
     i = 0
     while i <= 9:
-        results = get_random_record(core)
+        search_results = random_search(core)
+        results = search_results[0]
         for result in results:
             if ops.get_images(result['doc_ref']):
                 image = ops.get_images(result['doc_ref'])

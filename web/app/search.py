@@ -9,14 +9,18 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from . import solr
 from . import ops
+import pycountry
 
 search = Blueprint('search', __name__)
 
-# route for search page
+# route for basic search page
 @search.route('/search/', methods=['GET', 'POST'])
 def basic_search():
     if request.method == 'POST':
-        search = request.form.get('search')
+        if request.form.get('query') is not None:
+            query = request.form.get('query')
+        else:
+            query = None
         if request.form.get('core') is not None:
             core = request.form.get('core')
         else:
@@ -25,15 +29,54 @@ def basic_search():
             sort = request.form.get('sort')
         else:
             sort = 'relevance'
-        search_results = solr.content_search(core, sort, search)
+        if request.form.get('country') is not None:
+            country = request.form.get('country')
+        else:
+            country = None
+        if request.form.get('year') is not None:
+            year = request.form.get('year')
+        else:
+            year = None
+    else:
+        if request.args.get('query') is not None:
+            query = request.args.get('query')
+        else:
+            query = None
+        if request.args.get('core') is not None:
+            core = request.args.get('core')
+        else:
+            core = 'all'
+        if request.args.get('sort') is not None:
+            sort = request.args.get('sort')
+        else:
+            sort = 'relevance'
+        if request.args.get('country') is not None:
+            country = request.args.get('country')
+        else:
+            country = None
+        if request.args.get('year') is not None:
+            year = request.args.get('year')
+        else:
+            year = None
+    if (query is None and country is None and year is None):
+        return redirect(url_for('main.index'))
+    else:
+        search_results = solr.query_search(core, sort, query, country, year)
         results = search_results[0]
         num_found = search_results[1]
-        country_facet = search_results[2]
-        year_facet = search_results[3]
+        year_facet = search_results[2]['year']
+        country_facet = search_results[2]['country']
+        for i in range(0, len(country_facet)):
+            if i % 2 == 0:
+                country_full = pycountry.countries.get(alpha_2=country_facet[i])
+                if country_full is not None:
+                    country_facet[i] = country_full
+                else:
+                    country_full = pycountry.historic_countries.get(alpha_2=country_facet[i])
+                    if country_full is not None:
+                        country_facet[i] = country_full
         total_number = solr.get_total_number(core)
-        return render_template('search.html', results=results, num_found=num_found, total_number=total_number, country_facet=country_facet, year_facet=year_facet, search=search, core=core, sort=sort)
-    else:
-        return redirect(url_for('main.index'))
+        return render_template('search.html', results=results, num_found=num_found, total_number=total_number, country_facet=country_facet, year_facet=year_facet, query=query, core=core, sort=sort, country=country, year=year)
 
 # route for id_search page
 @search.route('/search/id/', methods=['GET'])
@@ -46,13 +89,8 @@ def id_search():
         core = request.args.get('core')
     else:
         core = 'all'
-    if request.args.get('sort') is not None:
-        sort = request.args.get('sort')
-    else:
-        sort = 'relevance'
-    search_results = solr.content_search(core, sort, search, id)
+    search_results = solr.id_search(core, id)
     results = search_results[0]
-
     for result in results:
         publication_details = ops.get_publication_details(result['doc_ref'])
         result.update(publication_details)
@@ -61,53 +99,3 @@ def id_search():
             result.update(image)
 
     return render_template('record.html', results=results)
-
-# route for country search page
-@search.route('/search/country/', methods=['GET', 'POST'])
-def country_search():
-    if request.method == 'POST':
-        country_code = request.form.get('country_code')
-        core = request.form.get('core')
-        sort = request.form.get('sort')
-    else:
-        country_code = request.args.get('country_code')
-        core = request.args.get('core')
-        sort = request.args.get('sort')
-    if country_code is None:
-        return redirect(url_for('main.index'))
-    if core is None:
-        core = 'all'
-    if sort is None:
-        sort = 'relevance'
-    field = 'country'
-    search_results = solr.term_search(core, sort, field, country_code)
-    results = search_results[0]
-    num_found = search_results[1]
-    total_number = solr.get_total_number(core)
-
-    return render_template('search.html', results=results, num_found=num_found, total_number=total_number, country_code=country_code, core=core, sort=sort)
-
-# route for year search page
-@search.route('/search/year/', methods=['GET', 'POST'])
-def year_search():
-    if request.method == 'POST':
-        year = request.form.get('year')
-        core = request.form.get('core')
-        sort = request.form.get('sort')
-    else:
-        year = request.args.get('year')
-        core = request.args.get('core')
-        sort = request.args.get('sort')
-    if year is None:
-        return redirect(url_for('main.index'))
-    if core is None:
-        core = 'all'
-    if sort is None:
-        sort = 'relevance'
-    field = 'year'
-    search_results = solr.term_search(core, sort, field, year)
-    results = search_results[0]
-    num_found = search_results[1]
-    total_number = solr.get_total_number(core)
-
-    return render_template('search.html', results=results, num_found=num_found, total_number=total_number, year=year, core=core, sort=sort)

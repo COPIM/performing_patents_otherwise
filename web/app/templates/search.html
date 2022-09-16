@@ -11,17 +11,11 @@
 </div>
 
 <div class="row p-3">
-  {% if search is defined %}
   <form action="{{ url_for('search.basic_search') }}" method="POST">
-    <input type="hidden" name="search" value="{{ search }}">
-  {% elif country_code is defined %}
-  <form action="{{ url_for('search.country_search') }}" method="POST">
-    <input type="hidden" name="country_code" value="{{ country_code }}">
-  {% elif year is defined %}
-  <form action="{{ url_for('search.year_search') }}" method="POST">
-    <input type="hidden" name="year" value="{{ year }}">
-  {% endif %}
+    <input type="hidden" name="query" value="{{ query }}">
     <input type="hidden" name="searchopt" value="{{ core }}">
+    <input type="hidden" name="country" value="{{ country }}">
+    <input type="hidden" name="year" value="{{ year }}">
     sort by:
     <select name="sort" id="sort" onchange="this.form.submit()">
       <option value="relevance" {% if sort == 'relevance' %} selected {% endif %}>relevance</option>
@@ -34,9 +28,59 @@
   </form>
 </div>
 
-{{country_facet}}
+<div class="row p-3">
+  <form action="{{ url_for('search.basic_search') }}" method="POST">
+    <input type="hidden" name="query" value="{{ query }}">
+    <input type="hidden" name="searchopt" value="{{ core }}">
+    <input type="hidden" name="sort" value="{{ sort }}">
+    <input type="hidden" name="year" value="{{ year }}">
+    filter by country:
+    <select name="country" id="sort" onchange="this.form.submit()">
+      {% if country is defined %}
+        <option value="None" selected>none</option>
+      {% else %}
+        <option>country</option>
+      {% endif %}
+      {% for i in range(0, country_facet|length) %}
+        {% if i % 2 == 0 %}
+          {% if country_facet[i].name is defined %}
+            <option value="{{ country_facet[i].alpha_2 }}" {% if country == country_facet[i].alpha_2 %} selected {% endif %}">{{ country_facet[i].name }} ({{ country_facet[i+1] }})</option>
+          {% else %}
+            <option value="{{ country_facet[i] }}" {% if country == country_facet[i] %} selected {% endif %}">{{ country_facet[i] }} ({{ country_facet[i+1] }})</option>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </select>
+    <noscript>
+      <input type="submit" class="btn btn-default" value="Set" />
+    </noscript>
+  </form>
+</div>
 
-{{year_facet}}
+<div class="row p-3">
+  <form action="{{ url_for('search.basic_search') }}" method="POST">
+    <input type="hidden" name="query" value="{{ query }}">
+    <input type="hidden" name="searchopt" value="{{ core }}">
+    <input type="hidden" name="sort" value="{{ sort }}">
+    <input type="hidden" name="country" value="{{ country }}">
+    filter by year:
+    <select name="year" id="sort" onchange="this.form.submit()">
+      {% if year is defined %}
+        <option value="None" selected>none</option>
+      {% else %}
+        <option>year</option>
+      {% endif %}
+      {% for i in range(0, year_facet|length) %}
+        {% if i % 2 == 0 %}
+          <option value="{{ year_facet[i] }}" {% if year == year_facet[i] %} selected {% endif %}">{{ year_facet[i] }} ({{ year_facet[i+1] }})</option>
+        {% endif %}
+      {% endfor %}
+    </select>
+    <noscript>
+      <input type="submit" class="btn btn-default" value="Set" />
+    </noscript>
+  </form>
+</div>
 
 {% if results == 'no results found' %}
 

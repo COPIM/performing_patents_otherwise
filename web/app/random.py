@@ -15,7 +15,8 @@ random = Blueprint('random', __name__)
 @random.route('/random/')
 def random_record():
     core = 'all'
-    results = solr.get_random_record(core)
+    search_results = solr.random_search(core)
+    results = search_results[0]
     for result in results:
         publication_details = ops.get_publication_details(result['doc_ref'])
         result.update(publication_details)
@@ -31,7 +32,8 @@ def two_random_records():
     results_list = []
     i = 0
     while i <= 1:
-        results = solr.get_random_record(core)
+        search_results = solr.random_search(core)
+        results = search_results[0]
         for result in results:
             publication_details = ops.get_publication_details(result['doc_ref'])
             result.update(publication_details)

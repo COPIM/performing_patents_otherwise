@@ -4,7 +4,8 @@
 # @author: Simon Bowie <ad7588@coventry.ac.uk>
 # @purpose: data route for data
 # @acknowledgements:
-# pycountry module for country data
+# pycountry module for country data: https://pypi.org/project/pycountry/
+# data formatted for Chart.js: https://www.chartjs.org/docs/latest/
 
 from flask import Blueprint, render_template, request
 import random

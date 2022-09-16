@@ -14,7 +14,7 @@ There are a total of {{ total_number }} patents.
       {% if i % 2 %}
         {{ year_data[i] }}<br>
       {% else %}
-        <a href="{{ url_for('search.year_search', year=year_data[i]) }}">
+        <a href="{{ url_for('search.basic_search', year=year_data[i]) }}">
           {{ year_data[i] }}
         </a>:
       {% endif %}
@@ -26,12 +26,12 @@ There are a total of {{ total_number }} patents.
         {{ country_data[i] }}<br>
       {% else %}
         {% if country_data[i].name is defined %}
-          <a href="{{ url_for('search.country_search', country_code=country_data[i].alpha_2) }}">
+          <a href="{{ url_for('search.basic_search', country=country_data[i].alpha_2) }}">
             {{ country_data[i].name }}
           </a>
           {{ country_data[i].flag }}:
         {% else %}
-          <a href="{{ url_for('search.country_search', country_code=country_data[i]) }}">
+          <a href="{{ url_for('search.basic_search', country=country_data[i]) }}">
             {{ country_data[i] }}
           </a>:
         {% endif %}
