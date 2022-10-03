@@ -3,7 +3,7 @@
 # @creation_date: 2022-09-07
 # @license: The MIT License <https://opensource.org/licenses/MIT>
 # @author: Simon Bowie <ad7588@coventry.ac.uk>
-# @author: Joana Chicau
+# @author: Joana Chicau <web@joanachicau.com>
 # @purpose: JavaScript functions for various functions
 # @acknowledgements:
 */

@@ -3,7 +3,7 @@
 # @creation_date: 2022-09-07
 # @license: The MIT License <https://opensource.org/licenses/MIT>
 # @author: Simon Bowie <ad7588@coventry.ac.uk>
-# @author: Joana Chicau
+# @author: Joana Chicau <web@joanachicau.com>
 # @purpose: Custom CSS to override Bootstrap 5 defaults
 # @acknowledgements:
 # Bootstrap 5.1.3: https://getbootstrap.com/
@@ -14,21 +14,15 @@
 /* FONTS*/
 
 @font-face {
-     font-family: "Astloch-B";
-     src: url(fonts/Astloch-Bold.ttf) format('truetype');
-     font-weight: bold;
+    font-family: "MetaAccanthis";
+    src: url(fonts/MetaAccanthis_regular.ttf) format('truetype');
+    font-weight: bold;
 }
 
 @font-face {
-     font-family: "Astloch";
-     src: url(fonts/Astloch-Regular.ttf) format('truetype');
-     font-weight: normal;
-}
-
-@font-face {
-     font-family: "Abordage";
-     src: url(fonts/Abordage-Regular.otf) format('opentype');
-     font-weight: normal;
+    font-family: "MetaAccanthisAlternate";
+    src: url(fonts/MetaAccanthisAlternate.ttf) format('truetype');
+    font-weight: normal;
 }
 
 @font-face {
@@ -69,7 +63,7 @@
     --color-gray: #edecec;
     --color-blue: #4f1dff;
     --color-pink: #cc285f;
-    --title-font: "Cmunobi";
+    --title-font: "MetaAccanthis"; /* Cmunobi */
     --body-font: "Compagnon";
 
     /*@media screen and (min-width: 320px)*/
@@ -330,6 +324,25 @@ body#random-img-page{
     margin: 0% 20%;
     line-height: 1.8rem;
     font-size: var(--body-fontsize);
+}
+
+/* DATA */
+
+canvas > * {
+    font-family: var(--body-font) !important;
+}
+
+.anchordata {
+    margin: 1rem 2rem;
+    z-index: 999;
+    position: fixed;
+    right: 0;
+    transform: skewY(10deg);
+}
+
+.anchordata a {
+    text-decoration: none;
+    border-bottom: 0.20rem var(--color-lightyellow) solid;
 }
 
 /***************** MOBILE ****************/
