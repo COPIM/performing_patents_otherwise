@@ -19,12 +19,7 @@ def index():
 # route for table of contents page
 @main.route('/contents/')
 def contents():
-    with open('content/toc.md', 'r') as f:
+    with open('content/TOC.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
-    return render_template('text.html', text=text)
-
-@main.route('/test/')
-def test():
-    text = "whatever"
     return render_template('text.html', text=text)
