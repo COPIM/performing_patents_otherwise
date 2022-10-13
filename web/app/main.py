@@ -23,3 +23,8 @@ def contents():
         text = f.read()
         text = markdown.markdown(text)
     return render_template('text.html', text=text)
+
+@main.route('/test/')
+def test():
+    text = "whatever"
+    return render_template('text.html', text=text)
