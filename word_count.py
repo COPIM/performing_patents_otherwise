@@ -16,7 +16,22 @@ for root, dirs, files in os.walk(directory):
             content = file.read()
             #text = rtf_to_text(content)
             words = content.split()
+            substring = '\\'
+            # remove elements from list that contain given string
+            words = [item for item in words if substring not in item]
+            substring = '}'
+            # remove elements from list that contain given string
+            words = [item for item in words if substring not in item]
+            substring = '{'
+            # remove elements from list that contain given string
+            words = [item for item in words if substring not in item]
+            substring = '/'
+            # remove elements from list that contain given string
+            words = [item for item in words if substring not in item]
+            substring = '('
+            # remove elements from list that contain given string
+            words = [item for item in words if substring not in item]
             total += len(words)
-            #print(text)
+            #print(words)
 
 print(total)
