@@ -41,6 +41,12 @@ function removeRandomTitle() {
   RandomSpan.style.display = "inline-block";
 }
 
+function removeRandomImage() {
+  var elts = document.getElementsByClassName("img-fluid");
+  var RandomImg = elts[Math.floor(Math.random() * elts.length)];
+  RandomImg.remove();
+}
+
 // code adapted from w3collective
 function readingTime(text) {
   const wpm = 200;
