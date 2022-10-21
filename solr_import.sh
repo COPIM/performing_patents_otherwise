@@ -55,12 +55,12 @@ Import()
 
   sleep 30
 
-  docker run --rm -v "$directory/$location:/$core" --network=host solr:latest post -c $core /$core
+  docker run --rm -v "$directory/$location:/$core" --network=host solr:8.11.1 post -c $core /$core
 }
 
 Import_recursive()
 {
-  docker run --rm -v "$directory/$subdirectory:/$core" --network=host solr:latest post -c $core /$core
+  docker run --rm -v "$directory/$subdirectory:/$core" --network=host solr:8.11.1 post -c $core /$core
 }
 ############################################################
 ############################################################
