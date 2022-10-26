@@ -63,7 +63,7 @@
     --color-gray: #edecec;
     --color-blue: #4f1dff;
     --color-pink: #cc285f;
-    --title-font: "MetaAccanthis"; /* Cmunobi */
+    --title-font: "Compagnon-T"; /* Cmunobi */
     --body-font: "Compagnon";
 
     /*@media screen and (min-width: 320px)*/
@@ -94,9 +94,9 @@ body {
 h1, .h1 {
     font-family: var(--title-font) !important;
     font-size: var(--title-fontsize) !important;
-    -webkit-text-stroke-width: 0.01rem;
+    -webkit-text-stroke-width: 0.09rem;
     -webkit-text-stroke-color: black;
-    font-style: italic;
+    letter-spacing: -0.15rem;
 }
 
 a.h1 {
@@ -119,6 +119,11 @@ p {
 
 .contrast {
     color: var(--color-lightyellow) !important;
+}
+
+/* overwrite */
+.p-5 {
+    padding: 3.5rem !important;
 }
 
 /* INDEX */
@@ -178,8 +183,14 @@ input#submit:hover {
   box-shadow: 0.25rem 0.25rem 0.5rem var(--color-dark)  !important;
 }
 
-button#notes, .action {
-    margin: 1rem 2rem;
+.arrow-back {
+    position: fixed;
+    left: 0;
+    margin: 0.5rem;
+}
+
+.action {
+    margin: 1.5rem 3rem;
     z-index: 999;
     position: fixed;
     top: 0;
@@ -193,7 +204,30 @@ button#notes, .action {
     border: none;
  }
 
-button#notes:hover {
+ .action button:hover {
+    color: var(--color-dark)  !important; 
+ }
+
+
+#random-img-page .action button:hover {
+    color: var(--color-whitish)  !important; 
+ }
+
+button#notes, button#notes-operations{
+    position: fixed; 
+    top: 0; 
+    right:0;
+    margin: 0.25rem 0.75rem; 
+    color: var(--color-whitish) !important;
+    background: var(--color-pink) !important;
+    border: 0.1rem solid var(--color-pink) !important;
+    border-radius: 5rem 3rem;
+    height: 2rem;
+    width: 2rem;
+    line-height: 0.1rem;
+}
+
+button#notes:hover, button#notes-operations:hover {
     color: var(--color-dark)  !important;
 }
 
@@ -206,6 +240,9 @@ button#notes:hover {
     line-height: 1.2rem;
     font-size: var(--body-fontsize-s);
     margin: 0.5rem 1rem;
+}
+.operations {
+    font-size: var(--body-fontsize-s);
 }
 
 .w-6 {
@@ -349,11 +386,23 @@ canvas > * {
 
 @media screen and (min-width:0px) and (max-width: 768px) {
 
+/* overwrite */
+.p-5 {
+    padding: 0.5rem !important;
+}
+
+
   /* INDEX SEARCH */
 
   input#inputsearch {
     width: 250px;;
   }
+
+/* RANDOM TITLES */
+
+  .action button {
+    font-size: 1rem;
+ }
 
   /* RANDOM IMAGES */
   #random-img-page .img-fluid:hover {

@@ -6,17 +6,27 @@
 
 {% block content %}
 
-  <div class="action">
-    <button onClick="refresh(this)" type="button" value="Refresh" title="new iteration">↻</button>
-    <!--<button onclick="" title="add one">+</button>-->
-    <button onclick="removeRandomImage()" title="remove">-</button>
-  </div>
+<div class="action">
+  <button onClick="refresh(this)" type="button" value="Refresh" title="new iteration">↻</button>
+  <span class="info" style="display: none;">
+    <span class="operations">↝ new display of random images from dataset;</span>
+  </span>
+  <button  onclick="" title="add one">+</button>
+  <span class="info" style="display: none;">
+    <span class="operations">↝ add a random image from dataset;</span>
+  </span>
+  <button  onclick="removeRandomImage()"  title="remove one">-</button>
+  <span class="info" style="display: none;">
+    <span class="operations">↝ remove a random image from page;</span>
+  </span>
+  <button id="notes-operations" onclick="hideShowInfo()">?</button>
+  <a href="{{ url_for('main.index') }}" class="arrow-back h1 text-left contrast" style="color: var(--color-lightyellow) !important;" title="back to index"> ⇽ </a>
+</div>
 
-  <a href="{{ url_for('main.index') }}" class="h1 text-left contrast" style="color: var(--color-lightyellow) !important;"> ⇽ </a>
 
   <div class="row">
     <div class="col m-5">
-      <p class="h1 text-center contrast">Layering of Images</p>
+      <p class="h1 text-center contrast">a Scattering of Images</p>
     </div>
   </div>
 

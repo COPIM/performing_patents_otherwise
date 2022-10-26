@@ -2,9 +2,15 @@
 
 {% block content %}
 
-<a href="{{ url_for('main.index') }}" class="h1 text-left"> ⇽ </a>
+<a href="{{ url_for('main.index') }}" class="h1 text-left" title="back to index"> ⇽ </a>
 
-There are a total of {{ total_number }} patents.
+<h1 class="h1 text-center"> There are a total of {{ total_number }} patents.</h1>
+
+<div class="anchordata">
+<a href="#time">temporal focus</a>
+<br>
+<a href="#geo">geographic focus</a>
+</div>
 
 <br><br>
 
@@ -40,8 +46,13 @@ There are a total of {{ total_number }} patents.
   </div>
 </div>
 
+<div id="time">
 <canvas id="chartOfYearFrequency" width="600" height="300"></canvas>
+</div>
+
+<div id="geo">
 <canvas id="chartOfCountryFrequency" width="600" height="300"></canvas>
+</div>
 
 <script type="text/javascript">
   // retrieve variables passed from Python
@@ -63,6 +74,18 @@ There are a total of {{ total_number }} patents.
           display: true,
           text: 'number of patent records for each year'
         },
+      animation: {
+        onComplete: () => {
+          delayed = true;
+        },
+        delay: (context) => {
+          let delay = 0;
+          if (context.type === 'data' && context.mode === 'default' && !delayed) {
+            delay = context.dataIndex * 1000 + context.datasetIndex * 100;
+          }
+          return delay;
+          },
+        },
       },
       responsive: true,
       scales: {
@@ -83,12 +106,13 @@ There are a total of {{ total_number }} patents.
       }
     }
   };
-
+  
   Chart.defaults.font.family = 'Compagnon'
   var yearGraph = new Chart(
     document.getElementById('chartOfYearFrequency'),
     config
   );
+
 </script>
 
 <script type="text/javascript">

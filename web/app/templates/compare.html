@@ -4,9 +4,12 @@
 
 <div class="action">
   <button onClick="refresh(this)" type="button" value="Refresh" title="new iteration">↻</button>
+  <span class="info" style="display: none;">
+    <span class="operations">↝ new display of random records from the dataset;</span>
+  </span>
+  <button id="notes-operations" onclick="hideShowInfo()">?</button>
+  <a href="{{ url_for('main.index') }}" class="arrow-back h1 text-left" title="back to index"> ⇽ </a>
 </div>
-
-<a href="{{ url_for('main.index') }}" class="h1 text-left"> ⇽ </a>
 
 <div class="compare mt-5">
 
@@ -14,10 +17,10 @@
     <div class="mt-5 text-center skewY">
 
     {% if result['title'] is defined %}
-    <p class="h1 mb-2">
+    <h1 class="h1 mt-4 mb-2">
       Title:
       {{ result['title'] }}
-    </p>
+    </h1>
     {% endif %}
 
     {% if result['year'] is defined %}

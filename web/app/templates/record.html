@@ -4,18 +4,21 @@
 
 <div class="action">
   <button onClick="refresh(this)" type="button" value="Refresh" title="new iteration">↻</button>
+  <span class="info" style="display: none;">
+    <span class="operations">↝ new display of a random record from the dataset;</span>
+  </span>
+  <button id="notes-operations" onclick="hideShowInfo()">?</button>
+  <a href="{{ url_for('main.index') }}" class="arrow-back h1 text-left" title="back to index"> ⇽ </a>
 </div>
-
-<a href="{{ url_for('main.index') }}" class="h1 text-left"> ⇽ </a>
 
   {% for result in results %}
   <div class="col text-center mt-2" id="result">
 
     {% if result['title'] is defined %}
-    <p class="h1 mb-2">
+    <h1 class="h1 mt-5 mb-2 p-5">
       Title:
       {{ result['title'] }}
-    </p>
+    </h1>
     {% endif %}
 
     {% if result['year'] is defined %}

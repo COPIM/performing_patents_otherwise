@@ -3,7 +3,8 @@
 {% block content %}
 
 <div class="action">
-  <button id="notes" onclick="hideShowInfo()">ⓘ</button>
+  <button id="notes" onclick="hideShowInfo()">?</button>
+  <!-- 👁 ⓘ ⅈ  ✍  ⁐ -->
 </div>
 
 <div class="index-row button-search random-interferences">
@@ -24,7 +25,7 @@
 </div>
 
 <div class="info note-interference" style="display: none;">
-  <p class="code"> // Interferences: Search interferences perform data otherwise. They disrupt ordering and invite unexpected readings.</p>
+  <p class="code"> ↪ Interferences: Search interferences perform data otherwise. They disrupt ordering and invite unexpected readings.</p>
 </div>
 
 <div class="index-row">
@@ -49,7 +50,7 @@
 
 <div class="info" style="display: none;">
   <p class="code">
-    // Main search engine sorting code:
+    ↪ Main search engine sorting code:
     solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&q=content%3A' + urllib.parse.quote_plus(search) + '&wt=json&sort=' + sort; request = requests.get(solrurl); json = request.json()
   </p>
 </div>
@@ -66,34 +67,34 @@
   </div>
 
   <div class="col text-center p-2">
-    <!-- timeline of search term -->
-    <a href="{{ url_for('random.two_random_records') }}">a timeline of inventions</a>
+    <!-- data page -->
+    <a href="{{ url_for('data.main_data') }}">mapping the archive</a>
   </div>
 </div>
 
 <div class="index-row justify-content-center mt-5">
   <div class="col text-center button-search button-hidden-off p-2">
-    <a href="">Hidden in plain sight</a>
+    <a href="">hidden in plain sight</a>
 
       <div class="info" style="display: none;">
-        <p class="code">// Searching for a history of women’s clothing inventors, that is in the archive, but hidden in plain sight.... </p>
+        <p class="code"> ↪ Searching for a history of women’s clothing inventors, that is in the archive, but hidden in plain sight.... </p>
       </div>
   </div>
 
    <div class="col text-center button-search button-hidden-off p-2">
-    <a href="{{ url_for('main.contents') }}">Search as a book</a>
+    <a href="{{ url_for('main.contents') }}">search as a book</a>
 
       <div class="info" style="display: none;">
-        <p class="code">// Find here a table of contents for this digital archive... </p>
+        <p class="code"> ↪ Find here a table of contents for this digital archive... </p>
       </div>
   </div>
 
 
   <div class="col text-center button-search button-hidden-off p-2">
-    <a href="">Off the record</a>
+    <a href="">off the record</a>
 
       <div class="info" style="display: none;">
-        <p class="code">// Some things are all over the patent archive but never made explicit. Off the record presents three artistic works that render these absent-present realities visible... </p>
+        <p class="code"> ↪ Some things are all over the patent archive but never made explicit. Off the record presents three artistic works that render these absent-present realities visible... </p>
       </div>
   </div>
 </div>

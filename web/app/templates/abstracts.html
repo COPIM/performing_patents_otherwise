@@ -4,15 +4,21 @@
 
 <div class="action">
   <button onClick="refresh(this)" type="button" value="Refresh" title="new iteration">↻</button>
+  <span class="info" style="display: none;">
+    <span class="operations">↝ add a random title from dataset;</span>
+  </span>
+  <button id="notes-operations" onclick="hideShowInfo()">?</button>
 </div>
 
 <div id="rdn-abstracts">
   <div class="row">
     <div class="col m-5">
-      <p class="h1 text-center">Reading Fragments</p>
-      <!-- The following total reading time is based on the calculation of approx. 43,647,513 words in all the documents divided by 200 as the average reading speed of 200 wpm -->
-      <p class="mt-2 text-center">a <span id="time"></span> minute read out of 218238 minutes reading time</p>
-      <a href="{{ url_for('main.index') }}" class="h1 text-left"> ⇽ </a>
+      <p class="h1 text-center">a Handful of Fragments</p>
+      <span class="info mt-2 text-center" style="display: none;">
+        <!-- The following total reading time is based on the calculation of approx. 43,647,513 words in all the documents divided by 200 as the average reading speed of 200 wpm -->
+        <p class="operations">↪ a <span id="time"></span> minute read out of 218238 minutes reading time</p>
+      </span>
+      <a href="{{ url_for('main.index') }}" class="arrow-back h1 text-left" title="back to index"> ⇽ </a>
     </div>
   </div>
 
