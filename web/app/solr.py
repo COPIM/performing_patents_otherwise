@@ -185,18 +185,19 @@ def get_ten_random_elements(field):
                 i += 1
     return output
 
-def get_ten_random_images():
+def get_random_images(number):
     core = 'all'
     output = []
     i = 0
-    while i <= 9:
+    while i <= number-1:
         search_results = random_search(core)
         results = search_results[0]
         for result in results:
             if ops.get_images(result['doc_ref']):
                 image = ops.get_images(result['doc_ref'])
-                result.update(image)
-                output.append(result)
+                dict = {'id': result['id']}
+                dict.update(image)
+                output.append(dict)
                 i += 1
     return output
 

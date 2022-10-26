@@ -59,6 +59,7 @@ def ten_random_abstracts():
 
 # route for getting ten random images
 @random.route('/random/images/')
-def ten_random_images():
-    results = solr.get_ten_random_images()
-    return render_template('images.html', results=results)
+def random_images():
+    images = solr.get_random_images(4)
+    additional_images = solr.get_random_images(6)
+    return render_template('images.html', images=images, additional_images=additional_images)
