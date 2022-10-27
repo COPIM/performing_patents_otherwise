@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{{ text|safe }}
+
+<hr>
+
+{% if results == 'no results found' %}
+
+  {{ results }}
+
+{% else %}
+
+  {% for result in results %}
+
+    <p class="h1">
+
+    Year:
+
+    {{ result['year'] }}
+
+    </p>
+
+    {% if result['title'] is defined %}
+    <p class="mb-2 mt-5">
+      <span class="emphasis">Title:</span>
+      <span class="result-entry">
+        {{ result['title'] }}
+      </span>
+    </p>
+    {% endif %}
+
+    {% if result['country'] is defined %}
+    <p class="mb-2">
+      <span class="emphasis">Country:</span>
+      {% if result['country'].name is defined %}
+        {{ result['country'].name }} {{ result['country'].flag }}
+      {% else %}
+        {{ result['country'] }}
+      {% endif %}
+    </p>
+    {% endif %}
+
+    {% if result['abstract'] is defined %}
+    <p class="mb-2">
+      <span class="emphasis">Abstract:</span>
+      <span class="result-entry">
+        {{ result['abstract'] }}
+      </span>
+    </p>
+    {% endif %}
+
+    <div class="mt-2 mb-5 search-links">
+      <p>
+        <span class="emphasis">European Patent Office PDF:</span>
+        <a href="{{ url_for('search.id_search', id=result['id'], core='all') }}">
+          <span class="result-entry">
+            {{ result['application_id'] }}
+          </span>
+        </a>
+      </p>
+    </div>
+
+  {% endfor %}
+
+{% endif %}
+
+{% endblock %}

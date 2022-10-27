@@ -6,6 +6,7 @@
 # @acknowledgements:
 
 from flask import Blueprint, render_template
+from . import solr
 import markdown
 
 hidden = Blueprint('hidden', __name__)
@@ -18,4 +19,18 @@ def index():
 # route for active theme page
 @hidden.route('/hidden/active/')
 def active():
-    return render_template('index.html')
+    with open('content/section_3/active.md', 'r') as f:
+        text = f.read()
+        text = markdown.markdown(text)
+
+    core = 'active'
+    results_list = []
+    i = 0
+    while i <= 9:
+        search_results = solr.random_search(core)
+        results = search_results[0]
+        for result in results:
+            results_list.append(result)
+        i += 1
+
+    return render_template('theme.html', text=text, results=results_list)

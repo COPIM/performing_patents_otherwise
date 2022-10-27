@@ -54,7 +54,7 @@
 - [Expanding citizens](hidden/#expanding "links to hidden section expanding citizens")
 - [Secret citizens](hidden/#secret "links to hidden section secret")
 - [Pissing & leaking citizens](hidden/#pissing "links to hidden section pissing & leaking citizens")
-- [Active citizens](hidden/#active "links to hidden section active citizens")
+- [Active citizens](/hidden/active)
 - [In/visible citizens](hidden/#visible "links to hidden section in/visible citizens")
 - [Multispecies citizens](hidden/#multispecies "links to hidden section multispecies citizens")
 - [Working citizens](hidden/#working "links to hidden section working citizens")
