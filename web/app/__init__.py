@@ -27,9 +27,9 @@ def create_app():
     from .search import search as search_blueprint
     app.register_blueprint(search_blueprint)
 
-    # blueprint for random parts of app
-    from .random import random as random_blueprint
-    app.register_blueprint(random_blueprint)
+    # blueprint for interventions parts of app
+    from .interventions import interventions as interventions_blueprint
+    app.register_blueprint(interventions_blueprint)
 
     # blueprint for data parts of app
     from .data import data as data_blueprint

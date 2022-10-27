@@ -1,18 +1,18 @@
-# @name: random.py
+# @name: interventions.py
 # @creation_date: 2022-09-09
 # @license: The MIT License <https://opensource.org/licenses/MIT>
 # @author: Simon Bowie <ad7588@coventry.ac.uk>
-# @purpose: random route for random
+# @purpose: inteventions route for Section 2: Search Interventions
 # @acknowledgements:
 
 from flask import Blueprint, render_template, request
 from . import solr
 from . import ops
 
-random = Blueprint('random', __name__)
+interventions = Blueprint('interventions', __name__)
 
-# route for random page
-@random.route('/random/')
+# route for random entry page ('A random entry')
+@interventions.route('/interventions/random/')
 def random_record():
     core = 'all'
     search_results = solr.random_search(core)
@@ -25,8 +25,8 @@ def random_record():
             result.update(image)
     return render_template('record.html', results=results)
 
-# route for comparing two random records
-@random.route('/random/two/')
+# route for comparing two random records ('A juxtaposition of two')
+@interventions.route('/interventions/juxtaposition/')
 def two_random_records():
     core = 'all'
     results_list = []
@@ -44,21 +44,21 @@ def two_random_records():
         i += 1
     return render_template('compare.html', results=results_list)
 
-# route for getting ten random titles
-@random.route('/random/titles/')
+# route for getting ten random titles ('A poetics of titles')
+@interventions.route('/interventions/titles/')
 def ten_random_titles():
     titles = solr.get_ten_random_elements('title')
     additional_titles = solr.get_ten_random_elements('title')
     return render_template('titles.html', titles=titles, additional_titles=additional_titles)
 
-# route for getting ten random abstracts
-@random.route('/random/abstracts/')
+# route for getting ten random abstracts ('A handful of fragments')
+@interventions.route('/interventions/fragments/')
 def ten_random_abstracts():
     abstracts = solr.get_ten_random_elements('abstract')
     return render_template('abstracts.html', abstracts=abstracts)
 
-# route for getting ten random images
-@random.route('/random/images/')
+# route for getting ten random images ('A scattering of images')
+@interventions.route('/interventions/scattering/')
 def random_images():
     images = solr.get_random_images(4)
     additional_images = solr.get_random_images(6)

@@ -38,12 +38,12 @@
     <span class="code">↪ Interventions are a mode of search, they disrupt ordering and invite unexpected readings....</span>
 </span>
 
-- [A poetics of titles](interventions/#titles "links to interventions section poetics of titles")
-- [A handful of fragments](interventions/#fragments "links to interventions section handful of fragments")
-- [A scattering of images](interventions/#scattering "links to interventions section scattering of images")
-- [A random entry](interventions/#random "links to interventions section random entry")
-- [A juxtaposition of two](interventions/#juxtaposition "links to interventions section juxtaposition of two")
-- [A timeline of inverntions](interventions/#timeline "links to interventions section timeline of inverntions)
+- [A poetics of titles](/interventions/titles)
+- [A handful of fragments](/interventions/fragments)
+- [A scattering of images](/interventions/scattering)
+- [A random entry](/interventions/random)
+- [A juxtaposition of two](interventions/juxtaposition)
+- [A timeline of inventions](interventions/#timeline "links to interventions section timeline of inverntions)
 
 
 ###  Section 3: Hidden in plain sight
