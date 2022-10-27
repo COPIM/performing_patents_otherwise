@@ -23,14 +23,6 @@ def active():
         text = f.read()
         text = markdown.markdown(text)
 
-    core = 'active'
-    results_list = []
-    i = 0
-    while i <= 9:
-        search_results = solr.random_search(core)
-        results = search_results[0]
-        for result in results:
-            results_list.append(result)
-        i += 1
+    results = solr.get_number_random_records('active', 10)
 
-    return render_template('theme.html', text=text, results=results_list)
+    return render_template('theme.html', text=text, results=results)

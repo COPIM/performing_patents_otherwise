@@ -171,6 +171,17 @@ def parse_result(id, input):
 
     return output
 
+def get_number_random_records(core, number):
+    results_list = []
+    i = 0
+    while i <= number-1:
+        search_results = random_search(core)
+        results = search_results[0]
+        for result in results:
+            results_list.append(result)
+        i += 1
+    return results_list
+
 def get_ten_random_elements(field):
     core = 'all'
     output = []
