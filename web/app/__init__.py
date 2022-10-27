@@ -31,6 +31,18 @@ def create_app():
     from .interventions import interventions as interventions_blueprint
     app.register_blueprint(interventions_blueprint)
 
+    # blueprint for hidden parts of app (Section 3: Hidden in plain sight)
+    from .hidden import hidden as hidden_blueprint
+    app.register_blueprint(hidden_blueprint)
+
+    # blueprint for offrecord parts of app (Section 4: Off the record)
+    from .offrecord import offrecord as offrecord_blueprint
+    app.register_blueprint(offrecord_blueprint)
+
+    # blueprint for making parts of app (Section 5: Making of)
+    from .making import making as making_blueprint
+    app.register_blueprint(making_blueprint)
+
     # blueprint for data parts of app
     from .data import data as data_blueprint
     app.register_blueprint(data_blueprint)

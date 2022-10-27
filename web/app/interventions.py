@@ -2,7 +2,7 @@
 # @creation_date: 2022-09-09
 # @license: The MIT License <https://opensource.org/licenses/MIT>
 # @author: Simon Bowie <ad7588@coventry.ac.uk>
-# @purpose: inteventions route for Section 2: Search Interventions
+# @purpose: interventions route for Section 2: Search Interventions
 # @acknowledgements:
 
 from flask import Blueprint, render_template, request
@@ -10,6 +10,11 @@ from . import solr
 from . import ops
 
 interventions = Blueprint('interventions', __name__)
+
+# route for interventions page
+@interventions.route('/interventions/')
+def index():
+    return render_template('index.html')
 
 # route for random entry page ('A random entry')
 @interventions.route('/interventions/random/')
