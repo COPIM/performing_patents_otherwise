@@ -19,15 +19,15 @@ def create_app():
 
     moment.init_app(app)
 
-    # blueprint for main parts of app
+    # blueprint for main parts of app (contents and frontmatter)
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
-    # blueprint for search parts of app
+    # blueprint for search parts of app (Section 1: Searching the archive)
     from .search import search as search_blueprint
     app.register_blueprint(search_blueprint)
 
-    # blueprint for interventions parts of app
+    # blueprint for interventions parts of app (Section 2: Search Interventions)
     from .interventions import interventions as interventions_blueprint
     app.register_blueprint(interventions_blueprint)
 
