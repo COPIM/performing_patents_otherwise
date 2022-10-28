@@ -55,7 +55,7 @@
 - [Secret citizens](/hidden/secret)
 - [Pissing & leaking citizens](/hidden/pissing)
 - [Active citizens](/hidden/active)
-- [In/visible citizens](/hidden/visible)
+- [In/visible citizens](/hidden/invisible)
 - [Multispecies citizens](/hidden/multispecies)
 - [Working citizens](/hidden/working)
 - [Self-defending citizens](/hidden/defending)
