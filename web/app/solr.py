@@ -47,7 +47,7 @@ def solr_search(solrurl):
 
     return output, num_found, facets
 
-def query_search(core, sort, query, country, year):
+def query_search(core, sort, query, country, year, page):
 
     # assemble parameters for the query string to Solr
     if (sort == 'relevance'):
@@ -72,8 +72,15 @@ def query_search(core, sort, query, country, year):
         field = 'year'
         year_parameter = '&fq=%7B!term%20f%3D' + field + '%7D' + year
 
+    if (page is None or page == 'None'):
+        page_parameter = ''
+    else:
+        start = (int(page) * 10) - 10
+        start = str(start)
+        page_parameter = '&start=' + start + '&rows=10'
+
     # assemble a query string to send to Solr. This uses the Solr hostname from config.env. Solr's query syntax can be found at many sites including https://lucene.apache.org/solr/guide/6_6/the-standard-query-parser.html
-    solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&indent=true' + query_parameter + '&wt=json' + sort_parameter + country_parameter + year_parameter + '&facet.field=country&facet.field=year&facet.sort=count&facet.mincount=1&facet=true'
+    solrurl = 'http://' + solr_hostname + ':' + solr_port + '/solr/' + core + '/select?q.op=OR&indent=true' + query_parameter + '&wt=json' + sort_parameter + country_parameter + year_parameter + page_parameter + '&facet.field=country&facet.field=year&facet.sort=count&facet.mincount=1&facet=true'
 
     output = solr_search(solrurl)
 

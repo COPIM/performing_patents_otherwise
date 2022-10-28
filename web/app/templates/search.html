@@ -10,6 +10,13 @@
   </div>
 </div>
 
+<div class="text-center">
+  <p>showing {{ page_range }} results of {{ num_found }} found{% if query is not none %} for query '{{ query }}'{% endif %}</p>
+  {% for page_number in pagination %}
+    <a {% if page_number|int == page|int %}class="fs-4"{% endif %} href="{{ url_for('search.basic_search', query=query, sort=sort, country=country, year=year, page=page_number) }}">{{ page_number }}</a>
+  {% endfor %}
+</div>
+
 <div class="row p-3">
   <form action="{{ url_for('search.basic_search') }}" method="POST">
     <input type="hidden" name="query" value="{{ query }}">

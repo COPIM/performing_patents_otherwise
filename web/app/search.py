@@ -10,6 +10,7 @@ from flask import Blueprint, render_template, request, redirect, url_for
 from . import solr
 from . import ops
 import pycountry
+import math
 
 search = Blueprint('search', __name__)
 
@@ -37,6 +38,10 @@ def basic_search():
             year = request.form.get('year')
         else:
             year = None
+        if request.form.get('page') is not None:
+            page = request.form.get('page')
+        else:
+            page = '1'
     else:
         if request.args.get('query') is not None:
             query = request.args.get('query')
@@ -58,10 +63,14 @@ def basic_search():
             year = request.args.get('year')
         else:
             year = None
+        if request.args.get('page') is not None:
+            page = request.args.get('page')
+        else:
+            page = '1'
     if (query is None and country is None and year is None):
         return redirect(url_for('main.index'))
     else:
-        search_results = solr.query_search(core, sort, query, country, year)
+        search_results = solr.query_search(core, sort, query, country, year, page)
         results = search_results[0]
         num_found = search_results[1]
         year_facet = search_results[2]['year']
@@ -75,8 +84,26 @@ def basic_search():
                     country_full = pycountry.historic_countries.get(alpha_2=country_facet[i])
                     if country_full is not None:
                         country_facet[i] = country_full
+        # get total number of records
         total_number = solr.get_total_number(core)
-        return render_template('search.html', results=results, num_found=num_found, total_number=total_number, country_facet=country_facet, year_facet=year_facet, query=query, core=core, sort=sort, country=country, year=year)
+        # work out how many pages to display in the pagination
+        num_pages = math.ceil(int(num_found) / 10)
+        raw_pagination = list(range(1, num_pages+1))
+        if int(page) > 5:
+            pagination = raw_pagination[int(page)-5:int(page)+4]
+            #pagination.insert(0,raw_pagination[0])
+            #pagination.append(raw_pagination[len(raw_pagination)-1])
+        else:
+            end = 9-int(page)
+            pagination = raw_pagination[:int(page)+end]
+            #pagination.insert(0,raw_pagination[0])
+            #pagination.append(raw_pagination[len(raw_pagination)-1])
+        # work out page range for display
+        page_end = int(page) * 10
+        page_start = page_end - 9
+        page_end = page_start + (len(results)-1)
+        page_range = str(page_start) + '–' + str(page_end)
+        return render_template('search.html', results=results, num_found=num_found, total_number=total_number, country_facet=country_facet, year_facet=year_facet, query=query, core=core, sort=sort, country=country, year=year, page=page, page_range=page_range, pagination=pagination)
 
 # route for id_search page
 @search.route('/search/id/', methods=['GET'])
