@@ -96,6 +96,11 @@ while getopts ":hlimzaespxdw" option; do
         location="data/pop_rtfs/ACTIVE (160)"
         Import
         exit;;
+      d) # index SELF-DEFENDING folder
+        core="defending"
+        location="data/pop_rtfs/SELF-DEFENDING (115)"
+        Import
+        exit;;
       e) # index EXPANDING folder
         core="expanding"
         location="data/pop_rtfs/EXPANDING (169)"
@@ -119,11 +124,6 @@ while getopts ":hlimzaespxdw" option; do
       x) # index SECRET folder
         core="secret"
         location="data/pop_rtfs/SECRET (92)"
-        Import
-        exit;;
-      d) # index SELF-DEFENDING folder
-        core="defending"
-        location="data/pop_rtfs/SELF-DEFENDING (115)"
         Import
         exit;;
       s) # index SURVIVING folder

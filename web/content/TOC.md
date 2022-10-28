@@ -51,15 +51,15 @@
     <span class="code">↪ Searching for a history of women’s clothing inventors, that is in the archive, but hidden in plain sight....</span>
 </span>
 
-- [Expanding citizens](hidden/#expanding "links to hidden section expanding citizens")
-- [Secret citizens](hidden/#secret "links to hidden section secret")
-- [Pissing & leaking citizens](hidden/#pissing "links to hidden section pissing & leaking citizens")
+- [Expanding citizens](/hidden/expanding)
+- [Secret citizens](/hidden/secret)
+- [Pissing & leaking citizens](/hidden/pissing)
 - [Active citizens](/hidden/active)
-- [In/visible citizens](hidden/#visible "links to hidden section in/visible citizens")
-- [Multispecies citizens](hidden/#multispecies "links to hidden section multispecies citizens")
-- [Working citizens](hidden/#working "links to hidden section working citizens")
-- [Self-defending citizens](hidden/#self-defending "links to hidden section self-defending citizens")
-- [Surviving citizens](hidden/#surviving "links to hidden section surviving citizens")
+- [In/visible citizens](/hidden/visible)
+- [Multispecies citizens](/hidden/multispecies)
+- [Working citizens](/hidden/working)
+- [Self-defending citizens](/hidden/defending)
+- [Surviving citizens](/hidden/surviving)
 
 ### Section 4: Off the record
 <span class="info" style="display: none;">
