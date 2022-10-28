@@ -32,12 +32,12 @@ Help()
    echo "h     Print this Help."
    echo "z     Index all."
    echo "a     Index ACTIVE folder."
+   echo "d     Index SELF-DEFENDING folder."
    echo "e     Index EXPANDING folder."
    echo "i     Index INVISIBLE folder."
    echo "m     Index MULTI-SPECIES folder."
    echo "p     Index PISSING & LEAKING folder."
    echo "x     Index SECRET folder."
-   echo "d     Index SELF-DEFENDING folder."
    echo "s     Index SURVIVING folder."
    echo "w     Index WORKING folder."
    echo
