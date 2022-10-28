@@ -42,7 +42,7 @@
 - [A handful of fragments](/interventions/fragments)
 - [A scattering of images](/interventions/scattering)
 - [A random entry](/interventions/random)
-- [A juxtaposition of two](interventions/juxtaposition)
+- [A juxtaposition of two](/interventions/juxtaposition)
 - [A timeline of inventions](interventions/#timeline "links to interventions section timeline of inverntions)
 
 
