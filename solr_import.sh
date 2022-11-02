@@ -8,7 +8,7 @@
 # https://www.redhat.com/sysadmin/arguments-options-bash-scripts
 
 ############################################################
-# Subprograms                                              #
+# subprograms                                              #
 ############################################################
 License()
 {
@@ -64,14 +64,20 @@ Import_recursive()
 }
 ############################################################
 ############################################################
-# Main program                                             #
+# main program                                             #
 ############################################################
 ############################################################
 
-# Set variables
+# set variables
 directory="/Users/ad7588/projects/patent_site_python"
 
-# Get the options
+# error message for no flags
+if (( $# == 0 )); then
+    Help
+    exit 1
+fi
+
+# get the options
 while getopts ":hlimzaespxdw" option; do
    case $option in
       l) # display License
@@ -137,7 +143,7 @@ while getopts ":hlimzaespxdw" option; do
         Import
         exit;;
       \?) # Invalid option
-        echo "Error: Invalid option"
+        Help
         exit;;
    esac
 done
