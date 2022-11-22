@@ -1,0 +1,5 @@
+# Search (Hidden in plain sight)
+
+The research team of the ERC funded Politics of Patentproject assembled this dataset, searching for a lesser-known history of women’s clothing inventors. Using mixed quantitative and qualitive methods we identifiedsix themesthat offer insights into how inventors have used new forms of clothing to resist, interrupt or creative break from conventional norms and make claims to rights and freedoms women and other marginalised people have otherwise been denied. 
+
+This research explores connections between citizens and clothing. More specifically, we are interested in understanding how inventors have created new forms of clothing that resist, subvertor disrupt social and political norms and beliefs, and in the process, bring new expressions of citizenship into being. Central to this project is the idea that clothing inventors can be explored as citizen-makers and that clothing patents are rich untapped sources of data that render visible alternativecitizenship possibilities, which may in turn provoke new questions about things we take for granted.

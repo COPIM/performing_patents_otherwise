@@ -52,14 +52,11 @@
 </span>
 
 - [Expanding citizens](/hidden/expanding)
-- [Secret citizens](/hidden/secret)
-- [Pissing & leaking citizens](/hidden/pissing)
 - [Active citizens](/hidden/active)
-- [In/visible citizens](/hidden/invisible)
-- [Multispecies citizens](/hidden/multispecies)
+- [Secret citizens](/hidden/secret)
+- [Pissing & leaking citizens](/hidden/leaking)
 - [Working citizens](/hidden/working)
-- [Self-defending citizens](/hidden/defending)
-- [Surviving citizens](/hidden/surviving)
+- [Resourceful citizens](/hidden/resourceful)
 
 ### Section 4: Off the record
 <span class="info" style="display: none;">

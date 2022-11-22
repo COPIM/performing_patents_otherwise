@@ -26,20 +26,19 @@ Help()
    # Display Help
    echo "This script performs Solr import functions for different cores."
    echo
-   echo "Syntax: solr_import.sh [-l|h|z|a|e|i|m|p|x|d|s|w]"
+   echo "Syntax: solr_import.sh [-l|h|z|e|a|x|d|p|w|r|t]"
    echo "options:"
    echo "l     Print the MIT License notification."
    echo "h     Print this Help."
    echo "z     Index all."
-   echo "a     Index ACTIVE folder."
-   echo "d     Index SELF-DEFENDING folder."
    echo "e     Index EXPANDING folder."
-   echo "i     Index INVISIBLE folder."
-   echo "m     Index MULTI-SPECIES folder."
-   echo "p     Index PISSING & LEAKING folder."
+   echo "a     Index ACTIVE folder."
    echo "x     Index SECRET folder."
-   echo "s     Index SURVIVING folder."
+   echo "d     Index SELF-DEFENDING folder."
+   echo "p     Index LEAKING folder."
    echo "w     Index WORKING folder."
+   echo "r     Index RESOURCEFUL folder."
+   echo "t     Index all themes folders."
    echo
 }
 
@@ -78,7 +77,7 @@ if (( $# == 0 )); then
 fi
 
 # get the options
-while getopts ":hlimzaespxdw" option; do
+while getopts ":lhzeaxdpwrt" option; do
    case $option in
       l) # display License
         License
@@ -97,34 +96,14 @@ while getopts ":hlimzaespxdw" option; do
             Import_recursive
           done
         exit;;
-      a) # index ACTIVE folder
-        core="active"
-        location="data/pop_rtfs/ACTIVE (160)"
-        Import
-        exit;;
-      d) # index SELF-DEFENDING folder
-        core="defending"
-        location="data/pop_rtfs/SELF-DEFENDING (115)"
-        Import
-        exit;;
       e) # index EXPANDING folder
         core="expanding"
         location="data/pop_rtfs/EXPANDING (169)"
         Import
         exit;;
-      i) # index INVISIBLE folder
-        core="invisible"
-        location="data/pop_rtfs/IN.VISIBLE (204)"
-        Import
-        exit;;
-      m) # index MULTI-SPECIES folder
-        core="multispecies"
-        location="data/pop_rtfs/MULTI-SPECIES (180)"
-        Import
-        exit;;
-      p) # index PISSING & LEAKING folder
-        core="pissing"
-        location="data/pop_rtfs/PISSING & LEAKING (168)"
+      a) # index ACTIVE folder
+        core="active"
+        location="data/pop_rtfs/ACTIVE (160)"
         Import
         exit;;
       x) # index SECRET folder
@@ -132,14 +111,39 @@ while getopts ":hlimzaespxdw" option; do
         location="data/pop_rtfs/SECRET (92)"
         Import
         exit;;
-      s) # index SURVIVING folder
-        core="surviving"
-        location="data/pop_rtfs/SURVIVING (166)"
+      p) # index LEAKING folder
+        core="leaking"
+        location="data/pop_rtfs/LEAKING (168)"
         Import
         exit;;
       w) # index WORKING folder
         core="working"
         location="data/pop_rtfs/WORKING (101)"
+        Import
+        exit;;
+      r) # index RESOURCEFUL folder
+        core="resourceful"
+        location="data/pop_rtfs/RESOURCEFUL (166)"
+        Import
+        exit;;
+      t) # index all themes folders
+        core="expanding"
+        location="data/pop_rtfs/EXPANDING (169)"
+        Import
+        core="active"
+        location="data/pop_rtfs/ACTIVE (160)"
+        Import
+        core="secret"
+        location="data/pop_rtfs/SECRET (92)"
+        Import
+        core="leaking"
+        location="data/pop_rtfs/LEAKING (168)"
+        Import
+        core="working"
+        location="data/pop_rtfs/WORKING (101)"
+        Import
+        core="resourceful"
+        location="data/pop_rtfs/RESOURCEFUL (166)"
         Import
         exit;;
       \?) # Invalid option
