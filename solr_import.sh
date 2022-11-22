@@ -54,12 +54,12 @@ Import()
 
   sleep 30
 
-  docker run --rm -v "$directory/$location:/$core" --network=host solr:8.11.1 post -c $core /$core
+  docker run --rm -v "$main_directory/$location:/$core" --network=host solr:8.11.1 post -c $core /$core
 }
 
 Import_recursive()
 {
-  docker run --rm -v "$directory/$subdirectory:/$core" --network=host solr:8.11.1 post -c $core /$core
+  docker run --rm -v "$main_directory/$subdirectory:/$core" --network=host solr:8.11.1 post -c $core /$core
 }
 ############################################################
 ############################################################
@@ -68,7 +68,13 @@ Import_recursive()
 ############################################################
 
 # set variables
-directory="/Users/ad7588/projects/patent_site_python"
+main_directory="/Users/ad7588/projects/patent_site_python"
+expanding_directory="data/pop_rtfs/EXPANDING (169)"
+active_directory="data/pop_rtfs/ACTIVE (160)"
+secret_directory="data/pop_rtfs/SECRET (92)"
+leaking_directory="data/pop_rtfs/LEAKING (168)"
+working_directory="data/pop_rtfs/WORKING (101)"
+resourceful_directory="data/pop_rtfs/RESOURCEFUL (166)"
 
 # error message for no flags
 if (( $# == 0 )); then
@@ -98,52 +104,52 @@ while getopts ":lhzeaxdpwrt" option; do
         exit;;
       e) # index EXPANDING folder
         core="expanding"
-        location="data/pop_rtfs/EXPANDING (169)"
+        location=$expanding_directory
         Import
         exit;;
       a) # index ACTIVE folder
         core="active"
-        location="data/pop_rtfs/ACTIVE (160)"
+        location=$active_directory
         Import
         exit;;
       x) # index SECRET folder
         core="secret"
-        location="data/pop_rtfs/SECRET (92)"
+        location=$secret_directory
         Import
         exit;;
       p) # index LEAKING folder
         core="leaking"
-        location="data/pop_rtfs/LEAKING (168)"
+        location=$leaking_directory
         Import
         exit;;
       w) # index WORKING folder
         core="working"
-        location="data/pop_rtfs/WORKING (101)"
+        location=$working_directory
         Import
         exit;;
       r) # index RESOURCEFUL folder
         core="resourceful"
-        location="data/pop_rtfs/RESOURCEFUL (166)"
+        location=$resourceful_directory
         Import
         exit;;
       t) # index all themes folders
         core="expanding"
-        location="data/pop_rtfs/EXPANDING (169)"
+        location=$expanding_directory
         Import
         core="active"
-        location="data/pop_rtfs/ACTIVE (160)"
+        location=$active_directory
         Import
         core="secret"
-        location="data/pop_rtfs/SECRET (92)"
+        location=$secret_directory
         Import
         core="leaking"
-        location="data/pop_rtfs/LEAKING (168)"
+        location=$leaking_directory
         Import
         core="working"
-        location="data/pop_rtfs/WORKING (101)"
+        location=$working_directory
         Import
         core="resourceful"
-        location="data/pop_rtfs/RESOURCEFUL (166)"
+        location=$resourceful_directory
         Import
         exit;;
       \?) # Invalid option
