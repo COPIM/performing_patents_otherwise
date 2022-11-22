@@ -21,31 +21,34 @@ solr_port = os.environ.get('SOLR_PORT')
 def solr_search(solrurl):
     # get result
     request = requests.get(solrurl)
-    # turn the API response into useful Json
-    json = request.json()
-
-    num_found = json['response']['numFound']
-    facets = []
-
-    if (num_found == 0):
-        output = 'no results found'
+    if request.status_code != 200:
+        error = "Solr error: " + str(request.text)
+        return error
     else:
-        output = []
-        for result in json['response']['docs']:
-            # set ID variable
-            id = result['id']
-            # set content variable
-            content = result['content']
-            # parse result
-            result_output = parse_result(id, content)
-            output.append(result_output)
-        try:
-            json['facet_counts']
-            facets = json['facet_counts']['facet_fields']
-        except KeyError:
-            pass
+        # turn the API response into useful Json
+        json = request.json()
 
-    return output, num_found, facets
+        num_found = json['response']['numFound']
+        facets = []
+
+        if (num_found == 0):
+            output = 'no results found'
+        else:
+            output = []
+            for result in json['response']['docs']:
+                # set ID variable
+                id = result['id']
+                # set content variable
+                content = result['content']
+                # parse result
+                result_output = parse_result(id, content)
+                output.append(result_output)
+            try:
+                json['facet_counts']
+                facets = json['facet_counts']['facet_fields']
+            except KeyError:
+                pass
+        return output, num_found, facets
 
 def query_search(core, sort, query, country, year, page):
 
@@ -183,11 +186,16 @@ def get_number_random_records(core, number):
     i = 0
     while i <= number-1:
         search_results = random_search(core)
-        results = search_results[0]
-        for result in results:
-            results_list.append(result)
-        i += 1
+        if "error" not in search_results:
+            results = search_results[0]
+            for result in results:
+                results_list.append(result)
+            i += 1
+        else:
+            results_list = search_results
+            break
     return results_list
+
 
 def get_ten_random_elements(field):
     core = 'all'
