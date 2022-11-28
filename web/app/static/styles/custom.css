@@ -94,7 +94,7 @@ body {
 h1, .h1 {
     font-family: var(--title-font) !important;
     font-size: var(--title-fontsize) !important;
-    -webkit-text-stroke-width: 0.09rem;
+    -webkit-text-stroke-width: 0.08rem;
     -webkit-text-stroke-color: black;
     letter-spacing: -0.15rem;
 }
@@ -119,6 +119,8 @@ p {
 
 .contrast {
     color: var(--color-lightyellow) !important;
+    -webkit-text-stroke-width: 0.08rem;
+    -webkit-text-stroke-color: var(--color-lightyellow) !important;
 }
 
 /* overwrite */
@@ -380,6 +382,66 @@ canvas > * {
 .anchordata a {
     text-decoration: none;
     border-bottom: 0.20rem var(--color-lightyellow) solid;
+}
+
+/* THEMES */
+
+.themes {
+    margin: 0% 20%;
+}
+
+.themes p {
+    margin: 2rem 0rem;
+}
+
+.allThemes {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.allThemes a {
+    text-decoration: none;
+    padding: 3rem 1rem;
+    margin: 2rem 0rem;
+    border-radius: 10rem;
+    background-color: var(--color-lightyellow);
+}
+.allThemes a:hover {
+    background-color: var(--color-light-gray);
+}
+
+.themeResults {
+    margin: 2rem 0rem;
+    width: 100%;
+    display: grid;
+    grid-column-gap: 0px;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+}
+
+.eachthemeResult {
+    text-align: center;
+    margin: 0.5rem 0rem;
+    padding: 1rem;
+    border-radius: 50rem;
+    background-color: var(--color-lightyellow);
+}
+
+.eachthemeResult a {
+    text-decoration: none;
+}
+
+.eachthemeResult p {
+    margin: 0rem !important;
+}
+
+.eachthemeResult:nth-child(even) {
+    margin: 0.5rem 0.5rem;
+}
+
+.eachthemeResult:hover {
+    background-color: var(--color-light-gray);
 }
 
 /***************** MOBILE ****************/

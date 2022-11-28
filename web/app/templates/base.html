@@ -36,20 +36,12 @@
 {% endblock %}
 
   <main class="flex-shrink-0">
-    <div class="container-fluid p-5 mb-5">
-
+      <div class="container-fluid p-5 mb-5">
           {% block content %}
           {% endblock %}
-
       </div>
-    </main>
-
-    <footer class="footer py-3 mt-auto bg-light">
-        <div class="container">
-            <span class="text-muted">Data from the <a href="https://www.epo.org/">European Patent Office's</a> <a href="https://worldwide.espacenet.com/">Espacenet patent search engine</a> and reconfigured by Goldsmiths, University of London's Archival Conversations project.</span>
-        </div>
-    </footer>
-
+  </main>
+  {% block footer %}
+  {% endblock %}
 </body>
-
 </html>

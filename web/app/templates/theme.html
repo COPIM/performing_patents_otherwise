@@ -2,9 +2,11 @@
 
 {% block content %}
 
-{{ text|safe }}
+<a href="/contents/" class="arrow-back h1 text-left" title="back to index"> ⇽ </a>
 
-<hr>
+<div class="themes">
+
+{{ text|safe }}
 
 {% if 'error' in results %}
 
@@ -12,9 +14,14 @@
 
 {% else %}
 
+<div class="themeResults">
+
   {% for result in results %}
 
-    <p class="h1">
+  <div class="eachthemeResult">
+  <a href="{{ url_for('search.id_search', id=result['id'], core=core) }}">
+
+    <p class="">
 
     Year:
 
@@ -23,7 +30,7 @@
     </p>
 
     {% if result['title'] is defined %}
-    <p class="mb-2 mt-5">
+    <p class="">
       <span class="emphasis">Title:</span>
       <span class="result-entry">
         {{ result['title'] }}
@@ -32,7 +39,7 @@
     {% endif %}
 
     {% if result['country'] is defined %}
-    <p class="mb-2">
+    <p class="">
       <span class="emphasis">Country:</span>
       {% if result['country'].name is defined %}
         {{ result['country'].name }} {{ result['country'].flag }}
@@ -43,27 +50,31 @@
     {% endif %}
 
     {% if result['abstract'] is defined %}
-    <p class="mb-2">
+    <!-- <p class="mb-2">
       <span class="emphasis">Abstract:</span>
       <span class="result-entry">
         {{ result['abstract'] }}
       </span>
-    </p>
+    </p> -->
     {% endif %}
 
-    <div class="mt-2 mb-5 search-links">
+    <!-- <div class="search-links">
       <p>
-        <span class="emphasis">European Patent Office PDF:</span>
-        <a href="{{ url_for('search.id_search', id=result['id'], core='all') }}">
+        <span class="emphasis">Link:</span>
           <span class="result-entry">
             {{ result['application_id'] }}
           </span>
-        </a>
       </p>
-    </div>
+    </div>  -->
 
+  </a>
+  </div>
   {% endfor %}
 
+</div>
+
 {% endif %}
+
+</div>
 
 {% endblock %}

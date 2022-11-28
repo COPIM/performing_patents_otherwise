@@ -22,65 +22,71 @@ def index():
 # route for expanding theme page
 @hidden.route('/hidden/expanding/')
 def expanding():
+    core = 'expanding'
     with open('content/section_3/expanding.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
 
-    results = solr.get_number_random_records('expanding', 10)
+    results = solr.get_number_random_records(core, 10)
 
-    return render_template('theme.html', text=text, results=results)
+    return render_template('theme.html', text=text, results=results, core=core)
 
 # route for active theme page
 @hidden.route('/hidden/active/')
 def active():
+    core = 'active'
     with open('content/section_3/active.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
 
-    results = solr.get_number_random_records('active', 10)
+    results = solr.get_number_random_records(core, 10)
 
-    return render_template('theme.html', text=text, results=results)
+    return render_template('theme.html', text=text, results=results, core=core)
 
 # route for secret theme page
 @hidden.route('/hidden/secret/')
 def secret():
+    core = 'secret'
     with open('content/section_3/secret.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
 
-    results = solr.get_number_random_records('secret', 10)
+    results = solr.get_number_random_records(core, 10)
 
-    return render_template('theme.html', text=text, results=results)
+    return render_template('theme.html', text=text, results=results, core=core)
 
 # route for leaking theme page
 @hidden.route('/hidden/leaking/')
 def leaking():
+    core = 'leaking'
     with open('content/section_3/leaking.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
 
-    results = solr.get_number_random_records('leaking', 10)
+    results = solr.get_number_random_records(core, 10)
 
-    return render_template('theme.html', text=text, results=results)
+    return render_template('theme.html', text=text, results=results, core=core)
 
 # route for working theme page
 @hidden.route('/hidden/working/')
 def working():
+    core = 'working'
     with open('content/section_3/working.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
 
-    results = solr.get_number_random_records('working', 10)
+    results = solr.get_number_random_records(core, 10)
 
-    return render_template('theme.html', text=text, results=results)
+    return render_template('theme.html', text=text, results=results, core=core)
 
 # route for resourceful theme page
 @hidden.route('/hidden/resourceful/')
 def resourceful():
+    core = 'resourceful'
     with open('content/section_3/resourceful.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
 
-    results = solr.get_number_random_records('resourceful', 10)
+    results = solr.get_number_random_records(core, 10)
 
-    return render_template('theme.html', text=text, results=results)
+    return render_template('theme.html', text=text, results=results, core=core)

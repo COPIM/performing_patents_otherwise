@@ -7,7 +7,7 @@
   <!-- 👁 ⓘ ⅈ  ✍  ⁐ -->
 </div>
 
-<div class="index-row button-search random-interferences">
+<div class="index-row button-search random-interferences mt-5">
   <div class="col text-center p-2">
     <!-- random titles -->
     <a href="{{ url_for('interventions.ten_random_titles') }}">a poetics of titles</a>
@@ -90,7 +90,7 @@
   </div>
 
 
-  <div class="col text-center button-search button-hidden-off p-2">
+  <div class="col text-center button-search button-hidden-off p-2 mb-5">
     <a href="">off the record</a>
 
       <div class="info" style="display: none;">
@@ -99,10 +99,12 @@
   </div>
 </div>
 
-<div>
-  <p class="about-text">Performing Patents Otherwise is a search engine, a dataset and a series of interferences in searching 320.000 clothing patents. Searching is a creative act. Search engines expose some parts of the archive, obscure others, and can even render visible what’s not in the archive. Performing Patents Otherwise queries patent data, and the search categories and techniques that make this data sort-, relate- and knowable.
-  <a href="about">Continue reading...</a>
-  </p>
-</div>
-
 {% endblock %}
+
+{% block footer %}
+<footer class="footer mt-5 py-3 bg-light">
+  <div class="container">
+      <span class="text-muted">Data from the <a href="https://www.epo.org/">European Patent Office's</a> <a href="https://worldwide.espacenet.com/">Espacenet patent search engine</a> and reconfigured by Goldsmiths, University of London's Archival Conversations project.</span>
+   </div>
+</footer>
+{% endblock%}
