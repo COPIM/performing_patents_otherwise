@@ -10,7 +10,10 @@ import markdown
 
 offrecord = Blueprint('offrecord', __name__)
 
-# route for off the record page
+# route for Martha Gowans page
 @offrecord.route('/offrecord/')
 def index():
-    return render_template('index.html')
+    with open('content/section_4/I-Martha-gowans.md', 'r') as f:
+        text = f.read()
+        text = markdown.markdown(text)
+    return render_template('text.html', text=text)
