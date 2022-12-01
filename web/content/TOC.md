@@ -23,12 +23,10 @@
 - [Partners](/frontmatter/#partners "links to frontmatter section partners")
 - [Contributors](/frontmatter/#contributors "links to frontmatter section contributors")
 
-### Foreword
+### [Foreword](/foreword)
 <span class="info" style="display: none;">
     <span class="code">↪ add intro text to foreword here...</span>
 </span>
-
-- [Foreword](/foreword)
 
 ### Section 1: Searching the archive
 <span class="info" style="display: none;">
@@ -48,7 +46,7 @@
 - [A timeline of inventions](interventions/#timeline "links to interventions section timeline of inventions)
 
 
-###  Section 3: Hidden in plain sight
+###  Section 3: [Hidden in plain sight](/hidden)
 <span class="info" style="display: none;">
     <span class="code">↪ Searching for a history of women’s clothing inventors, that is in the archive, but hidden in plain sight....</span>
 </span>
@@ -60,7 +58,7 @@
 - [Working citizens](/hidden/working)
 - [Resourceful citizens](/hidden/resourceful)
 
-### Section 4: Off the record
+### Section 4: [Off the record](/offrecord)
 <span class="info" style="display: none;">
     <span class="code">↪ Some things are all over the patent archive but never made explicit. Off the record presents three artistic works that render these absent-present realities visible...</span>
 </span>
