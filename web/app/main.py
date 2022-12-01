@@ -23,3 +23,19 @@ def contents():
         text = f.read()
         text = markdown.markdown(text)
     return render_template('text.html', text=text)
+
+# route for foreword page
+@main.route('/foreword/')
+def foreword():
+    with open('content/foreword.md', 'r') as f:
+        text = f.read()
+        text = markdown.markdown(text)
+    return render_template('text.html', text=text)
+
+# route for frontmatter page
+@main.route('/frontmatter/')
+def frontmatter():
+    with open('content/frontmatter.md', 'r') as f:
+        text = f.read()
+        text = markdown.markdown(text)
+    return render_template('text.html', text=text)

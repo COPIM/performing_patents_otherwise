@@ -15,18 +15,20 @@
     <span class="code">↪ add intro text to frontmatter here...</span>
 </span>
 
-- [Publisher: Mattering Press](frontmatter/#publisher "links to frontmatter section publisher")
-- [Copyright](frontmatter/#copyright "links to frontmatter section copyright")
-- [Citation](frontmatter/#citation "links to frontmatter section citation")
-- [Acknowledgments](frontmatter/#acknowledgments "links to frontmatter section acknowledgments")
-- [Funders](frontmatter/#funders "links to frontmatter section funders")
-- [Partners](frontmatter/#partner "links to frontmatter section partners")
-- [Contributors](frontmatter/#contributor "links to frontmatter section contributors")
+- [Publisher: Mattering Press](/frontmatter/#publisher "links to frontmatter section publisher")
+- [Copyright](/frontmatter/#copyright "links to frontmatter section copyright")
+- [Citation](/frontmatter/#citation "links to frontmatter section citation")
+- [Acknowledgements](/frontmatter/#acknowledgements "links to frontmatter section acknowledgements")
+- [Funders](/frontmatter/#funders "links to frontmatter section funders")
+- [Partners](/frontmatter/#partners "links to frontmatter section partners")
+- [Contributors](/frontmatter/#contributors "links to frontmatter section contributors")
 
 ### Foreword
 <span class="info" style="display: none;">
     <span class="code">↪ add intro text to foreword here...</span>
 </span>
+
+- [Foreword](/foreword)
 
 ### Section 1: Searching the archive
 <span class="info" style="display: none;">
@@ -43,7 +45,7 @@
 - [A scattering of images](/interventions/scattering)
 - [A random entry](/interventions/random)
 - [A juxtaposition of two](/interventions/juxtaposition)
-- [A timeline of inventions](interventions/#timeline "links to interventions section timeline of inverntions)
+- [A timeline of inventions](interventions/#timeline "links to interventions section timeline of inventions)
 
 
 ###  Section 3: Hidden in plain sight
@@ -63,17 +65,17 @@
     <span class="code">↪ Some things are all over the patent archive but never made explicit. Off the record presents three artistic works that render these absent-present realities visible...</span>
 </span>
 
-- [I Martha Gowans](/offrecord)
-- [Sewing labour](offrecord/#sewinglabour "links to off section sewing labour")
-- [Performing gender](offrecord/#performinggender "links to off section performing gender")
-- [Colonial traces](offrecord/#colonialtraces "links to off section colonial traces")
+- [I Martha Gowans](/offrecord "links to off the record section")
+- [Sewing labour](offrecord/#sewinglabour "links to off the record section sewing labour")
+- [Performing gender](offrecord/#performinggender "links to off the record section performing gender")
+- [Colonial traces](offrecord/#colonialtraces "links to off the record section colonial traces")
 
 ###  Section 5: Making of
 <span class="info" style="display: none;">
     <span class="code">↪ A series of essays from the makers on the research, methods, tools developed...</span>
 </span>
 
-- [On making search-engine book](making/#search-engine-book "links to making section making search-engine book")
-- [On interface design](/making/interface)
-- [On combining databases and books](/making/databases)
-- [Making of - a collective interview](making/#interview "links to making section collective interview")
+- [On making search-engine book](making/#search-engine-book "links to making-of section on making search-engine book")
+- [On interface design](/making/interface "links to making-of section on interface design")
+- [On combining databases and books](/making/databases "links to making-of section on combining databases and books")
+- [Making of - a collective interview](making/#interview "links to making-of section collective interview")
