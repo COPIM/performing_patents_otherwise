@@ -17,7 +17,7 @@ def index():
     with open('content/section_3/intro-hidden.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
-    return render_template('text.html', text=text)
+    return render_template('hidden.html', text=text)
 
 # route for expanding theme page
 @hidden.route('/hidden/expanding/')

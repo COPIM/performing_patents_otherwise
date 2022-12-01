@@ -390,6 +390,10 @@ canvas > * {
     margin: 0% 20%;
 }
 
+.themes h1 {
+    text-align: center;
+}
+
 .themes p {
     margin: 2rem 0rem;
 }
@@ -442,6 +446,43 @@ canvas > * {
 
 .eachthemeResult:hover {
     background-color: var(--color-light-gray);
+}
+
+/* OFF THE RECORD */
+
+.offtherecord {
+    margin: 0% 20%;
+}
+
+.offtherecord h1 {
+    text-align: center;
+}
+
+.offtherecord p {
+    margin: 2rem 0rem;
+}
+
+.offtherecord img {
+    width: 100%;
+}
+
+.offtherecord h2, .offtherecord h3 {
+    margin: 2rem 0rem;
+    padding: 0rem 1rem;
+}
+
+.offtherecord h2 {
+    font-size: 2.25 rem;
+    background-color: var(--color-lightyellow);
+    border-radius: 0.5rem;
+}
+
+.offtherecord h3   {
+    border-bottom: 0.25rem dashed var(--color-lightyellow);
+}
+
+.offtherecord li {
+    
 }
 
 /***************** MOBILE ****************/

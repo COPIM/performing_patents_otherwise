@@ -16,4 +16,4 @@ def index():
     with open('content/section_4/I-Martha-gowans.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
-    return render_template('text.html', text=text)
+    return render_template('offrecord.html', text=text)
