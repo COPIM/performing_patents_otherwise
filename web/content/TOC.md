@@ -63,6 +63,7 @@
     <span class="code">↪ Some things are all over the patent archive but never made explicit. Off the record presents three artistic works that render these absent-present realities visible...</span>
 </span>
 
+- [I Martha Gowans](/offrecord)
 - [Sewing labour](offrecord/#sewinglabour "links to off section sewing labour")
 - [Performing gender](offrecord/#performinggender "links to off section performing gender")
 - [Colonial traces](offrecord/#colonialtraces "links to off section colonial traces")
@@ -73,6 +74,6 @@
 </span>
 
 - [On making search-engine book](making/#search-engine-book "links to making section making search-engine book")
-- [On interface design](making/#interface "links to making section interface design")
-- [On combining databases and books](making/#databases "links to making section combining databases and books")
+- [On interface design](/making/interface)
+- [On combining databases and books](/making/databases)
 - [Making of - a collective interview](making/#interview "links to making section collective interview")
