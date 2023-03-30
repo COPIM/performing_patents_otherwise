@@ -485,6 +485,40 @@ canvas > * {
     
 }
 
+/* MAKING */
+
+.making {
+    margin: 0% 20%;
+}
+
+.making h1 {
+    text-align: center;
+}
+
+.making p {
+    margin: 2rem 0rem;
+}
+
+.making img {
+    width: 100%;
+}
+
+.making h2, .making h3 {
+    margin: 2rem 0rem;
+    padding: 0rem 1rem;
+}
+
+.making h2 {
+    font-size: 2.25 rem;
+    background-color: var(--color-lightyellow);
+    border-radius: 0.5rem;
+}
+
+.making h3   {
+    border-bottom: 0.25rem dashed var(--color-lightyellow);
+}
+
+
 /***************** MOBILE ****************/
 
 @media screen and (min-width:0px) and (max-width: 768px) {
