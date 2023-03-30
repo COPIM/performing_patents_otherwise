@@ -50,12 +50,12 @@ In transforming this dataset into a book, we looked to many of the features of a
 
 Breeding, Marshall. 2015. ‘Serendipity: The Virtual-Library Experience’. Computers in Libraries 35 (09): 9–11.
 
-Brin, Sergey, and Lawrence Page. 1998. ‘The Anatomy of a Large-Scale Hypertextual Web Search Engine’. Computer Networks and ISDN Systems 30 (1–7): 107–17. https://doi.org/10.1016/S0169-7552(98)00110-X.
+Brin, Sergey, and Lawrence Page. 1998. ‘The Anatomy of a Large-Scale Hypertextual Web Search Engine’. Computer Networks and ISDN Systems 30 (1–7): 107–17. [https://doi.org/10.1016/S0169-7552(98)00110-X](https://doi.org/10.1016/S0169-7552(98)00110-X).
 
-Codd, E. F. 1970. ‘A Relational Model of Data for Large Shared Data Banks’. Communications of the ACM 13 (6): 377–87. https://doi.org/10.1145/362384.362685.
+Codd, E. F. 1970. ‘A Relational Model of Data for Large Shared Data Banks’. Communications of the ACM 13 (6): 377–87. [https://doi.org/10.1145/362384.362685](https://doi.org/10.1145/362384.362685).
 
-Herzstein, Erin. 2021. ‘How Do Computers Generate Random Numbers?’ Medium. 30 January 2021. https://levelup.gitconnected.com/how-do-computers-generate-random-numbers-a72be65877f6.
+Herzstein, Erin. 2021. ‘How Do Computers Generate Random Numbers?’ Medium. 30 January 2021. [https://levelup.gitconnected.com/how-do-computers-generate-random-numbers-a72be65877f6](https://levelup.gitconnected.com/how-do-computers-generate-random-numbers-a72be65877f6).
 
 Kline, Kevin, Lee Gould, and Andrew Zanevsky. 1999. Transact-SQL Programming: Covers Microsoft SQL Server 6.5 /7.0 and Sybase Adaptive Server 11.5. O’Reilly Media, Inc.
 
-Kubica, Chris. 2010. ‘Your Book as a Database: A Primer’. Publishing Perspectives (blog). 10 June 2010. https://publishingperspectives.com/2010/06/your-book-as-a-database-a-primer/.
+Kubica, Chris. 2010. ‘Your Book as a Database: A Primer’. Publishing Perspectives (blog). 10 June 2010. [https://publishingperspectives.com/2010/06/your-book-as-a-database-a-primer/](https://publishingperspectives.com/2010/06/your-book-as-a-database-a-primer/).
