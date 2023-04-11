@@ -24,10 +24,10 @@ def contents():
         text = markdown.markdown(text)
     return render_template('text.html', text=text)
 
-# route for foreword page
-@main.route('/foreword/')
+# route for introduction page
+@main.route('/introduction/')
 def foreword():
-    with open('content/foreword.md', 'r') as f:
+    with open('content/introduction.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
     return render_template('text.html', text=text)

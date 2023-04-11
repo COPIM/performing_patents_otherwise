@@ -448,40 +448,40 @@ canvas > * {
     background-color: var(--color-light-gray);
 }
 
-/* OFF THE RECORD */
+/* CONVERSATIONS */
 
-.offtherecord {
+.conversations {
     margin: 0% 20%;
 }
 
-.offtherecord h1 {
+.conversations h1 {
     text-align: center;
 }
 
-.offtherecord p {
+.conversations p {
     margin: 2rem 0rem;
 }
 
-.offtherecord img {
+.conversations img {
     width: 100%;
 }
 
-.offtherecord h2, .offtherecord h3 {
+.conversations h2, .conversations h3 {
     margin: 2rem 0rem;
     padding: 0rem 1rem;
 }
 
-.offtherecord h2 {
+.conversations h2 {
     font-size: 2.25 rem;
     background-color: var(--color-lightyellow);
     border-radius: 0.5rem;
 }
 
-.offtherecord h3   {
+.conversations h3   {
     border-bottom: 0.25rem dashed var(--color-lightyellow);
 }
 
-.offtherecord li {
+.conversations li {
     
 }
 

@@ -2,7 +2,7 @@
 # @creation_date: 2022-10-27
 # @license: The MIT License <https://opensource.org/licenses/MIT>
 # @author: Simon Bowie <ad7588@coventry.ac.uk>
-# @purpose: making route for Section 5: Making of
+# @purpose: making route for Section 4: Making of
 # @acknowledgements:
 
 from flask import Blueprint, render_template
@@ -18,15 +18,15 @@ def index():
 # route for interface design essay
 @making.route('/making/interface/')
 def interface():
-    with open('content/section_5/on-interface-design.md', 'r') as f:
+    with open('content/section_4/on-interface-design.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
     return render_template('making.html', text=text)
 
 # route for databases essay
-@making.route('/making/databases/')
+@making.route('/making/search-engine-book/')
 def databases():
-    with open('content/section_5/on-combining-databases-and-books.md', 'r') as f:
+    with open('content/section_4/on-combining-databases-and-books.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
     return render_template('making.html', text=text)

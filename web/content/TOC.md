@@ -15,38 +15,25 @@
     <span class="code">↪ add intro text to frontmatter here...</span>
 </span>
 
-- [Publisher: Mattering Press](/frontmatter/#publisher "links to frontmatter section publisher")
-- [Copyright](/frontmatter/#copyright "links to frontmatter section copyright")
-- [Citation](/frontmatter/#citation "links to frontmatter section citation")
-- [Acknowledgements](/frontmatter/#acknowledgements "links to frontmatter section acknowledgements")
-- [Funders](/frontmatter/#funders "links to frontmatter section funders")
-- [Partners](/frontmatter/#partners "links to frontmatter section partners")
-- [Contributors](/frontmatter/#contributors "links to frontmatter section contributors")
-
-### [Foreword](/foreword)
+### [Introduction](/introduction)
 <span class="info" style="display: none;">
     <span class="code">↪ add intro text to foreword here...</span>
 </span>
 
-### Section 1: Searching the archive
-<span class="info" style="display: none;">
-    <span class="code">↪ Main search via keywords...</span>
-</span>
-
-### Section 2: Search Interventions
+### Section 1: Archive Interventions
 <span class="info" style="display: none;">
     <span class="code">↪ Interventions are a mode of search, they disrupt ordering and invite unexpected readings....</span>
 </span>
 
+- [A search engine](/)
 - [A poetics of titles](/interventions/titles)
 - [A handful of fragments](/interventions/fragments)
 - [A scattering of images](/interventions/scattering)
 - [A random entry](/interventions/random)
 - [A juxtaposition of two](/interventions/juxtaposition)
-- [A timeline of inventions](interventions/#timeline "links to interventions section timeline of inventions)
+- [Mapping the archive](/data)
 
-
-###  Section 3: [Hidden in plain sight](/hidden)
+###  Section 2: [Hidden in plain sight](/hidden)
 <span class="info" style="display: none;">
     <span class="code">↪ Searching for a history of women’s clothing inventors, that is in the archive, but hidden in plain sight....</span>
 </span>
@@ -58,22 +45,21 @@
 - [Working citizens](/hidden/working)
 - [Resourceful citizens](/hidden/resourceful)
 
-### Section 4: [Off the record](/offrecord)
+### Section 3: [Archive conversations](/conversations)
 <span class="info" style="display: none;">
-    <span class="code">↪ Some things are all over the patent archive but never made explicit. Off the record presents three artistic works that render these absent-present realities visible...</span>
+    <span class="code">↪ Some things are all over the patent archive but never made explicit. Off the record presents four artistic works that render these absent-present realities visible...</span>
 </span>
 
-- [I Martha Gowans](/offrecord "links to off the record section")
-- [Sewing labour](offrecord/#sewinglabour "links to off the record section sewing labour")
-- [Performing gender](offrecord/#performinggender "links to off the record section performing gender")
-- [Colonial traces](offrecord/#colonialtraces "links to off the record section colonial traces")
+- [Sewing the archive](/conversations/#sewingthearchive)
+- [I Martha Gowans](/conversations "links to conversations section")
+- [Caribbean Quilt](/conversations/#caribbeanquilt)
+- [Women On The Move](/conversations/#womenonthemove)
 
-###  Section 5: Making of
+###  Section 4: Making of
 <span class="info" style="display: none;">
     <span class="code">↪ A series of essays from the makers on the research, methods, tools developed...</span>
 </span>
 
-- [On making search-engine book](making/#search-engine-book "links to making-of section on making search-engine book")
-- [On interface design](/making/interface "links to making-of section on interface design")
-- [On combining databases and books](/making/databases "links to making-of section on combining databases and books")
-- [Making of - a collective interview](making/#interview "links to making-of section collective interview")
+- [Making of—a collective interview](/making/#interview "links to making-of section collective interview")
+- [On making the search-engine book](/making/search-engine-book "links to making-of section on making search-engine book")
+- [A note on interface design](/making/interface "links to making-of section on interface design")
