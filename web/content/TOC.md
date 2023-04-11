@@ -35,13 +35,13 @@
 
 ### Section 2: [Archive conversations](/conversations)
 <span class="info" style="display: none;">
-    <span class="code">↪ Some things are all over the patent archive but never made explicit. Off the record presents four artistic works that render these absent-present realities visible...</span>
+    <span class="code">↪ Some things are all over the patent archive but never made explicit. Archive conversations presents four artistic works that render these absent-present realities visible...</span>
 </span>
 
 - [Sewing the archive](/conversations/#sewingthearchive)
-- [I Martha Gowans](/conversations "links to conversations section")
-- [Caribbean Quilt](/conversations/#caribbeanquilt)
-- [Women On The Move](/conversations/#womenonthemove)
+- [I, Martha Gowans](/conversations/martha "links to conversations section")
+- [Caribbean Quilt](/conversations/caribbeanquilt)
+- [Women On The Move](/conversations/womenonthemove)
 
 ###  Section 3: [Making of](/making)
 <span class="info" style="display: none;">
@@ -49,5 +49,5 @@
 </span>
 
 - [Making of—a collective interview](/making/#interview "links to making-of section collective interview")
-- [On making the search-engine book](/making/search-engine-book "links to making-of section on making search-engine book")
+- [On making the search engine book](/making/search-engine-book "links to making-of section on making search-engine book")
 - [A note on interface design](/making/interface "links to making-of section on interface design")
