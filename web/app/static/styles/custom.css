@@ -485,7 +485,7 @@ canvas > * {
     
 }
 
-/* MAKING */
+/* MAKING OF */
 
 .making {
     margin: 0% 20%;
@@ -518,6 +518,15 @@ canvas > * {
     border-bottom: 0.25rem dashed var(--color-lightyellow);
 }
 
+code {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+p code {
+    margin: 1rem 0rem !important;
+}
 
 /***************** MOBILE ****************/
 
