@@ -3,14 +3,14 @@
   <a href="/" class="arrow-back h1 text-left" title="back to index"> ⇽ </a>
 </div>
 
-<h1 class="mt-5"> Table of Content</h1>
+<h1 class="mt-5"> Table of Contents</h1>
 <span class="info" style="display: none;">
-    <span class="code">↪ This website is the home of “Performing Patterns Otherwise.” It is an archive, a website and an experimental electronic book that binds search, archive and writing in one publication. The landing page navigates the publication according to the conventions of a search engine, foregrounding search. The table of content offers a way of navigating that foregrounds texts, which is more in line with the conventions of book making. The  table of content reveals a logic of zooming in, from the general search to more specific configurations of the relationships between search, content, ordering and sense-making.</span>
+    <span class="code">↪ This website is the home of “Performing Patents Otherwise.” It is an archive, a website and an experimental electronic book that binds search, archive and writing in one publication. The landing page navigates the publication according to the conventions of a search engine, foregrounding search. The table of contents offers a way of navigating that foregrounds texts, which is more in line with the conventions of book making. The table of contents reveals a logic of zooming in, from the general search to more specific configurations of the relationships between search, content, ordering and sense-making.</span>
 </span>
 
 <br/>
 
-### Frontmatter
+### [Frontmatter](/frontmatter)
 <span class="info" style="display: none;">
     <span class="code">↪ add intro text to frontmatter here...</span>
 </span>
@@ -20,7 +20,7 @@
     <span class="code">↪ add intro text to foreword here...</span>
 </span>
 
-### Section 1: Archive Interventions
+### Section 1: Archive interventions
 <span class="info" style="display: none;">
     <span class="code">↪ Interventions are a mode of search, they disrupt ordering and invite unexpected readings....</span>
 </span>
@@ -33,19 +33,7 @@
 - [A juxtaposition of two](/interventions/juxtaposition)
 - [Mapping the archive](/data)
 
-###  Section 2: [Hidden in plain sight](/hidden)
-<span class="info" style="display: none;">
-    <span class="code">↪ Searching for a history of women’s clothing inventors, that is in the archive, but hidden in plain sight....</span>
-</span>
-
-- [Expanding citizens](/hidden/expanding)
-- [Active citizens](/hidden/active)
-- [Secret citizens](/hidden/secret)
-- [Pissing & leaking citizens](/hidden/leaking)
-- [Working citizens](/hidden/working)
-- [Resourceful citizens](/hidden/resourceful)
-
-### Section 3: [Archive conversations](/conversations)
+### Section 2: [Archive conversations](/conversations)
 <span class="info" style="display: none;">
     <span class="code">↪ Some things are all over the patent archive but never made explicit. Off the record presents four artistic works that render these absent-present realities visible...</span>
 </span>
@@ -55,7 +43,7 @@
 - [Caribbean Quilt](/conversations/#caribbeanquilt)
 - [Women On The Move](/conversations/#womenonthemove)
 
-###  Section 4: Making of
+###  Section 3: [Making of](/making)
 <span class="info" style="display: none;">
     <span class="code">↪ A series of essays from the makers on the research, methods, tools developed...</span>
 </span>

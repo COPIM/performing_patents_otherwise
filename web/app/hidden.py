@@ -14,7 +14,7 @@ hidden = Blueprint('hidden', __name__)
 # route for hidden page
 @hidden.route('/hidden/')
 def index():
-    with open('content/section_2/intro-hidden.md', 'r') as f:
+    with open('content/hidden/intro-hidden.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
     return render_template('hidden.html', text=text)
@@ -23,7 +23,7 @@ def index():
 @hidden.route('/hidden/expanding/')
 def expanding():
     core = 'expanding'
-    with open('content/section_2/expanding.md', 'r') as f:
+    with open('content/hidden/expanding.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
 
@@ -35,7 +35,7 @@ def expanding():
 @hidden.route('/hidden/active/')
 def active():
     core = 'active'
-    with open('content/section_2/active.md', 'r') as f:
+    with open('content/hidden/active.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
 
@@ -47,7 +47,7 @@ def active():
 @hidden.route('/hidden/secret/')
 def secret():
     core = 'secret'
-    with open('content/section_2/secret.md', 'r') as f:
+    with open('content/hidden/secret.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
 
@@ -59,7 +59,7 @@ def secret():
 @hidden.route('/hidden/leaking/')
 def leaking():
     core = 'leaking'
-    with open('content/section_2/leaking.md', 'r') as f:
+    with open('content/hidden/leaking.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
 
@@ -71,7 +71,7 @@ def leaking():
 @hidden.route('/hidden/working/')
 def working():
     core = 'working'
-    with open('content/section_2/working.md', 'r') as f:
+    with open('content/hidden/working.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
 
@@ -83,7 +83,7 @@ def working():
 @hidden.route('/hidden/resourceful/')
 def resourceful():
     core = 'resourceful'
-    with open('content/section_2/resourceful.md', 'r') as f:
+    with open('content/hidden/resourceful.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
 

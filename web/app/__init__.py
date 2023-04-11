@@ -27,19 +27,19 @@ def create_app():
     from .search import search as search_blueprint
     app.register_blueprint(search_blueprint)
 
-    # blueprint for interventions parts of app (Section 1: Archive Interventions)
+    # blueprint for interventions parts of app (Section 1: Archive interventions)
     from .interventions import interventions as interventions_blueprint
     app.register_blueprint(interventions_blueprint)
 
-    # blueprint for hidden parts of app (Section 2: Hidden in plain sight)
+    # blueprint for hidden parts of app
     from .hidden import hidden as hidden_blueprint
     app.register_blueprint(hidden_blueprint)
 
-    # blueprint for conversations parts of app (Section 3: Archive Conversations)
+    # blueprint for conversations parts of app (Section 2: Archive conversations)
     from .conversations import conversations as conversations_blueprint
     app.register_blueprint(conversations_blueprint)
 
-    # blueprint for making parts of app (Section 4: Making of)
+    # blueprint for making parts of app (Section 3: Making of)
     from .making import making as making_blueprint
     app.register_blueprint(making_blueprint)
 

@@ -2,7 +2,7 @@
 # @creation_date: 2022-10-27
 # @license: The MIT License <https://opensource.org/licenses/MIT>
 # @author: Simon Bowie <ad7588@coventry.ac.uk>
-# @purpose: conversations route for Section 3: Archive Conversations
+# @purpose: conversations route for Section 2: Archive Conversations
 # @acknowledgements:
 
 from flask import Blueprint, render_template
@@ -13,7 +13,13 @@ conversations = Blueprint('conversations', __name__)
 # route for Martha Gowans page
 @conversations.route('/conversations/')
 def index():
-    with open('content/section_3/I-Martha-gowans.md', 'r') as f:
+    with open('content/section_2/conversations.md', 'r') as f:
+        text = f.read()
+        text = markdown.markdown(text)
+    return render_template('conversations.html', text=text)
+
+def martha():
+    with open('content/section_2/I-Martha-gowans.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
     return render_template('conversations.html', text=text)

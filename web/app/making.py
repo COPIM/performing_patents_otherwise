@@ -13,12 +13,15 @@ making = Blueprint('making', __name__)
 # route for making of page
 @making.route('/making/')
 def index():
-    return render_template('index.html')
+    with open('content/section_3/making.md', 'r') as f:
+        text = f.read()
+        text = markdown.markdown(text)
+    return render_template('making.html', text=text)
 
 # route for interface design essay
 @making.route('/making/interface/')
 def interface():
-    with open('content/section_4/on-interface-design.md', 'r') as f:
+    with open('content/section_3/on-interface-design.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
     return render_template('making.html', text=text)
@@ -26,7 +29,7 @@ def interface():
 # route for databases essay
 @making.route('/making/search-engine-book/')
 def databases():
-    with open('content/section_4/on-combining-databases-and-books.md', 'r') as f:
+    with open('content/section_3/on-combining-databases-and-books.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
     return render_template('making.html', text=text)

@@ -2,7 +2,7 @@
 # @creation_date: 2022-09-09
 # @license: The MIT License <https://opensource.org/licenses/MIT>
 # @author: Simon Bowie <ad7588@coventry.ac.uk>
-# @purpose: interventions route for Section 2: Search Interventions
+# @purpose: interventions route for Section 1: Archive interventions
 # @acknowledgements:
 
 from flask import Blueprint, render_template, request
