@@ -8,6 +8,8 @@ The Performing Patents Otherwise publication is a Python application using the [
 
 The application is then made available through the [Gunicorn](https://gunicorn.org/) WSGI HTTP Server and served to the web by [Nginx](https://nginx.org/). 
 
+![diagram of the application architecture](https://github.com/COPIM/politics_of_patents/blob/main/web/app/static/images/patents_site_architecture.png?raw=true)
+
 The search engine is an [Apache Solr](https://solr.apache.org/) 8.11.1 search engine. Solr is a reliable open source search engine that provides full-text search, faceted search, and advanced customisation. Solr is able to index RTF files using [Apache Tika’s](https://tika.apache.org/) framework for extracting metadata and text from a range of document formats. Solr indexes all the patent documents and then presents that index via an API for querying. This is available on port 8983 when running locally. Some Solr config is kept in ./solr_config to perform custom indexing for year and country data.
 
 The application queries the European Patent Office's [Open Patent Services API](https://www.epo.org/searching-for-patents/data/web-services/ops.html) to pull in extra data for each patent such as original language title, original language abstract, and images of the original patents.
