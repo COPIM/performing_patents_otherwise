@@ -67,3 +67,13 @@ Note this fix to ensure that .rtf files can be indexed using Apache Tika: https:
 Add files to Solr using:
 
 `docker run --rm -v "/Users/ad7588/Downloads/2018 (10381):/2018" --network=host solr:latest post -c epo_data /2018`
+
+## credits
+
+Content on the Performing Patents Otherwise site is © 2023 Julien McHardy & Kat Jungnickel with copyright of chapters with their respective authors. The content is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. 
+
+The site's data is from the [European Patent Office](https://www.epo.org/) and reconfigured by Goldsmiths, University of London's [Politics of Patents](https://www.politicsofpatents.org/) research project funded by an [ERC](https://erc.europa.eu/) Consolidator grant.
+
+The site's source code is available at [https://github.com/COPIM/performing_patents_otherwise](https://github.com/COPIM/performing_patents_otherwise) and is licensed under the [MIT License](https://github.com/COPIM/performing_patents_otherwise/blob/main/LICENSE).
+
+The site was developed by [Simon Bowie](https://simonxix.com) and designed by [Joana Chicau](https://joanachicau.com/).
