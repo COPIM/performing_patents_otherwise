@@ -22,7 +22,7 @@ def contents():
     with open('content/TOC.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
-    return render_template('text.html', text=text)
+    return render_template('toc.html', text=text)
 
 # route for introduction page
 @main.route('/introduction/')

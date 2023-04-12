@@ -448,74 +448,41 @@ canvas > * {
     background-color: var(--color-light-gray);
 }
 
-/* CONVERSATIONS */
+/* TEXT PAGES LIKE ARCHIVAL CONVERSATIONS AND MAKING OF */
 
-.conversations {
+.text {
     margin: 0% 20%;
 }
 
-.conversations h1 {
+.text h1 {
     text-align: center;
 }
 
-.conversations p {
+.text p {
     margin: 2rem 0rem;
 }
 
-.conversations img {
+.text img {
     width: 100%;
 }
 
-.conversations h2, .conversations h3 {
+.text h2, .text h3 {
     margin: 2rem 0rem;
     padding: 0rem 1rem;
 }
 
-.conversations h2 {
+.text h2 {
     font-size: 2.25 rem;
     background-color: var(--color-lightyellow);
     border-radius: 0.5rem;
 }
 
-.conversations h3   {
+.text h3   {
     border-bottom: 0.25rem dashed var(--color-lightyellow);
 }
 
-.conversations li {
+.text li {
     
-}
-
-/* MAKING OF */
-
-.making {
-    margin: 0% 20%;
-}
-
-.making h1 {
-    text-align: center;
-}
-
-.making p {
-    margin: 2rem 0rem;
-}
-
-.making img {
-    width: 100%;
-}
-
-.making h2, .making h3 {
-    margin: 2rem 0rem;
-    padding: 0rem 1rem;
-}
-
-.making h2 {
-    font-size: 2.25 rem;
-    background-color: var(--color-lightyellow);
-    border-radius: 0.5rem;
-}
-
-.making h3   {
-    border-bottom: 0.25rem dashed var(--color-lightyellow);
 }
 
 code {

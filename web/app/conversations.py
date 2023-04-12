@@ -23,4 +23,4 @@ def martha():
     with open('content/section_2/I-Martha-gowans.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
-    return render_template('conversations-text.html', text=text)
+    return render_template('text.html', text=text)

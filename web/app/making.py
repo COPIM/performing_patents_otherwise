@@ -24,7 +24,7 @@ def interface():
     with open('content/section_3/on-interface-design.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
-    return render_template('making-text.html', text=text)
+    return render_template('text.html', text=text)
 
 # route for databases essay
 @making.route('/making/search-engine-book/')
@@ -32,4 +32,4 @@ def databases():
     with open('content/section_3/on-combining-databases-and-books.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
-    return render_template('making-text.html', text=text)
+    return render_template('text.html', text=text)
