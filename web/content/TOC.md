@@ -5,24 +5,18 @@
 
 <h1 class="mt-5"> Table of Contents</h1>
 <span class="info" style="display: none;">
-    <span class="code">↪ This website is the home of “Performing Patents Otherwise.” It is an archive, a website and an experimental electronic book that binds search, archive and writing in one publication. The landing page navigates the publication according to the conventions of a search engine, foregrounding search. The table of contents offers a way of navigating that foregrounds texts, which is more in line with the conventions of book making. The table of contents reveals a logic of zooming in, from the general search to more specific configurations of the relationships between search, content, ordering and sense-making.</span>
+    <span class="code">↪ This website is the home of Performing Patents Otherwise. It is an archive, a website and an experimental electronic book that binds search, archive and writing in one publication. The landing page navigates the publication according to the conventions of a search engine, foregrounding search. The table of contents offers a way of navigating that foregrounds texts, which is more in line with the conventions of book making. The table of contents reveals a logic of zooming in, from the general search to more specific configurations of the relationships between search, content, ordering and sense-making.</span>
 </span>
 
 <br/>
 
 ### [Frontmatter](/frontmatter)
-<span class="info" style="display: none;">
-    <span class="code">↪ add intro text to frontmatter here...</span>
-</span>
 
 ### [Introduction](/introduction)
-<span class="info" style="display: none;">
-    <span class="code">↪ add intro text to foreword here...</span>
-</span>
 
-### Section 1: Archive interventions
+### Search interferences
 <span class="info" style="display: none;">
-    <span class="code">↪ Interventions are a mode of search, they disrupt ordering and invite unexpected readings....</span>
+    <span class="code">↪ Search interferences provide ways of searching that offer entry points to the patent archive that are otherwise obscured by the unspoken conventions of search engines.</span>
 </span>
 
 - [A search engine](/)
@@ -33,9 +27,9 @@
 - [A juxtaposition of two](/interventions/juxtaposition)
 - [Mapping the archive](/data)
 
-### Section 2: [Archive conversations](/conversations)
+### [Archive conversations](/conversations)
 <span class="info" style="display: none;">
-    <span class="code">↪ Some things are all over the patent archive but never made explicit. Archive conversations presents four artistic works that render these absent-present realities visible...</span>
+    <span class="code">↪ Archival conversations enter into conversation with the materiality of the patents bringing aspects of the archive to the fore that computational search cannot capture.</span>
 </span>
 
 - [Sewing the archive](/conversations/#sewingthearchive)
@@ -43,9 +37,9 @@
 - [Caribbean Quilt](/conversations/caribbeanquilt)
 - [Women On The Move](/conversations/womenonthemove)
 
-###  Section 3: [Making of](/making)
+###  [Making of](/making)
 <span class="info" style="display: none;">
-    <span class="code">↪ A series of essays from the makers on the research, methods, tools developed...</span>
+    <span class="code">↪ Reflections from the makers of Performing Patents Otherwise.</span>
 </span>
 
 - [Making of—a collective interview](/making/#interview "links to making-of section collective interview")
