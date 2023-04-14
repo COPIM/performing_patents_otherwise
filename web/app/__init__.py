@@ -27,9 +27,9 @@ def create_app():
     from .search import search as search_blueprint
     app.register_blueprint(search_blueprint)
 
-    # blueprint for interventions parts of app (Section 1: Archive interventions)
-    from .interventions import interventions as interventions_blueprint
-    app.register_blueprint(interventions_blueprint)
+    # blueprint for interferences parts of app (Section 1: Search interferences)
+    from .interferences import interferences as interferences_blueprint
+    app.register_blueprint(interferences_blueprint)
 
     # blueprint for hidden parts of app
     from .hidden import hidden as hidden_blueprint

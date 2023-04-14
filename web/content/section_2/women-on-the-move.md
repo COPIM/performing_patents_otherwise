@@ -1,4 +1,4 @@
-# Women on the move
+# Women On The Move
 
 As part of reimagining historical patents project, the Politics of Patents (POP) team, led by Dr Kat Jungnickel, focused on the challenges facing women over time to play sports and live active public lives. They unearthed hundreds of clothing inventions for all kinds of sports and activities in historic patent archives. This data reveals how women and girls have had to creatively and persistently work around barriers to their freedom of movement. Often this required clothing that did more than one thing - enabling them to conform to social norms AND convert into safe and comfortable sportswear. 
 

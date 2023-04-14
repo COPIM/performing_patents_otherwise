@@ -1,4 +1,4 @@
-# Sewing the archive
+# Sewing the Archive
 
 The Politics of Patents research team, under the leadership of Kat Jungnickel at Goldsmith, University of London, is researching global patent archives to reconstruct and reimagine 200 years of wearable technologies, combining big data and in-depth visual & document analysis with ethnography, interviews and practice-research.
 
@@ -6,6 +6,6 @@ The POP lab is a research sewing studio where the team reconstructs historical c
 
 Sewing, reconstructing and reimagining historical clothing patents is one way of entering into an intimate conversation with the materiality of the archive.
 
-This forthcoming chapter 'sewing the archive' will introduce the sewing practices of the POP lab and the archival conversations they facilitate.
+This forthcoming chapter 'Sewing the Archive' will introduce the sewing practices of the POP lab and the archival conversations they facilitate.
 
 ![pop_lab.jpg](/static/images/pop_lab.jpg)
