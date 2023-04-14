@@ -44,4 +44,4 @@
 
 - [Making Of—A Collective Interview](/making/interview "links to making-of section A Collective Interview")
 - [On Combining Databases and Books](/making/database-book "links to making-of section On Combining Databases and Books")
-- [Interface the Archive (WIP)](/making/interface "links to making-of section Interface the Archive")
+- [Interfacing Data](/making/interface "links to making-of section Interfacing Data")
