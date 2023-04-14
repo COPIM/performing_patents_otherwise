@@ -16,7 +16,7 @@ The sewing pattern, in concert with a script that we composed from the original 
 
 *I, Martha Gowans* is an ongoing experiment, that will change every time that it is performed. The video below provides documentation of a three-day performance workshop that took place in the autumn of 2022 at Het Huis in Utrecht.
 
-<iframe src="<https://archive.org/embed/i-martha-gowans>" width="640" height="480" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
+<iframe src="https://archive.org/embed/i-martha-gowans" width="640" height="480" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
 
 Contributors: Julien McHardy, Nahuel Cano, Kat Jungnickel (Concept & Direction), Nahuel Cano (Sound composition), Juan Fernández Gebauer (Camera & Montage), Kat Jungnickel, Julien McHardy (Research), Margo van de Linde (Text collaborator & Voice), Kat Jungnickel, Emma Hoette (Machine operators), Ellen Fowles (Sewing pattern).
 

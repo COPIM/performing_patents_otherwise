@@ -6,7 +6,7 @@ As part of reimagining historical patents project, the Politics of Patents (POP)
 
 The POP team reconstructed a collection of lesser-known costumes spanning 50 years (1890 to 1940) and invited The Adventure Syndicate and Mòr Diversity to try this collection of reconstructed convertible, reversible, multiple, and hidden sports and activewear in the Scottish hills. Together they went running, jumping, hiking, flying, cycling, swimming, hunting, riding horses, catching trains and driving cars, climbing up and rolling down hills and otherwise put these amazing costumes through their paces. Making and wearing this data, and putting it through its paces, offers another way of entering into embodied conversations with the archive.  
 
-<iframe width="560" height="315" src="<https://www.youtube.com/embed/SsS_woEaTeE>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SsS_woEaTeE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 The short film “Women On The Move” was brought to life by Alice Lemkes, Lee Craigie and Philippa Battye of The Adventure Syndicate and Maciek Tomiczek of Oxford Atelier. 
 
