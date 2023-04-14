@@ -4,7 +4,7 @@ Edited by Julien McHardy and Kat Jungnickel.
 
 Interface design and front-end development by Joana Chicau.
 
-Search engine, database, and backend development by Simon Bowie.
+Search engine, database, and back-end development by Simon Bowie.
 
 With contributions by Yemi Awosile, Philippa Battye, Simon Bowie, Nahuel Cano, Joana Chicau, Lee Craigie, Ellen Fowles, Juan Fernández Gebauer, Emma Hoette, Kat Jungnickel, Alice Lemkes, Julien McHardy, Rosalind Sinclair, Maciek Tomiczek and Margo van de Linde.
 
@@ -30,7 +30,7 @@ Read more about the license at [creativecommons.org/licenses/by-nc-sa/4.0/](http
 
 ![by-nc-sa@0.5x.png](/static/images/by-nc-sa%400.5x.png)
 
-The backend code is available on GitHub at [https://github.com/COPIM/performing_patents_otherwise](https://github.com/COPIM/performing_patents_otherwise) and is licensed under the [MIT License](https://github.com/COPIM/performing_patents_otherwise/blob/main/LICENSE).
+The source code is available on GitHub at [https://github.com/COPIM/performing_patents_otherwise](https://github.com/COPIM/performing_patents_otherwise) and is licensed under the [MIT License](https://github.com/COPIM/performing_patents_otherwise/blob/main/LICENSE).
 
 DOI: coming shortly
 
