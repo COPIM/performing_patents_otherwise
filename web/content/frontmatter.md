@@ -1,10 +1,10 @@
 # Performing Patents Otherwise
 
-Edited by Julien McHardy and Kat Jungnickel
+Edited by Julien McHardy and Kat Jungnickel.
 
-Interface design and front-end development by Joana Chicau
+Interface design and front-end development by Joana Chicau.
 
-Search engine, database, and backend development by [Simon Bowie](https://simonxix.com)
+Search engine, database, and backend development by [Simon Bowie](https://simonxix.com).
 
 With contributions by Yemi Awosile, Philippa Battye, Simon Bowie, Nahuel Cano, Joana Chicau, Lee Craigie, Ellen Fowles, Juan Fernández Gebauer, Emma Hoette, Kat Jungnickel, Alice Lemkes, Julien McHardy, Rosalind Sinclair, Maciek Tomiczek and Margo van de Linde.
 
