@@ -27,9 +27,17 @@ def interface():
     return render_template('text.html', text=text)
 
 # route for databases essay
-@making.route('/making/search-engine-book/')
+@making.route('/making/database-book/')
 def databases():
     with open('content/section_3/on-combining-databases-and-books.md', 'r') as f:
+        text = f.read()
+        text = markdown.markdown(text)
+    return render_template('text.html', text=text)
+
+# route for interview
+@making.route('/making/interview/')
+def interview():
+    with open('content/section_3/making-of-interview.md', 'r') as f:
         text = f.read()
         text = markdown.markdown(text)
     return render_template('text.html', text=text)

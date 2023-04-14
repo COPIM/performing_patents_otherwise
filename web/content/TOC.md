@@ -32,16 +32,16 @@
     <span class="code">↪ Archival conversations enter into conversation with the materiality of the patents bringing aspects of the archive to the fore that computational search cannot capture.</span>
 </span>
 
-- [Sewing the archive](/conversations/#sewingthearchive)
-- [I, Martha Gowans](/conversations/martha "links to conversations section")
-- [Caribbean Quilt](/conversations/caribbeanquilt)
-- [Women On The Move](/conversations/womenonthemove)
+- [Sewing the archive](/conversations/sewing-the-archive)
+- [I, Martha Gowans](/conversations/i-martha-gowans "links to conversations section")
+- [Caribbean Quilt](/conversations/caribbean-quilt)
+- [Women On The Move](/conversations/women-on-the-move)
 
 ###  [Making of](/making)
 <span class="info" style="display: none;">
     <span class="code">↪ Reflections from the makers of Performing Patents Otherwise.</span>
 </span>
 
-- [Making of—a collective interview](/making/#interview "links to making-of section collective interview")
-- [On making the search engine book](/making/search-engine-book "links to making-of section on making search-engine book")
-- [A note on interface design](/making/interface "links to making-of section on interface design")
+- [Making of—a collective interview](/making/interview "links to making-of section collective interview")
+- [On combining databases and books](/making/database-book "links to making-of section on combining databases and books")
+- [Interface the Archive (WIP)](/making/interface "links to making-of section on interface design")
