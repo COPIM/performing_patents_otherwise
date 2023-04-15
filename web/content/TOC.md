@@ -35,7 +35,7 @@
 - [Sewing the Archive](/conversations/sewing-the-archive "links to conversations section Sewing the Archive")
 - [I, Martha Gowans](/conversations/i-martha-gowans "links to conversations section I, Martha Gowans")
 - [Caribbean Quilt](/conversations/caribbean-quilt "links to conversations section Caribbean Quilt")
-- [Women On The Move](/conversations/women-on-the-move "links to conversations section Women on the Move")
+- [Women on the Move](/conversations/women-on-the-move "links to conversations section Women on the Move")
 
 ###  [Making of](/making)
 <span class="info" style="display: none;">
