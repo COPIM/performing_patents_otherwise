@@ -500,6 +500,12 @@ p code {
     margin: 1rem 0rem !important;
 }
 
+img + em { 
+    text-align: center;
+    font-size: .8rem;
+}
+
+
 /***************** MOBILE ****************/
 
 @media screen and (min-width:0px) and (max-width: 768px) {
