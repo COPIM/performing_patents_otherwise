@@ -16,6 +16,10 @@ Books contain multitudes. Mattering Press is keen to render the unseen processes
 
 This book is a truly collaborative exploration of what a datebook could be. It would not have been possible without Simon Bowie and Joana Chicau whose roles oscillated between developer, designer, co-editor, and author. The search interventions, in particular, are, in large part, their achievement. Further, this book would be unthinkable without our collaborations with the composers, actors, researchers, machine operators and designers who developed the Archival Conversations with us; thank you, Rosalind Sinclair, Yemi Awosile, Alice Lemkes, Lee Craigie and Philippa Battye of The Adventure Syndicate and Maciek Tomiczek of Oxford Atelier, Ellen Fowles, Nahuel Cano, Juan Fernández Gebauer, Margo van de Linde and Emma Hoette, it was a joy to enter into archival conversations with you. Finally, this entire project rests on the European Patent Office's exemplary open data policy that allowed us to download and modify the underlying patent database.
 
+Thie publication uses the following fonts:
+
+- [Compagnon](https://velvetyne.fr/fonts/compagnon/) designed by Chloé Lozano, Juliette Duhé, Léa Pradine, Sébastien Riollier, and Valentin Papon and distributed under the [SIL Open Font License, Version 1.1](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL) through the [Velvetyne Type Foundry](https://velvetyne.fr/).
+
 ![IMG_fullreslogo_long.png](/static/images/IMG_fullreslogo_long.png)Public beta edition 1.0 published by Mattering Press, April 2023, Manchester
 
 ### Copyright

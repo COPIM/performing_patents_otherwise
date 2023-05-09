@@ -34,7 +34,13 @@
 @font-face {
      font-family: "Compagnon";
      src: url(fonts/Compagnon-Roman.otf) format('opentype');
-     font-weight: bold;
+     font-weight: normal;
+}
+
+@font-face {
+    font-family: "Compagnon-B";
+    src: url(fonts/Compagnon-Bold.otf) format('opentype');
+    font-weight: bolder;
 }
 
 @font-face {
@@ -42,7 +48,6 @@
      src: url(fonts/Compagnon-Medium.otf) format('opentype');
      font-weight: bold;
 }
-
 
 @font-face {
      font-family: "Compagnon-L";
