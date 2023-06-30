@@ -2,12 +2,12 @@
 
 {% block content %}
 
-<div class="action">
-  <button id="notes" onclick="hideShowInfo()">?</button>
+<div class="">
+  <button id="notes-operations" onclick="hideShowInfo()">?</button>
   <!-- 👁 ⓘ ⅈ  ✍  ⁐ -->
 </div>
 
-<div class="index-row button-search random-interferences mt-5">
+<div class="index-row button-search random-interferences mt-5 interferences" style="display: none;">
   <div class="col text-center p-2">
     <!-- random titles -->
     <a href="{{ url_for('interferences.ten_random_titles') }}">a poetics of titles</a>
@@ -24,16 +24,13 @@
   </div>
 </div>
 
-<div class="info note-interference" style="display: none;">
-  <p class="code"> ↪ The search interface breaks with the unspoken conventions of search engines, offering different entry points to the patent archive.</p>
-</div>
 
 <div class="index-row">
   <div class="col text-center m-5">
     <p class="h1">Performing Patents Otherwise</p>
-    <div class="info" style="display: none;">
-      <p class="code">
-        Archival conversations with 320,000 clothing inventions
+    <div>
+      <p>
+        <i>An experimental book querying two hundred years of clothing inventions</i>
       </p>
     </div>
   </div>
@@ -42,7 +39,7 @@
 <div class="row justify-content-center mt-3">
   <div class="col-sm-10 text-center button-search">
     <form action="{{ url_for('search.basic_search') }}" method="POST">
-      <input type="text" name="query" id="inputsearch" placeholder="search for a patent record...">
+      <input type="text" name="query" id="inputsearch" placeholder="type to perform a search...">
       <input type="submit" id="submit" value="search">
     </form>
   </div>
@@ -55,7 +52,7 @@
   </p>
 </div>
 
-<div class="index-row button-search random-interferences mt-5">
+<div class="index-row button-search random-interferences mt-5 interferences" style="display: none;">
   <div class="col text-center p-2">
     <!-- random record -->
     <a href="{{ url_for('interferences.random_record') }}">a random entry</a>
@@ -74,27 +71,27 @@
 
 <div class="index-row justify-content-center mt-5">
   <div class="col text-center button-search button-hidden-off p-2">
-    <a href="{{ url_for('conversations.index') }}">archival conversations</a>
+    <a href="{{ url_for('main.frontmatter') }}">about</a>
 
       <div class="info" style="display: none;">
-        <p class="code"> ↪ Archival conversations bring relational aspects of the archive to the fore that computational search cannot capture.</p>
+        <p class="code"> ↪ meet the team behind the project</p>
       </div>
   </div>
 
    <div class="col text-center button-search button-hidden-off p-2">
-    <a href="{{ url_for('main.contents') }}">search as a book</a>
+    <a href="{{ url_for('main.contents') }}">contents</a>
 
       <div class="info" style="display: none;">
-        <p class="code"> ↪ <i>Performing Patents Otherwise</i> is a website is a book is a website has a table of content.</p>
+        <p class="code"> ↪ discover essays, archival conversations & the making of</p>
       </div>
   </div>
 
 
-  <div class="col text-center button-search button-hidden-off p-2 mb-5">
-    <a href="{{ url_for('making.index') }}">making of</a>
+  <div class="col text-center button-search button-hidden-off p-2">
+    <button id="interfere" onclick="toggleMenu()">search interferences</button>
 
       <div class="info" style="display: none;">
-        <p class="code"> ↪ Reflections on tools and methods from the makers of <i>Performing Patents Otherwise</i>.</p>
+        <p class="code"> ↪ reveal serendipitous ways into the archive</p>
       </div>
   </div>
 </div>
@@ -102,8 +99,8 @@
 {% endblock %}
 
 {% block footer %}
-<footer class="footer mt-5 py-3 bg-light">
-  <div class="container">
+<footer class="footer p-3">
+  <div class="container info" style="display: none" >
       <span class="text-muted">© 2023 Julien McHardy & Kat Jungnickel, chapters by respective authors. Licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a> license.</span>
       <span class="text-muted">Data from the <a href="https://www.politicsofpatents.org/">Politics of Patents</a> research project hosted at Goldsmiths, University of London, and funded by the European Research Council under the European Union’s Horizon 2020 research and innovation programme (#819458).</span>
    </div>

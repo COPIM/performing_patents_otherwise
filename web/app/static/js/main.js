@@ -10,10 +10,27 @@
 
 function hideShowInfo(){
       var iDiv = document.querySelectorAll('.info'), i;
-  for (i = 0; i < iDiv.length; ++i) {
-     if ( iDiv[i].style.display == 'none') {
-        iDiv[i].style.display = 'initial'; }
-     else { iDiv[i].style.display = 'none'; }
+      for (i = 0; i < iDiv.length; ++i) {
+      if ( iDiv[i].style.display == 'none') {
+        iDiv[i].style.display = 'initial';
+        document.querySelector('#notes-operations').style.boxShadow = 'inset 0.1rem 0.1rem 0.5rem var(--color-pink)';
+      }
+      else { iDiv[i].style.display = 'none';
+      document.querySelector('#notes-operations').style.boxShadow = 'initial';
+    }
+  }
+}
+
+function toggleMenu(){
+      var iDiv = document.querySelectorAll('.interferences'), i;
+      for (i = 0; i < iDiv.length; ++i) {
+      if ( iDiv[i].style.display == 'none') {
+        iDiv[i].style.display = 'flex';
+        document.querySelector('#interfere').style.boxShadow = '0.25rem 0.25rem 0.5rem var(--color-dark)';
+      }
+      else { iDiv[i].style.display = 'none';
+      document.querySelector('#interfere').style.boxShadow = 'initial';
+    }
   }
 }
 

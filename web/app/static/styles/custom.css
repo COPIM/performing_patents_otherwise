@@ -63,11 +63,11 @@
 
 :root {
     --color-dark: #0c2039;
-    --color-whitish: #fbf9ff;
+    --color-whitish: #fcfbff;
     --color-lightyellow: #ffff99;
     --color-gray: #edecec;
     --color-blue: #4f1dff;
-    --color-pink: #cc285f;
+    --color-pink: #c00041;
     --title-font: "Compagnon-T"; /* Cmunobi */
     --body-font: "Compagnon";
 
@@ -75,6 +75,7 @@
     --title-fontsize: calc(2rem + 1.5vw) !important;
     --body-fontsize: calc(14px + 6 * (100vw - 320px) / 1600) !important;
     --button-fontsize: calc(16px + 6 * (100vw - 320px) / 1600) !important;
+    --button-fontsize-s: calc(14px + 6 * (100vw - 320px) / 1600) !important;
     --body-fontsize-s: calc(11px + 6 * (100vw - 320px) / 1600) !important;
 }
 
@@ -101,7 +102,7 @@ h1, .h1 {
     font-size: var(--title-fontsize) !important;
     -webkit-text-stroke-width: 0.08rem;
     -webkit-text-stroke-color: black;
-    letter-spacing: -0.15rem;
+    letter-spacing: -0.05rem;
 }
 
 a.h1 {
@@ -150,6 +151,7 @@ input#inputsearch, select#searchopt, select#sort, input#submit {
     border: none !important;
     border-radius: 0.25rem !important;
     margin: 0.25rem;
+    padding-bottom: 0.35rem;
 }
 
 select#searchopt{
@@ -164,30 +166,35 @@ input#submit:hover {
    box-shadow: 0.25rem 0.25rem 0.5rem var(--color-lightyellow)  !important;
 }
 
-.button-search  a, .button-search input, .button-search  select {
-  font-size:  var(--button-fontsize) !important;
+.button-search  a, .button-search input, .button-search  select, .button-search  button {
+  font-size:  var(--button-fontsize);
   text-decoration: none;
   border-radius: 0.25rem;
   padding: 0.25rem 0.5rem;
+  border: 0px;
 }
 
 .random-interferences a {
+  font-size: var(--button-fontsize-s);
   color: var(--color-dark)  !important;
   background:  var(--color-lightyellow);
+  padding-bottom: 0.45rem;
 }
 
 .random-interferences  a:hover {
-  box-shadow: 0.25rem 0.25rem 0.5rem var(--color-dark)  !important;
+  box-shadow: inset 0.25rem 0.25rem 0.5rem var(--color-gray) !important;
 }
 
-.button-hidden-off a {
+.button-hidden-off a, .button-hidden-off button {
   color: var(--color-dark)  !important;
   background:  var(--color-gray);
   text-decoration: none;
+  padding-bottom: 0.5rem;
 }
 
-.button-hidden-off a:hover {
+.button-hidden-off a:hover, .button-hidden-off button:hover {
   box-shadow: 0.25rem 0.25rem 0.5rem var(--color-dark)  !important;
+  text-shadow: 1px 1px 10px var(--color-lightyellow);
 }
 
 .arrow-back {
@@ -212,29 +219,30 @@ input#submit:hover {
  }
 
  .action button:hover {
-    color: var(--color-dark)  !important; 
+    color: var(--color-dark)  !important;
  }
 
 
 #random-img-page .action button:hover {
-    color: var(--color-whitish)  !important; 
+    color: var(--color-whitish)  !important;
  }
 
-button#notes, button#notes-operations{
-    position: fixed; 
-    top: 0; 
+button#notes-operations{
+    position: fixed;
+    top: 0;
     right:0;
-    margin: 0.25rem 0.75rem; 
-    color: var(--color-whitish) !important;
-    background: var(--color-pink) !important;
-    border: 0.1rem solid var(--color-pink) !important;
+    margin: 0.25rem 0.75rem;
+    font-size: 2rem;
+    color: var(--color-pink);
+    background: transparent;
+    border: 0.1rem solid var(--color-pink);
     border-radius: 5rem 3rem;
     height: 2rem;
     width: 2rem;
     line-height: 0.1rem;
 }
 
-button#notes:hover, button#notes-operations:hover {
+button#notes-operations:hover {
     color: var(--color-dark)  !important;
 }
 
@@ -289,6 +297,7 @@ p.about-text {
     flex-wrap: wrap;
     justify-content: space-evenly;
     flex-direction: row;
+    align-items: center;
 }
 
 /* SEARCH */
@@ -487,7 +496,7 @@ canvas > * {
 }
 
 .text li {
-    
+
 }
 
 code {
@@ -500,7 +509,7 @@ p code {
     margin: 1rem 0rem !important;
 }
 
-img + em { 
+img + em {
     text-align: center;
     font-size: .8rem;
 }
@@ -510,16 +519,19 @@ img + em {
 
 @media screen and (min-width:0px) and (max-width: 768px) {
 
-/* overwrite */
-.p-5 {
-    padding: 0.5rem !important;
-}
+  /* overwrite */
+  .p-5 {
+      padding: 0.5rem !important;
+  }
 
+  .arrow-back {
+    margin: -1rem 0.5rem;
+  }
 
   /* INDEX SEARCH */
 
   input#inputsearch {
-    width: 250px;;
+    width: 250px;
   }
 
 /* RANDOM TITLES */
