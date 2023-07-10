@@ -7,7 +7,7 @@
 # https://www.digitalocean.com/community/tutorials/how-to-add-authentication-to-your-app-with-flask-login
 # Config stuff adapted from https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iii-web-forms
 
-from flask import Flask
+from flask import Flask, session
 from flask_moment import Moment
 import os
 
@@ -16,6 +16,10 @@ moment = Moment()
 
 def create_app():
     app = Flask(__name__)
+
+    # get the secret key so sessions work
+    secret = os.getenv('SECRET_KEY')
+    app.secret_key = secret
 
     moment.init_app(app)
 

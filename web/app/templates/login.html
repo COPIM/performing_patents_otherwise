@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+   
+<form action="/login" method="post">
+  <strong>Password:</strong><br>
+  <input  name='password' ><br><br>
+<input  type="submit" value="Login">
+</form>
+
+{% endblock %}
+
+{% block footer %}
+<footer class="footer p-3">
+  <div class="container info" style="display: none" >
+      <span class="text-muted">© 2023 Julien McHardy & Kat Jungnickel, chapters by respective authors. Licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a> license.</span>
+      <span class="text-muted">Data from the <a href="https://www.politicsofpatents.org/">Politics of Patents</a> research project hosted at Goldsmiths, University of London, and funded by the European Research Council under the European Union’s Horizon 2020 research and innovation programme (#819458).</span>
+   </div>
+</footer>
+{% endblock%}
