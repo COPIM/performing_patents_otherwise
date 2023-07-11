@@ -197,10 +197,22 @@ input#submit:hover {
   text-shadow: 1px 1px 10px var(--color-lightyellow);
 }
 
-.arrow-back {
+.search-back {
     position: fixed;
     left: 0;
     margin: 0.5rem;
+    font-size: var(--body-fontsize-s) !important;
+    text-decoration: none;
+    background: transparent;
+    color: var(--color-dark) !important;
+    border: 0.1rem solid var(--color-dark);
+    border-radius: 2rem 2.5rem !important;
+    padding: 0.2rem 0.3rem;
+}
+
+.search-back:hover {
+    background: var(--color-dark) !important;
+    color: var(--color-lightyellow) !important;
 }
 
 .action {
@@ -515,7 +527,7 @@ img + em {
 }
 
 
-/***************** MOBILE ****************/
+/***************** SMALL DEVICES ****************/
 
 @media screen and (min-width:0px) and (max-width: 768px) {
 
@@ -524,7 +536,7 @@ img + em {
       padding: 0.5rem !important;
   }
 
-  .arrow-back {
+  .search-back {
     margin: -1rem 0.5rem;
   }
 
@@ -557,4 +569,18 @@ img + em {
     flex: auto !important;
   }
 
+}
+
+@media screen and (min-width:0px) and (max-width: 414px) {
+
+  /* changing layout to column on phones  */
+
+    .index-row {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+    }
 }
