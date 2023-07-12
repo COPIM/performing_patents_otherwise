@@ -1,8 +1,3 @@
-<div class="action">
-  <button id="notes-operations" onclick="hideShowInfo()">?</button>
-  <a href="/" class="arrow-back h1 text-left" title="back to index"> ⇽ </a>
-</div>
-
 <h1 class="mt-5"> Table of Contents</h1>
 <span class="info" style="display: none;">
     <span class="code">↪ This website is the home of <i>Performing Patents Otherwise</i>. It is an archive, a website and an experimental electronic book that binds search, archive and writing in one publication. The landing page navigates the publication according to the conventions of a search engine, foregrounding search. The table of contents offers a way of navigating that foregrounds texts, which is more in line with the conventions of book making. The table of contents reveals a logic of zooming in, from the general search to more specific configurations of the relationships between search, content, ordering and sense-making.</span>
