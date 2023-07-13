@@ -410,6 +410,14 @@ canvas > * {
     border-bottom: 0.20rem var(--color-lightyellow) solid;
 }
 
+#time {
+    margin-top: 2.5rem;
+}
+
+#geo {
+    margin-top: 2.5rem;
+}
+
 /* THEMES */
 
 .themes {
@@ -536,14 +544,18 @@ img + em {
       padding: 0.5rem !important;
   }
 
-  .search-back {
-    margin: -1rem 0.5rem;
+  .h1 {
+    padding-top: 2rem;
   }
 
   /* INDEX SEARCH */
 
   input#inputsearch {
     width: 250px;
+  }
+
+  .w100-s {
+    width: 100%;
   }
 
 /* RANDOM TITLES */
@@ -568,6 +580,13 @@ img + em {
   .col {
     flex: auto !important;
   }
+
+/* TEXT PAGES LIKE ARCHIVAL CONVERSATIONS AND MAKING OF */
+
+.text {
+    margin: 0% 10%;
+}
+
 
 }
 

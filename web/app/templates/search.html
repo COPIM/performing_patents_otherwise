@@ -4,7 +4,7 @@
 
 <div class="row">
   <div class="col m-5">
-    <a href="{{ url_for('main.index') }}" class="search-back text-left" title="back to search">search</a>
+    <a href="{{ url_for('main.index') }}" class="h1 text-left"> ⇽ </a>
     <p class="h1 text-center">a timeline of inventions</p>
     <p class="mt-2 text-center">{{ num_found }} patents found out of {{ total_number }}</p>
   </div>
@@ -42,7 +42,7 @@
     <input type="hidden" name="sort" value="{{ sort }}">
     <input type="hidden" name="year" value="{{ year }}">
     filter by country:
-    <select name="country" id="sort" onchange="this.form.submit()">
+    <select name="country" id="sort" class="w100-s" onchange="this.form.submit()">
       {% if country is defined %}
         <option value="None" selected>none</option>
       {% else %}
